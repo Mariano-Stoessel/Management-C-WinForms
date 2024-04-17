@@ -7,7 +7,7 @@
     <ProjectGuid>{BABACA2E-41A6-4A90-AD66-0C48339CE5F1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Alternativa_2</RootNamespace>
-    <AssemblyName>Alternativa_2</AssemblyName>
+    <AssemblyName>Alternativa 2</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

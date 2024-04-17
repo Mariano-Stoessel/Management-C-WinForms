@@ -7,7 +7,7 @@
     <ProjectGuid>{C22F6869-8E3B-49AB-BBFB-340E506D2D16}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Alternativa_1</RootNamespace>
-    <AssemblyName>Alternativa_1</AssemblyName>
+    <AssemblyName>Alternativa 1</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
