@@ -41,7 +41,9 @@
             this.btnMarcas = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.pMenu.SuspendLayout();
+            this.pLogo.SuspendLayout();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -82,7 +84,7 @@
             // 
             // pMenu
             // 
-            this.pMenu.BackColor = System.Drawing.Color.Orange;
+            this.pMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pMenu.Controls.Add(this.btnSalir);
             this.pMenu.Controls.Add(this.btnUsuario);
             this.pMenu.Controls.Add(this.btnMarcas);
@@ -93,7 +95,7 @@
             this.pMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pMenu.Location = new System.Drawing.Point(0, 0);
             this.pMenu.Name = "pMenu";
-            this.pMenu.Size = new System.Drawing.Size(200, 550);
+            this.pMenu.Size = new System.Drawing.Size(215, 550);
             this.pMenu.TabIndex = 0;
             // 
             // btnArticulos
@@ -104,14 +106,15 @@
             this.btnArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArticulos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnArticulos.Location = new System.Drawing.Point(0, 175);
+            this.btnArticulos.Location = new System.Drawing.Point(0, 150);
             this.btnArticulos.Name = "btnArticulos";
             this.btnArticulos.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnArticulos.Size = new System.Drawing.Size(200, 75);
+            this.btnArticulos.Size = new System.Drawing.Size(215, 50);
             this.btnArticulos.TabIndex = 4;
             this.btnArticulos.Text = "&Lista de Artículos";
             this.btnArticulos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnArticulos.UseVisualStyleBackColor = false;
+            this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
             // btnInicio
             // 
@@ -125,18 +128,21 @@
             this.btnInicio.Location = new System.Drawing.Point(0, 100);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnInicio.Size = new System.Drawing.Size(200, 75);
+            this.btnInicio.Size = new System.Drawing.Size(215, 50);
             this.btnInicio.TabIndex = 1;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // pLogo
             // 
+            this.pLogo.BackColor = System.Drawing.Color.Orange;
+            this.pLogo.Controls.Add(this.label1);
             this.pLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pLogo.Location = new System.Drawing.Point(0, 0);
             this.pLogo.Name = "pLogo";
-            this.pLogo.Size = new System.Drawing.Size(200, 100);
+            this.pLogo.Size = new System.Drawing.Size(215, 100);
             this.pLogo.TabIndex = 0;
             // 
             // btnCategorias
@@ -147,10 +153,10 @@
             this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategorias.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCategorias.Location = new System.Drawing.Point(0, 250);
+            this.btnCategorias.Location = new System.Drawing.Point(0, 200);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnCategorias.Size = new System.Drawing.Size(200, 75);
+            this.btnCategorias.Size = new System.Drawing.Size(215, 50);
             this.btnCategorias.TabIndex = 6;
             this.btnCategorias.Text = "&Categorias";
             this.btnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,10 +170,10 @@
             this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarcas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnMarcas.Location = new System.Drawing.Point(0, 325);
+            this.btnMarcas.Location = new System.Drawing.Point(0, 250);
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnMarcas.Size = new System.Drawing.Size(200, 75);
+            this.btnMarcas.Size = new System.Drawing.Size(215, 50);
             this.btnMarcas.TabIndex = 8;
             this.btnMarcas.Text = "&Marcas";
             this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -181,10 +187,10 @@
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUsuario.Location = new System.Drawing.Point(0, 400);
+            this.btnUsuario.Location = new System.Drawing.Point(0, 300);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnUsuario.Size = new System.Drawing.Size(200, 75);
+            this.btnUsuario.Size = new System.Drawing.Size(215, 50);
             this.btnUsuario.TabIndex = 9;
             this.btnUsuario.Text = "&Usuario";
             this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -193,33 +199,50 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalir.Location = new System.Drawing.Point(0, 475);
+            this.btnSalir.Location = new System.Drawing.Point(0, 500);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSalir.Size = new System.Drawing.Size(200, 75);
+            this.btnSalir.Size = new System.Drawing.Size(215, 50);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(175, 73);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "(T.T)";
             // 
             // PaginaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(884, 550);
             this.Controls.Add(this.pMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.IsMdiContainer = true;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(900, 589);
             this.MinimumSize = new System.Drawing.Size(900, 589);
             this.Name = "PaginaPrincipal";
-            this.Text = " Gestor de artículos SupremoMax";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Gestor de Artículos SupremoMax";
             this.Load += new System.EventHandler(this.PaginaPrincipal_Load);
             this.pMenu.ResumeLayout(false);
+            this.pLogo.ResumeLayout(false);
+            this.pLogo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -238,6 +261,7 @@
         private System.Windows.Forms.Button btnMarcas;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnUsuario;
+        private System.Windows.Forms.Label label1;
     }
 }
 

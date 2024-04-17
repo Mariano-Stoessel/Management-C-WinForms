@@ -19,7 +19,38 @@ namespace Alternativa_1
 
         private void PaginaPrincipal_Load(object sender, EventArgs e)
         {
-
+            Ventana1 ventana = new Ventana1();
+            ventana.MdiParent = this;
+            ventana.Show();
         }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(Ventana1))
+                    return;
+            }
+            Ventana1 ventana = new Ventana1();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnArticulos_Click(object sender, EventArgs e)
+        {
+            foreach(var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(Ventana2))
+                    return;
+            }
+            Ventana2 ventana = new Ventana2();
+            ventana.MdiParent = this;
+            ventana.Show();          
+        }   
     }
 }
