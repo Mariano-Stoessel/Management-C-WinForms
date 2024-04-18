@@ -44,6 +44,21 @@ namespace Alternativa_1
             Ventana2 ventana = new Ventana2();
             ventana.MdiParent = this;
             ventana.Show();          
-        }   
+        }
+
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
