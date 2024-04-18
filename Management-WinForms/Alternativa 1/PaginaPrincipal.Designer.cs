@@ -34,13 +34,13 @@
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.pMenu = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnUsuario = new System.Windows.Forms.Button();
+            this.btnMarcas = new System.Windows.Forms.Button();
+            this.btnCategorias = new System.Windows.Forms.Button();
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.pLogo = new System.Windows.Forms.Panel();
-            this.btnCategorias = new System.Windows.Forms.Button();
-            this.btnMarcas = new System.Windows.Forms.Button();
-            this.btnUsuario = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pMenu.SuspendLayout();
             this.pLogo.SuspendLayout();
@@ -84,7 +84,7 @@
             // 
             // pMenu
             // 
-            this.pMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.pMenu.Controls.Add(this.btnSalir);
             this.pMenu.Controls.Add(this.btnUsuario);
             this.pMenu.Controls.Add(this.btnMarcas);
@@ -95,17 +95,99 @@
             this.pMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pMenu.Location = new System.Drawing.Point(0, 0);
             this.pMenu.Name = "pMenu";
-            this.pMenu.Size = new System.Drawing.Size(215, 550);
+            this.pMenu.Size = new System.Drawing.Size(215, 611);
             this.pMenu.TabIndex = 0;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnSalir.Location = new System.Drawing.Point(0, 561);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnSalir.Size = new System.Drawing.Size(215, 50);
+            this.btnSalir.TabIndex = 10;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnUsuario
+            // 
+            this.btnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuario.FlatAppearance.BorderSize = 0;
+            this.btnUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnUsuario.Location = new System.Drawing.Point(0, 300);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnUsuario.Size = new System.Drawing.Size(215, 50);
+            this.btnUsuario.TabIndex = 9;
+            this.btnUsuario.Text = "&Usuario";
+            this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuario.UseVisualStyleBackColor = false;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
+            // 
+            // btnMarcas
+            // 
+            this.btnMarcas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMarcas.FlatAppearance.BorderSize = 0;
+            this.btnMarcas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnMarcas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMarcas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnMarcas.Location = new System.Drawing.Point(0, 250);
+            this.btnMarcas.Name = "btnMarcas";
+            this.btnMarcas.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnMarcas.Size = new System.Drawing.Size(215, 50);
+            this.btnMarcas.TabIndex = 8;
+            this.btnMarcas.Text = "&Marcas";
+            this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMarcas.UseVisualStyleBackColor = false;
+            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
+            // 
+            // btnCategorias
+            // 
+            this.btnCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btnCategorias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCategorias.FlatAppearance.BorderSize = 0;
+            this.btnCategorias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnCategorias.Location = new System.Drawing.Point(0, 200);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnCategorias.Size = new System.Drawing.Size(215, 50);
+            this.btnCategorias.TabIndex = 6;
+            this.btnCategorias.Text = "&Categorias";
+            this.btnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategorias.UseVisualStyleBackColor = false;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
             // btnArticulos
             // 
-            this.btnArticulos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnArticulos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.btnArticulos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnArticulos.FlatAppearance.BorderSize = 0;
+            this.btnArticulos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnArticulos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.btnArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnArticulos.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnArticulos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.btnArticulos.Location = new System.Drawing.Point(0, 150);
             this.btnArticulos.Name = "btnArticulos";
             this.btnArticulos.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -118,13 +200,15 @@
             // 
             // btnInicio
             // 
-            this.btnInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.btnInicio.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnInicio.FlatAppearance.BorderColor = System.Drawing.Color.SlateGray;
             this.btnInicio.FlatAppearance.BorderSize = 0;
+            this.btnInicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnInicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInicio.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.btnInicio.Location = new System.Drawing.Point(0, 100);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -137,82 +221,13 @@
             // 
             // pLogo
             // 
-            this.pLogo.BackColor = System.Drawing.Color.Orange;
+            this.pLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.pLogo.Controls.Add(this.label1);
             this.pLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pLogo.Location = new System.Drawing.Point(0, 0);
             this.pLogo.Name = "pLogo";
             this.pLogo.Size = new System.Drawing.Size(215, 100);
             this.pLogo.TabIndex = 0;
-            // 
-            // btnCategorias
-            // 
-            this.btnCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCategorias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCategorias.FlatAppearance.BorderSize = 0;
-            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategorias.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCategorias.Location = new System.Drawing.Point(0, 200);
-            this.btnCategorias.Name = "btnCategorias";
-            this.btnCategorias.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnCategorias.Size = new System.Drawing.Size(215, 50);
-            this.btnCategorias.TabIndex = 6;
-            this.btnCategorias.Text = "&Categorias";
-            this.btnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategorias.UseVisualStyleBackColor = false;
-            // 
-            // btnMarcas
-            // 
-            this.btnMarcas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnMarcas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMarcas.FlatAppearance.BorderSize = 0;
-            this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMarcas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnMarcas.Location = new System.Drawing.Point(0, 250);
-            this.btnMarcas.Name = "btnMarcas";
-            this.btnMarcas.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnMarcas.Size = new System.Drawing.Size(215, 50);
-            this.btnMarcas.TabIndex = 8;
-            this.btnMarcas.Text = "&Marcas";
-            this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMarcas.UseVisualStyleBackColor = false;
-            // 
-            // btnUsuario
-            // 
-            this.btnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUsuario.FlatAppearance.BorderSize = 0;
-            this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnUsuario.Location = new System.Drawing.Point(0, 300);
-            this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnUsuario.Size = new System.Drawing.Size(215, 50);
-            this.btnUsuario.TabIndex = 9;
-            this.btnUsuario.Text = "&Usuario";
-            this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuario.UseVisualStyleBackColor = false;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalir.Location = new System.Drawing.Point(0, 500);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnSalir.Size = new System.Drawing.Size(215, 50);
-            this.btnSalir.TabIndex = 10;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label1
             // 
@@ -229,13 +244,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(884, 550);
+            this.ClientSize = new System.Drawing.Size(984, 611);
             this.Controls.Add(this.pMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(900, 589);
-            this.MinimumSize = new System.Drawing.Size(900, 589);
+            this.MaximumSize = new System.Drawing.Size(1000, 650);
+            this.MinimumSize = new System.Drawing.Size(1000, 650);
             this.Name = "PaginaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestor de Artículos SupremoMax";

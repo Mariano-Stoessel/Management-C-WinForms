@@ -26,14 +26,7 @@ namespace Alternativa_1
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            foreach (var item in Application.OpenForms)
-            {
-                if (item.GetType() == typeof(Ventana1))
-                    return;
-            }
-            Ventana1 ventana = new Ventana1();
-            ventana.MdiParent = this;
-            ventana.Show();
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -51,6 +44,21 @@ namespace Alternativa_1
             Ventana2 ventana = new Ventana2();
             ventana.MdiParent = this;
             ventana.Show();          
-        }   
+        }
+
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
