@@ -1,6 +1,6 @@
 ﻿namespace alternativa3
 {
-    partial class ventanaproducto
+    partial class formulario2
     {
         /// <summary>
         /// Variable del diseñador necesaria.

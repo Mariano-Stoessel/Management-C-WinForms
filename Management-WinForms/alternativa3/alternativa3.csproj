@@ -53,6 +53,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="categoria.Designer.cs">
+      <DependentUpon>categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="producto.Designer.cs">
+      <DependentUpon>producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="usuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +87,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="perfil.resx">
       <DependentUpon>perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usuario.resx">
+      <DependentUpon>usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ventanaproducto.resx">
       <DependentUpon>ventanaproducto.cs</DependentUpon>

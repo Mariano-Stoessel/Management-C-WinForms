@@ -44,11 +44,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
             this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correoo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,7 +163,6 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Guardar";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -176,7 +175,6 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "Editar";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -189,7 +187,6 @@
             this.button3.TabIndex = 13;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label4
             // 
@@ -215,17 +212,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(610, 374);
             this.dataGridView1.TabIndex = 15;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(324, 80);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(610, 31);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Lista de Usuarios :";
             // 
             // documento
             // 
@@ -254,6 +240,16 @@
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.Width = 125;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(324, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(610, 31);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Lista de Usuarios :";
             // 
             // usuario
             // 

@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace alternativa3
 {
-    public partial class categoria : Form
+    public partial class formulario2 : Form
     {
-        public categoria()
+        public formulario2()
         {
             InitializeComponent();
+        }
+
+        private void menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
