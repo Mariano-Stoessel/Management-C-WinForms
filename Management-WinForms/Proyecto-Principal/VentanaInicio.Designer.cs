@@ -1,4 +1,4 @@
-﻿namespace Alternativa_1
+﻿namespace Proyecto_Principal
 {
     partial class VentanaInicio
     {

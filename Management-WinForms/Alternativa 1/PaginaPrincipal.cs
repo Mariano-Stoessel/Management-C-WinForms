@@ -58,7 +58,7 @@ namespace Alternativa_1
 
         private void btnCategorias_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

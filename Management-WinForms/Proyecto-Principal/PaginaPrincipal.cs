@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Alternativa_1
+namespace Proyecto_Principal
 {
     public partial class PaginaPrincipal : Form
     {
