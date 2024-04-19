@@ -16,7 +16,7 @@ namespace alternativa3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new perfil());
+            Application.Run(new txtdocumento());
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.menutitulo = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // menutitulo
@@ -57,16 +58,31 @@
             this.label1.Text = "SISTEMA DE CONTROL";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Form1
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(20, 220);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(171, 40);
+            this.iconButton1.TabIndex = 3;
+            this.iconButton1.Text = "usuario";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // ventanaproducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menutitulo);
-            this.Name = "Form1";
+            this.Name = "ventanaproducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,6 +91,7 @@
         #endregion
         private System.Windows.Forms.MenuStrip menutitulo;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
 

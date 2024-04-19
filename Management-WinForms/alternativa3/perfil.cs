@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace alternativa3
 {
-    public partial class perfil : Form
+    public partial class txtdocumento : Form
     {
-        public perfil()
+        public txtdocumento()
         {
             InitializeComponent();
         }
@@ -30,7 +30,11 @@ namespace alternativa3
             form.FormClosing += frm_closing;
         }
         private void frm_closing(object sender, FormClosingEventArgs e)
-        { this.Show(); }
+        {
+            txtdoc.Text = "";
+            txtclave.Text = "";
+            
+            this.Show(); }
 
     }
 }
