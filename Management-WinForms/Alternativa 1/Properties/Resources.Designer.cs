@@ -63,6 +63,26 @@ namespace Alternativa_1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconDetails {
+            get {
+                object obj = ResourceManager.GetObject("IconDetails", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconoLogo {
+            get {
+                object obj = ResourceManager.GetObject("IconoLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconRefresh {
             get {
                 object obj = ResourceManager.GetObject("IconRefresh", resourceCulture);

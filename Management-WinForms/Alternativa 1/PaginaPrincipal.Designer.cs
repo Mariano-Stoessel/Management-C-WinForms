@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaginaPrincipal));
             this.BottomToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.TopToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
@@ -97,7 +96,7 @@
             this.pMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pMenu.Location = new System.Drawing.Point(0, 0);
             this.pMenu.Name = "pMenu";
-            this.pMenu.Size = new System.Drawing.Size(215, 611);
+            this.pMenu.Size = new System.Drawing.Size(215, 661);
             this.pMenu.TabIndex = 0;
             // 
             // btnAbout
@@ -130,7 +129,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnSalir.Location = new System.Drawing.Point(0, 561);
+            this.btnSalir.Location = new System.Drawing.Point(0, 611);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSalir.Size = new System.Drawing.Size(215, 50);
@@ -232,7 +231,7 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
+            this.pbLogo.Image = global::Alternativa_1.Properties.Resources.IconoLogo;
             this.pbLogo.Location = new System.Drawing.Point(67, 10);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(80, 80);
@@ -244,13 +243,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.pMenu);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1000, 650);
-            this.MinimumSize = new System.Drawing.Size(1000, 650);
+            this.MaximumSize = new System.Drawing.Size(1000, 700);
+            this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "PaginaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestor de Artículos SupremoMax";
