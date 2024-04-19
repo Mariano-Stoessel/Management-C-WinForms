@@ -231,7 +231,7 @@
             // 
             // pbLogo
             // 
-            this.pbLogo.Image = global::Alternativa_1.Properties.Resources.IconoLogo;
+            this.pbLogo.Image = global::Proyecto_Principal.Properties.Resources.IconoLogo;
             this.pbLogo.Location = new System.Drawing.Point(67, 10);
             this.pbLogo.Name = "pbLogo";
             this.pbLogo.Size = new System.Drawing.Size(80, 80);

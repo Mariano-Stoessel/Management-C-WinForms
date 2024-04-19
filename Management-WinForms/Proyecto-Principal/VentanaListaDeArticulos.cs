@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Alternativa_1
 {
-    public partial class Ventana2 : Form
+    public partial class VentanaListaDeArticulos : Form
     {
-        public Ventana2()
+        public VentanaListaDeArticulos()
         {
             InitializeComponent();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Ventana2 ventana = new Ventana2();
+            VentanaListaDeArticulos ventana = new VentanaListaDeArticulos();
             this.Hide();
         }
     }

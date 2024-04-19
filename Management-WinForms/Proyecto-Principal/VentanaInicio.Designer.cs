@@ -1,6 +1,6 @@
 ﻿namespace Alternativa_1
 {
-    partial class Ventana1
+    partial class VentanaInicio
     {
         /// <summary>
         /// Required designer variable.

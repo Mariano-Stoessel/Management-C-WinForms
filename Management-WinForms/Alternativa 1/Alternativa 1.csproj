@@ -77,6 +77,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Ventana1.resx">
       <DependentUpon>Ventana1.cs</DependentUpon>
@@ -96,6 +97,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconRefresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconoLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
