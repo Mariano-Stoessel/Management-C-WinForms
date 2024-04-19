@@ -30,8 +30,6 @@
         {
             this.btnVolver = new System.Windows.Forms.Button();
             this.pLateralDerecho = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.lblCategorias = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -43,11 +41,17 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbOrdenar = new System.Windows.Forms.ComboBox();
+            this.cbxOrdenar = new System.Windows.Forms.ComboBox();
             this.lblOrdenar = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.cbxCategorias = new System.Windows.Forms.ComboBox();
+            this.lblMarcas = new System.Windows.Forms.Label();
+            this.cbxMarcas = new System.Windows.Forms.ComboBox();
+            this.pSeparador = new System.Windows.Forms.Panel();
+            this.rdInactivo = new System.Windows.Forms.RadioButton();
+            this.rdActivo = new System.Windows.Forms.RadioButton();
+            this.rdNinguno = new System.Windows.Forms.RadioButton();
             this.pLateralDerecho.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.pTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.pHeader.SuspendLayout();
@@ -71,33 +75,18 @@
             // 
             // pLateralDerecho
             // 
-            this.pLateralDerecho.Controls.Add(this.panel1);
+            this.pLateralDerecho.Controls.Add(this.rdInactivo);
+            this.pLateralDerecho.Controls.Add(this.rdActivo);
+            this.pLateralDerecho.Controls.Add(this.rdNinguno);
+            this.pLateralDerecho.Controls.Add(this.pSeparador);
+            this.pLateralDerecho.Controls.Add(this.cbxMarcas);
+            this.pLateralDerecho.Controls.Add(this.lblMarcas);
+            this.pLateralDerecho.Controls.Add(this.cbxCategorias);
             this.pLateralDerecho.Controls.Add(this.lblCategorias);
             this.pLateralDerecho.Location = new System.Drawing.Point(565, 169);
             this.pLateralDerecho.Name = "pLateralDerecho";
             this.pLateralDerecho.Size = new System.Drawing.Size(190, 466);
             this.pLateralDerecho.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.checkedListBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 34);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(190, 100);
-            this.panel1.TabIndex = 4;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkedListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(0, 0);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(190, 100);
-            this.checkedListBox1.TabIndex = 0;
             // 
             // lblCategorias
             // 
@@ -107,8 +96,8 @@
             this.lblCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.lblCategorias.Location = new System.Drawing.Point(0, 0);
             this.lblCategorias.Name = "lblCategorias";
-            this.lblCategorias.Padding = new System.Windows.Forms.Padding(5);
-            this.lblCategorias.Size = new System.Drawing.Size(119, 34);
+            this.lblCategorias.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
+            this.lblCategorias.Size = new System.Drawing.Size(119, 54);
             this.lblCategorias.TabIndex = 3;
             this.lblCategorias.Text = "Categorias";
             // 
@@ -194,7 +183,7 @@
             this.pHeader.Controls.Add(this.button1);
             this.pHeader.Controls.Add(this.textBox1);
             this.pHeader.Controls.Add(this.label1);
-            this.pHeader.Controls.Add(this.cbOrdenar);
+            this.pHeader.Controls.Add(this.cbxOrdenar);
             this.pHeader.Controls.Add(this.lblOrdenar);
             this.pHeader.Location = new System.Drawing.Point(10, 112);
             this.pHeader.Name = "pHeader";
@@ -218,7 +207,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(115, 11);
@@ -238,16 +227,16 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Cod Artículo:";
             // 
-            // cbOrdenar
+            // cbxOrdenar
             // 
-            this.cbOrdenar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.cbOrdenar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOrdenar.FormattingEnabled = true;
-            this.cbOrdenar.Location = new System.Drawing.Point(594, 10);
-            this.cbOrdenar.Name = "cbOrdenar";
-            this.cbOrdenar.Size = new System.Drawing.Size(151, 28);
-            this.cbOrdenar.TabIndex = 2;
+            this.cbxOrdenar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.cbxOrdenar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxOrdenar.FormattingEnabled = true;
+            this.cbxOrdenar.Location = new System.Drawing.Point(594, 10);
+            this.cbxOrdenar.Name = "cbxOrdenar";
+            this.cbxOrdenar.Size = new System.Drawing.Size(151, 28);
+            this.cbxOrdenar.TabIndex = 2;
             // 
             // lblOrdenar
             // 
@@ -276,6 +265,91 @@
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.UseVisualStyleBackColor = false;
             // 
+            // cbxCategorias
+            // 
+            this.cbxCategorias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbxCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCategorias.FormattingEnabled = true;
+            this.cbxCategorias.Location = new System.Drawing.Point(0, 54);
+            this.cbxCategorias.Name = "cbxCategorias";
+            this.cbxCategorias.Size = new System.Drawing.Size(190, 28);
+            this.cbxCategorias.TabIndex = 4;
+            // 
+            // lblMarcas
+            // 
+            this.lblMarcas.AutoSize = true;
+            this.lblMarcas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarcas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.lblMarcas.Location = new System.Drawing.Point(0, 82);
+            this.lblMarcas.Name = "lblMarcas";
+            this.lblMarcas.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
+            this.lblMarcas.Size = new System.Drawing.Size(87, 54);
+            this.lblMarcas.TabIndex = 5;
+            this.lblMarcas.Text = "Marcas";
+            // 
+            // cbxMarcas
+            // 
+            this.cbxMarcas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbxMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxMarcas.FormattingEnabled = true;
+            this.cbxMarcas.Location = new System.Drawing.Point(0, 136);
+            this.cbxMarcas.Name = "cbxMarcas";
+            this.cbxMarcas.Size = new System.Drawing.Size(190, 28);
+            this.cbxMarcas.TabIndex = 6;
+            // 
+            // pSeparador
+            // 
+            this.pSeparador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pSeparador.Location = new System.Drawing.Point(0, 164);
+            this.pSeparador.Name = "pSeparador";
+            this.pSeparador.Size = new System.Drawing.Size(190, 25);
+            this.pSeparador.TabIndex = 7;
+            // 
+            // rdInactivo
+            // 
+            this.rdInactivo.AutoSize = true;
+            this.rdInactivo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdInactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdInactivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.rdInactivo.Location = new System.Drawing.Point(0, 261);
+            this.rdInactivo.Name = "rdInactivo";
+            this.rdInactivo.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
+            this.rdInactivo.Size = new System.Drawing.Size(190, 36);
+            this.rdInactivo.TabIndex = 15;
+            this.rdInactivo.Text = "Inactivo";
+            this.rdInactivo.UseVisualStyleBackColor = true;
+            // 
+            // rdActivo
+            // 
+            this.rdActivo.AutoSize = true;
+            this.rdActivo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.rdActivo.Location = new System.Drawing.Point(0, 225);
+            this.rdActivo.Name = "rdActivo";
+            this.rdActivo.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
+            this.rdActivo.Size = new System.Drawing.Size(190, 36);
+            this.rdActivo.TabIndex = 14;
+            this.rdActivo.Text = "Activo";
+            this.rdActivo.UseVisualStyleBackColor = true;
+            // 
+            // rdNinguno
+            // 
+            this.rdNinguno.AutoSize = true;
+            this.rdNinguno.Checked = true;
+            this.rdNinguno.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdNinguno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdNinguno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.rdNinguno.Location = new System.Drawing.Point(0, 189);
+            this.rdNinguno.Name = "rdNinguno";
+            this.rdNinguno.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
+            this.rdNinguno.Size = new System.Drawing.Size(190, 36);
+            this.rdNinguno.TabIndex = 13;
+            this.rdNinguno.TabStop = true;
+            this.rdNinguno.Text = "Ninguno";
+            this.rdNinguno.UseVisualStyleBackColor = true;
+            // 
             // VentanaListaDeArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,7 +372,6 @@
             this.Text = "Ventana2";
             this.pLateralDerecho.ResumeLayout(false);
             this.pLateralDerecho.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.pTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.pHeader.ResumeLayout(false);
@@ -319,13 +392,18 @@
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Panel pHeader;
-        private System.Windows.Forms.ComboBox cbOrdenar;
+        private System.Windows.Forms.ComboBox cbxOrdenar;
         private System.Windows.Forms.Label lblOrdenar;
         private System.Windows.Forms.Label lblCategorias;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbxMarcas;
+        private System.Windows.Forms.Label lblMarcas;
+        private System.Windows.Forms.ComboBox cbxCategorias;
+        private System.Windows.Forms.Panel pSeparador;
+        private System.Windows.Forms.RadioButton rdInactivo;
+        private System.Windows.Forms.RadioButton rdActivo;
+        private System.Windows.Forms.RadioButton rdNinguno;
     }
 }
