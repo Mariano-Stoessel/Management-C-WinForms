@@ -17,7 +17,7 @@ namespace Alternativa_1
             InitializeComponent();
         }
 
-        private void btnArticulosVolver_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
             Ventana2 ventana = new Ventana2();
             this.Hide();

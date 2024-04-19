@@ -39,11 +39,12 @@
             this.btnMarcas = new System.Windows.Forms.Button();
             this.btnCategorias = new System.Windows.Forms.Button();
             this.btnArticulos = new System.Windows.Forms.Button();
-            this.btnInicio = new System.Windows.Forms.Button();
             this.pLogo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnAbout = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pMenu.SuspendLayout();
             this.pLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BottomToolStripPanel
@@ -85,12 +86,12 @@
             // pMenu
             // 
             this.pMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.pMenu.Controls.Add(this.btnAbout);
             this.pMenu.Controls.Add(this.btnSalir);
             this.pMenu.Controls.Add(this.btnUsuario);
             this.pMenu.Controls.Add(this.btnMarcas);
             this.pMenu.Controls.Add(this.btnCategorias);
             this.pMenu.Controls.Add(this.btnArticulos);
-            this.pMenu.Controls.Add(this.btnInicio);
             this.pMenu.Controls.Add(this.pLogo);
             this.pMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pMenu.Location = new System.Drawing.Point(0, 0);
@@ -112,7 +113,7 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSalir.Size = new System.Drawing.Size(215, 50);
-            this.btnSalir.TabIndex = 10;
+            this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -128,12 +129,12 @@
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnUsuario.Location = new System.Drawing.Point(0, 300);
+            this.btnUsuario.Location = new System.Drawing.Point(0, 250);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnUsuario.Size = new System.Drawing.Size(215, 50);
-            this.btnUsuario.TabIndex = 9;
-            this.btnUsuario.Text = "&Usuario";
+            this.btnUsuario.TabIndex = 3;
+            this.btnUsuario.Text = "Usuario";
             this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuario.UseVisualStyleBackColor = false;
             this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
@@ -148,12 +149,12 @@
             this.btnMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMarcas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnMarcas.Location = new System.Drawing.Point(0, 250);
+            this.btnMarcas.Location = new System.Drawing.Point(0, 200);
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnMarcas.Size = new System.Drawing.Size(215, 50);
-            this.btnMarcas.TabIndex = 8;
-            this.btnMarcas.Text = "&Marcas";
+            this.btnMarcas.TabIndex = 2;
+            this.btnMarcas.Text = "Marcas";
             this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMarcas.UseVisualStyleBackColor = false;
             this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
@@ -168,12 +169,12 @@
             this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnCategorias.Location = new System.Drawing.Point(0, 200);
+            this.btnCategorias.Location = new System.Drawing.Point(0, 150);
             this.btnCategorias.Name = "btnCategorias";
             this.btnCategorias.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnCategorias.Size = new System.Drawing.Size(215, 50);
-            this.btnCategorias.TabIndex = 6;
-            this.btnCategorias.Text = "&Categorias";
+            this.btnCategorias.TabIndex = 1;
+            this.btnCategorias.Text = "Categorias";
             this.btnCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategorias.UseVisualStyleBackColor = false;
             this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
@@ -188,56 +189,54 @@
             this.btnArticulos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnArticulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArticulos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnArticulos.Location = new System.Drawing.Point(0, 150);
+            this.btnArticulos.Location = new System.Drawing.Point(0, 100);
             this.btnArticulos.Name = "btnArticulos";
             this.btnArticulos.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnArticulos.Size = new System.Drawing.Size(215, 50);
-            this.btnArticulos.TabIndex = 4;
-            this.btnArticulos.Text = "&Lista de Artículos";
+            this.btnArticulos.TabIndex = 0;
+            this.btnArticulos.Text = "Lista de Artículos";
             this.btnArticulos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnArticulos.UseVisualStyleBackColor = false;
             this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
-            // btnInicio
-            // 
-            this.btnInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.btnInicio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInicio.FlatAppearance.BorderColor = System.Drawing.Color.SlateGray;
-            this.btnInicio.FlatAppearance.BorderSize = 0;
-            this.btnInicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnInicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
-            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnInicio.Location = new System.Drawing.Point(0, 100);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnInicio.Size = new System.Drawing.Size(215, 50);
-            this.btnInicio.TabIndex = 1;
-            this.btnInicio.Text = "Inicio";
-            this.btnInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInicio.UseVisualStyleBackColor = false;
-            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
-            // 
             // pLogo
             // 
             this.pLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.pLogo.Controls.Add(this.label1);
+            this.pLogo.Controls.Add(this.pictureBox1);
             this.pLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pLogo.Location = new System.Drawing.Point(0, 0);
             this.pLogo.Name = "pLogo";
             this.pLogo.Size = new System.Drawing.Size(215, 100);
             this.pLogo.TabIndex = 0;
             // 
-            // label1
+            // btnAbout
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 73);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "(T.T)";
+            this.btnAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btnAbout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.SlateGray;
+            this.btnAbout.FlatAppearance.BorderSize = 0;
+            this.btnAbout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnAbout.Location = new System.Drawing.Point(0, 300);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnAbout.Size = new System.Drawing.Size(215, 50);
+            this.btnAbout.TabIndex = 4;
+            this.btnAbout.Text = "About";
+            this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAbout.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(215, 100);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // PaginaPrincipal
             // 
@@ -257,7 +256,7 @@
             this.Load += new System.EventHandler(this.PaginaPrincipal_Load);
             this.pMenu.ResumeLayout(false);
             this.pLogo.ResumeLayout(false);
-            this.pLogo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -269,14 +268,14 @@
         private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
         private System.Windows.Forms.ToolStripContentPanel ContentPanel;
         private System.Windows.Forms.Panel pMenu;
-        private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Panel pLogo;
         private System.Windows.Forms.Button btnArticulos;
         private System.Windows.Forms.Button btnCategorias;
         private System.Windows.Forms.Button btnMarcas;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnUsuario;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
