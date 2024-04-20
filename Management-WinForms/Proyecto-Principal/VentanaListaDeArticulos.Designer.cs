@@ -30,6 +30,13 @@
         {
             this.btnVolver = new System.Windows.Forms.Button();
             this.pLateralDerecho = new System.Windows.Forms.Panel();
+            this.rdInactivo = new System.Windows.Forms.RadioButton();
+            this.rdActivo = new System.Windows.Forms.RadioButton();
+            this.rdNinguno = new System.Windows.Forms.RadioButton();
+            this.pSeparador = new System.Windows.Forms.Panel();
+            this.cbxMarcas = new System.Windows.Forms.ComboBox();
+            this.lblMarcas = new System.Windows.Forms.Label();
+            this.cbxCategorias = new System.Windows.Forms.ComboBox();
             this.lblCategorias = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -44,13 +51,6 @@
             this.cbxOrdenar = new System.Windows.Forms.ComboBox();
             this.lblOrdenar = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.cbxCategorias = new System.Windows.Forms.ComboBox();
-            this.lblMarcas = new System.Windows.Forms.Label();
-            this.cbxMarcas = new System.Windows.Forms.ComboBox();
-            this.pSeparador = new System.Windows.Forms.Panel();
-            this.rdInactivo = new System.Windows.Forms.RadioButton();
-            this.rdActivo = new System.Windows.Forms.RadioButton();
-            this.rdNinguno = new System.Windows.Forms.RadioButton();
             this.pLateralDerecho.SuspendLayout();
             this.pTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
@@ -87,6 +87,95 @@
             this.pLateralDerecho.Name = "pLateralDerecho";
             this.pLateralDerecho.Size = new System.Drawing.Size(190, 466);
             this.pLateralDerecho.TabIndex = 2;
+            // 
+            // rdInactivo
+            // 
+            this.rdInactivo.AutoSize = true;
+            this.rdInactivo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdInactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdInactivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.rdInactivo.Location = new System.Drawing.Point(0, 261);
+            this.rdInactivo.Name = "rdInactivo";
+            this.rdInactivo.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
+            this.rdInactivo.Size = new System.Drawing.Size(190, 36);
+            this.rdInactivo.TabIndex = 15;
+            this.rdInactivo.Text = "Inactivo";
+            this.rdInactivo.UseVisualStyleBackColor = true;
+            // 
+            // rdActivo
+            // 
+            this.rdActivo.AutoSize = true;
+            this.rdActivo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.rdActivo.Location = new System.Drawing.Point(0, 225);
+            this.rdActivo.Name = "rdActivo";
+            this.rdActivo.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
+            this.rdActivo.Size = new System.Drawing.Size(190, 36);
+            this.rdActivo.TabIndex = 14;
+            this.rdActivo.Text = "Activo";
+            this.rdActivo.UseVisualStyleBackColor = true;
+            // 
+            // rdNinguno
+            // 
+            this.rdNinguno.AutoSize = true;
+            this.rdNinguno.Checked = true;
+            this.rdNinguno.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rdNinguno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdNinguno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.rdNinguno.Location = new System.Drawing.Point(0, 189);
+            this.rdNinguno.Name = "rdNinguno";
+            this.rdNinguno.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
+            this.rdNinguno.Size = new System.Drawing.Size(190, 36);
+            this.rdNinguno.TabIndex = 13;
+            this.rdNinguno.TabStop = true;
+            this.rdNinguno.Text = "Ninguno";
+            this.rdNinguno.UseVisualStyleBackColor = true;
+            // 
+            // pSeparador
+            // 
+            this.pSeparador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pSeparador.Location = new System.Drawing.Point(0, 164);
+            this.pSeparador.Name = "pSeparador";
+            this.pSeparador.Size = new System.Drawing.Size(190, 25);
+            this.pSeparador.TabIndex = 7;
+            // 
+            // cbxMarcas
+            // 
+            this.cbxMarcas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.cbxMarcas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbxMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxMarcas.FormattingEnabled = true;
+            this.cbxMarcas.Location = new System.Drawing.Point(0, 136);
+            this.cbxMarcas.Name = "cbxMarcas";
+            this.cbxMarcas.Size = new System.Drawing.Size(190, 28);
+            this.cbxMarcas.TabIndex = 6;
+            this.cbxMarcas.Text = "Todo";
+            // 
+            // lblMarcas
+            // 
+            this.lblMarcas.AutoSize = true;
+            this.lblMarcas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarcas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.lblMarcas.Location = new System.Drawing.Point(0, 82);
+            this.lblMarcas.Name = "lblMarcas";
+            this.lblMarcas.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
+            this.lblMarcas.Size = new System.Drawing.Size(87, 54);
+            this.lblMarcas.TabIndex = 5;
+            this.lblMarcas.Text = "Marcas";
+            // 
+            // cbxCategorias
+            // 
+            this.cbxCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.cbxCategorias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbxCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCategorias.FormattingEnabled = true;
+            this.cbxCategorias.Location = new System.Drawing.Point(0, 54);
+            this.cbxCategorias.Name = "cbxCategorias";
+            this.cbxCategorias.Size = new System.Drawing.Size(190, 28);
+            this.cbxCategorias.TabIndex = 4;
+            this.cbxCategorias.Text = "Todo";
             // 
             // lblCategorias
             // 
@@ -229,13 +318,21 @@
             // 
             // cbxOrdenar
             // 
+            this.cbxOrdenar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxOrdenar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.cbxOrdenar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxOrdenar.FormattingEnabled = true;
-            this.cbxOrdenar.Location = new System.Drawing.Point(594, 10);
+            this.cbxOrdenar.Items.AddRange(new object[] {
+            "Mas antiguo",
+            "Mas reciente",
+            "Mayor Precio",
+            "Menor Precio",
+            "Orden por defecto"});
+            this.cbxOrdenar.Location = new System.Drawing.Point(585, 11);
             this.cbxOrdenar.Name = "cbxOrdenar";
-            this.cbxOrdenar.Size = new System.Drawing.Size(151, 28);
+            this.cbxOrdenar.Size = new System.Drawing.Size(160, 28);
             this.cbxOrdenar.TabIndex = 2;
             // 
             // lblOrdenar
@@ -243,7 +340,7 @@
             this.lblOrdenar.AutoSize = true;
             this.lblOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrdenar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.lblOrdenar.Location = new System.Drawing.Point(480, 8);
+            this.lblOrdenar.Location = new System.Drawing.Point(471, 7);
             this.lblOrdenar.Name = "lblOrdenar";
             this.lblOrdenar.Padding = new System.Windows.Forms.Padding(5);
             this.lblOrdenar.Size = new System.Drawing.Size(108, 30);
@@ -252,6 +349,8 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.AccessibleDescription = "";
+            this.btnRefresh.AccessibleName = "";
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -263,92 +362,8 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(40, 40);
             this.btnRefresh.TabIndex = 8;
+            this.btnRefresh.Tag = "";
             this.btnRefresh.UseVisualStyleBackColor = false;
-            // 
-            // cbxCategorias
-            // 
-            this.cbxCategorias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbxCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxCategorias.FormattingEnabled = true;
-            this.cbxCategorias.Location = new System.Drawing.Point(0, 54);
-            this.cbxCategorias.Name = "cbxCategorias";
-            this.cbxCategorias.Size = new System.Drawing.Size(190, 28);
-            this.cbxCategorias.TabIndex = 4;
-            // 
-            // lblMarcas
-            // 
-            this.lblMarcas.AutoSize = true;
-            this.lblMarcas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.lblMarcas.Location = new System.Drawing.Point(0, 82);
-            this.lblMarcas.Name = "lblMarcas";
-            this.lblMarcas.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
-            this.lblMarcas.Size = new System.Drawing.Size(87, 54);
-            this.lblMarcas.TabIndex = 5;
-            this.lblMarcas.Text = "Marcas";
-            // 
-            // cbxMarcas
-            // 
-            this.cbxMarcas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbxMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxMarcas.FormattingEnabled = true;
-            this.cbxMarcas.Location = new System.Drawing.Point(0, 136);
-            this.cbxMarcas.Name = "cbxMarcas";
-            this.cbxMarcas.Size = new System.Drawing.Size(190, 28);
-            this.cbxMarcas.TabIndex = 6;
-            // 
-            // pSeparador
-            // 
-            this.pSeparador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pSeparador.Location = new System.Drawing.Point(0, 164);
-            this.pSeparador.Name = "pSeparador";
-            this.pSeparador.Size = new System.Drawing.Size(190, 25);
-            this.pSeparador.TabIndex = 7;
-            // 
-            // rdInactivo
-            // 
-            this.rdInactivo.AutoSize = true;
-            this.rdInactivo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdInactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdInactivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.rdInactivo.Location = new System.Drawing.Point(0, 261);
-            this.rdInactivo.Name = "rdInactivo";
-            this.rdInactivo.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
-            this.rdInactivo.Size = new System.Drawing.Size(190, 36);
-            this.rdInactivo.TabIndex = 15;
-            this.rdInactivo.Text = "Inactivo";
-            this.rdInactivo.UseVisualStyleBackColor = true;
-            // 
-            // rdActivo
-            // 
-            this.rdActivo.AutoSize = true;
-            this.rdActivo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.rdActivo.Location = new System.Drawing.Point(0, 225);
-            this.rdActivo.Name = "rdActivo";
-            this.rdActivo.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
-            this.rdActivo.Size = new System.Drawing.Size(190, 36);
-            this.rdActivo.TabIndex = 14;
-            this.rdActivo.Text = "Activo";
-            this.rdActivo.UseVisualStyleBackColor = true;
-            // 
-            // rdNinguno
-            // 
-            this.rdNinguno.AutoSize = true;
-            this.rdNinguno.Checked = true;
-            this.rdNinguno.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdNinguno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdNinguno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.rdNinguno.Location = new System.Drawing.Point(0, 189);
-            this.rdNinguno.Name = "rdNinguno";
-            this.rdNinguno.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
-            this.rdNinguno.Size = new System.Drawing.Size(190, 36);
-            this.rdNinguno.TabIndex = 13;
-            this.rdNinguno.TabStop = true;
-            this.rdNinguno.Text = "Ninguno";
-            this.rdNinguno.UseVisualStyleBackColor = true;
             // 
             // VentanaListaDeArticulos
             // 
