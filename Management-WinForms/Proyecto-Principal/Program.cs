@@ -1,6 +1,7 @@
 ﻿using Proyecto_Principal;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,7 @@ namespace Proyecto_Principal
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new PaginaPrincipal());
+            
         }
     }
 }

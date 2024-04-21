@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto_Principal
 {
-    public partial class VentanaListaDeArticulos : Form
+    public partial class VentanaMarcas : Form
     {
-        public VentanaListaDeArticulos()
+        public VentanaMarcas()
         {
             InitializeComponent();
         }
@@ -21,6 +21,11 @@ namespace Proyecto_Principal
         {
             
             this.Dispose();
+        }
+
+        private void lblHeader_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

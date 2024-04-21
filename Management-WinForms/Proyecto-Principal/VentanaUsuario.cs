@@ -10,17 +10,27 @@ using System.Windows.Forms;
 
 namespace Proyecto_Principal
 {
-    public partial class VentanaListaDeArticulos : Form
+    public partial class VentanaUsuario : Form
     {
-        public VentanaListaDeArticulos()
+        public VentanaUsuario()
         {
             InitializeComponent();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            
             this.Dispose();
+
+        }
+
+        private void lblHeader_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VentanaUsuario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

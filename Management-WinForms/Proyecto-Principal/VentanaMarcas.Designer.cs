@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Principal
 {
-    partial class VentanaListaDeArticulos
+    partial class VentanaMarcas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.btnVolver = new System.Windows.Forms.Button();
-            this.pLateralDerecho = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.lblCategorias = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
@@ -46,8 +42,6 @@
             this.cbOrdenar = new System.Windows.Forms.ComboBox();
             this.lblOrdenar = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.pLateralDerecho.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.pTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.pHeader.SuspendLayout();
@@ -69,49 +63,6 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // pLateralDerecho
-            // 
-            this.pLateralDerecho.Controls.Add(this.panel1);
-            this.pLateralDerecho.Controls.Add(this.lblCategorias);
-            this.pLateralDerecho.Location = new System.Drawing.Point(565, 169);
-            this.pLateralDerecho.Name = "pLateralDerecho";
-            this.pLateralDerecho.Size = new System.Drawing.Size(190, 466);
-            this.pLateralDerecho.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.checkedListBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 34);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(190, 100);
-            this.panel1.TabIndex = 4;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkedListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(0, 0);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(190, 100);
-            this.checkedListBox1.TabIndex = 0;
-            // 
-            // lblCategorias
-            // 
-            this.lblCategorias.AutoSize = true;
-            this.lblCategorias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.lblCategorias.Location = new System.Drawing.Point(0, 0);
-            this.lblCategorias.Name = "lblCategorias";
-            this.lblCategorias.Padding = new System.Windows.Forms.Padding(5);
-            this.lblCategorias.Size = new System.Drawing.Size(119, 34);
-            this.lblCategorias.TabIndex = 3;
-            this.lblCategorias.Text = "Categorias";
-            // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
@@ -119,7 +70,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnEditar.Location = new System.Drawing.Point(455, 595);
+            this.btnEditar.Location = new System.Drawing.Point(656, 595);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(0);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 40);
@@ -134,7 +85,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnAgregar.Location = new System.Drawing.Point(345, 595);
+            this.btnAgregar.Location = new System.Drawing.Point(537, 595);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 40);
@@ -152,8 +103,9 @@
             this.lblHeader.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
             this.lblHeader.Size = new System.Drawing.Size(765, 100);
             this.lblHeader.TabIndex = 0;
-            this.lblHeader.Text = "Lista de Artículos";
+            this.lblHeader.Text = "Marcas";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblHeader.Click += new System.EventHandler(this.lblHeader_Click);
             // 
             // pTitle
             // 
@@ -174,7 +126,7 @@
             this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.btnDetalle.Image = global::Proyecto_Principal.Properties.Resources.IconDetails;
-            this.btnDetalle.Location = new System.Drawing.Point(295, 595);
+            this.btnDetalle.Location = new System.Drawing.Point(387, 596);
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(0);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(40, 40);
@@ -187,7 +139,7 @@
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Location = new System.Drawing.Point(10, 169);
             this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(545, 406);
+            this.dgvLista.Size = new System.Drawing.Size(755, 406);
             this.dgvLista.TabIndex = 10;
             // 
             // pHeader
@@ -270,14 +222,14 @@
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
             this.btnRefresh.Image = global::Proyecto_Principal.Properties.Resources.IconRefresh;
-            this.btnRefresh.Location = new System.Drawing.Point(245, 595);
+            this.btnRefresh.Location = new System.Drawing.Point(336, 596);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(40, 40);
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.UseVisualStyleBackColor = false;
             // 
-            // VentanaListaDeArticulos
+            // VentanaMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -290,16 +242,12 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.pLateralDerecho);
             this.Controls.Add(this.pTitle);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VentanaListaDeArticulos";
+            this.Name = "VentanaMarcas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ventana2";
-            this.pLateralDerecho.ResumeLayout(false);
-            this.pLateralDerecho.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.pTitle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.pHeader.ResumeLayout(false);
@@ -311,22 +259,18 @@
         #endregion
 
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Panel pLateralDerecho;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel pTitle;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Panel pHeader;
         private System.Windows.Forms.ComboBox cbOrdenar;
         private System.Windows.Forms.Label lblOrdenar;
-        private System.Windows.Forms.Label lblCategorias;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblHeader;
     }
 }

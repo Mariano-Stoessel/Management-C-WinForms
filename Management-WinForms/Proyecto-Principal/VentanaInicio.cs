@@ -16,5 +16,10 @@ namespace Proyecto_Principal
         {
             InitializeComponent();
         }
+
+        private void lblText_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Principal
 {
-    partial class VentanaListaDeArticulos
+    partial class VentanaCategorias
     {
         /// <summary>
         /// Required designer variable.
@@ -150,10 +150,10 @@
             this.lblHeader.Location = new System.Drawing.Point(0, 0);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
-            this.lblHeader.Size = new System.Drawing.Size(765, 100);
+            this.lblHeader.Size = new System.Drawing.Size(427, 100);
             this.lblHeader.TabIndex = 0;
-            this.lblHeader.Text = "Lista de Artículos";
-            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblHeader.Text = "Categorias";
+            this.lblHeader.Click += new System.EventHandler(this.lblHeader_Click);
             // 
             // pTitle
             // 
@@ -277,7 +277,7 @@
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.UseVisualStyleBackColor = false;
             // 
-            // VentanaListaDeArticulos
+            // VentanaCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -294,7 +294,7 @@
             this.Controls.Add(this.pTitle);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "VentanaListaDeArticulos";
+            this.Name = "VentanaCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ventana2";
             this.pLateralDerecho.ResumeLayout(false);

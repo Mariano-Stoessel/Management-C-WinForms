@@ -70,6 +70,7 @@
             this.lblText.Text = "Por favor, seleccione las funciones que desea utilizar.\r\nVerifique sus modificaci" +
     "ones.\r\n\r\nMuchas gracias.\r\n\r\n\r\n";
             this.lblText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblText.Click += new System.EventHandler(this.lblText_Click);
             // 
             // pHeader
             // 
@@ -93,7 +94,7 @@
             this.lblTitle.Text = "Bienvenido al \r\nSistema de gestión de la empresa\r\n\r\n";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Ventana1
+            // VentanaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,7 +103,7 @@
             this.Controls.Add(this.pHeader);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Ventana1";
+            this.Name = "VentanaInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ventana1";
             this.panel1.ResumeLayout(false);

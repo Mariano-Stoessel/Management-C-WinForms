@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace Proyecto_Principal
 {
-    public partial class VentanaListaDeArticulos : Form
+    public partial class VentanaCategorias : Form
     {
-        public VentanaListaDeArticulos()
+        public VentanaCategorias()
         {
             InitializeComponent();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            
             this.Dispose();
+        }
+
+        private void lblHeader_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
