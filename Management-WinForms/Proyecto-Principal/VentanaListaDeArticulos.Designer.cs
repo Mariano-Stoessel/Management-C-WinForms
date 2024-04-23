@@ -43,7 +43,7 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.pTitle = new System.Windows.Forms.Panel();
             this.btnDetalle = new System.Windows.Forms.Button();
-            this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.dgvListaArticulos = new System.Windows.Forms.DataGridView();
             this.pHeader = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -53,7 +53,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.pLateralDerecho.SuspendLayout();
             this.pTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             this.pHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +68,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 40);
-            this.btnVolver.TabIndex = 0;
+            this.btnVolver.TabIndex = 2;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -98,7 +98,7 @@
             this.rdInactivo.Name = "rdInactivo";
             this.rdInactivo.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
             this.rdInactivo.Size = new System.Drawing.Size(190, 36);
-            this.rdInactivo.TabIndex = 15;
+            this.rdInactivo.TabIndex = 4;
             this.rdInactivo.Text = "Inactivo";
             this.rdInactivo.UseVisualStyleBackColor = true;
             // 
@@ -112,7 +112,7 @@
             this.rdActivo.Name = "rdActivo";
             this.rdActivo.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
             this.rdActivo.Size = new System.Drawing.Size(190, 36);
-            this.rdActivo.TabIndex = 14;
+            this.rdActivo.TabIndex = 3;
             this.rdActivo.Text = "Activo";
             this.rdActivo.UseVisualStyleBackColor = true;
             // 
@@ -127,7 +127,7 @@
             this.rdNinguno.Name = "rdNinguno";
             this.rdNinguno.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
             this.rdNinguno.Size = new System.Drawing.Size(190, 36);
-            this.rdNinguno.TabIndex = 13;
+            this.rdNinguno.TabIndex = 2;
             this.rdNinguno.TabStop = true;
             this.rdNinguno.Text = "Ninguno";
             this.rdNinguno.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             this.cbxMarcas.Location = new System.Drawing.Point(0, 136);
             this.cbxMarcas.Name = "cbxMarcas";
             this.cbxMarcas.Size = new System.Drawing.Size(190, 28);
-            this.cbxMarcas.TabIndex = 6;
+            this.cbxMarcas.TabIndex = 1;
             this.cbxMarcas.Text = "Todo";
             // 
             // lblMarcas
@@ -174,7 +174,7 @@
             this.cbxCategorias.Location = new System.Drawing.Point(0, 54);
             this.cbxCategorias.Name = "cbxCategorias";
             this.cbxCategorias.Size = new System.Drawing.Size(190, 28);
-            this.cbxCategorias.TabIndex = 4;
+            this.cbxCategorias.TabIndex = 0;
             this.cbxCategorias.Text = "Todo";
             // 
             // lblCategorias
@@ -216,7 +216,7 @@
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 40);
-            this.btnAgregar.TabIndex = 7;
+            this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
@@ -256,17 +256,19 @@
             this.btnDetalle.Margin = new System.Windows.Forms.Padding(0);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(40, 40);
-            this.btnDetalle.TabIndex = 9;
+            this.btnDetalle.TabIndex = 4;
             this.btnDetalle.UseVisualStyleBackColor = false;
             // 
-            // dgvLista
+            // dgvListaArticulos
             // 
-            this.dgvLista.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Location = new System.Drawing.Point(10, 169);
-            this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(545, 406);
-            this.dgvLista.TabIndex = 10;
+            this.dgvListaArticulos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaArticulos.Location = new System.Drawing.Point(10, 169);
+            this.dgvListaArticulos.Name = "dgvListaArticulos";
+            this.dgvListaArticulos.ReadOnly = true;
+            this.dgvListaArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaArticulos.Size = new System.Drawing.Size(545, 406);
+            this.dgvListaArticulos.TabIndex = 1;
             // 
             // pHeader
             // 
@@ -278,7 +280,7 @@
             this.pHeader.Location = new System.Drawing.Point(10, 112);
             this.pHeader.Name = "pHeader";
             this.pHeader.Size = new System.Drawing.Size(744, 45);
-            this.pHeader.TabIndex = 11;
+            this.pHeader.TabIndex = 0;
             // 
             // button1
             // 
@@ -291,7 +293,7 @@
             this.button1.Location = new System.Drawing.Point(285, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 32);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
             // 
@@ -303,7 +305,7 @@
             this.textBox1.Location = new System.Drawing.Point(115, 11);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(152, 26);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.TabIndex = 0;
             // 
             // label1
             // 
@@ -334,7 +336,7 @@
             this.cbxOrdenar.Location = new System.Drawing.Point(585, 11);
             this.cbxOrdenar.Name = "cbxOrdenar";
             this.cbxOrdenar.Size = new System.Drawing.Size(160, 28);
-            this.cbxOrdenar.TabIndex = 2;
+            this.cbxOrdenar.TabIndex = 0;
             // 
             // lblOrdenar
             // 
@@ -362,7 +364,7 @@
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(40, 40);
-            this.btnRefresh.TabIndex = 8;
+            this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Tag = "";
             this.btnRefresh.UseVisualStyleBackColor = false;
             // 
@@ -373,7 +375,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 655);
             this.Controls.Add(this.pHeader);
-            this.Controls.Add(this.dgvLista);
+            this.Controls.Add(this.dgvListaArticulos);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAgregar);
@@ -386,10 +388,11 @@
             this.Name = "VentanaListaDeArticulos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ventana2";
+            this.Load += new System.EventHandler(this.VentanaListaDeArticulos_Load);
             this.pLateralDerecho.ResumeLayout(false);
             this.pLateralDerecho.PerformLayout();
             this.pTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).EndInit();
             this.pHeader.ResumeLayout(false);
             this.pHeader.PerformLayout();
             this.ResumeLayout(false);
@@ -406,7 +409,6 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel pTitle;
         private System.Windows.Forms.Button btnDetalle;
-        private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Panel pHeader;
         private System.Windows.Forms.ComboBox cbxOrdenar;
         private System.Windows.Forms.Label lblOrdenar;
@@ -421,5 +423,6 @@
         private System.Windows.Forms.RadioButton rdInactivo;
         private System.Windows.Forms.RadioButton rdActivo;
         private System.Windows.Forms.RadioButton rdNinguno;
+        private System.Windows.Forms.DataGridView dgvListaArticulos;
     }
 }
