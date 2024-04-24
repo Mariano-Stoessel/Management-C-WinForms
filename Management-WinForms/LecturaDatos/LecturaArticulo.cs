@@ -14,41 +14,34 @@ namespace LecturaDatos
         public List<Articulo> listar()
         {
             List<Articulo> lista = new List<Articulo>();
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
+            AccesoDatos datos = new AccesoDatos();
             try
             {
-                conexion.ConnectionString = "server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT A.Codigo as 'Código', A.Nombre, A.Descripcion, M.Descripcion AS 'Marca', C.Descripcion as 'Categoría', I.ImagenUrl, A.Precio FROM ARTICULOS A\r\n" +
+                datos.SetearConsulta("SELECT A.Codigo as 'Código', A.Nombre, A.Descripcion, M.Descripcion AS 'Marca', C.Descripcion as 'Categoría', I.ImagenUrl, A.Precio FROM ARTICULOS A\r\n" +
                     "INNER JOIN CATEGORIAS C ON C.Id = A.IdCategoria\r\n" +
                     "INNER JOIN MARCAS M ON M.Id = A.IdMarca\r\n" +
-                    "INNER JOIN IMAGENES I ON I.IdArticulo = A.Id";
-                comando.Connection = conexion;
+                    "INNER JOIN IMAGENES I ON I.IdArticulo = A.Id");
+                datos.EjecutarLectura();
 
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Codigo = lector.GetString(0);
-                    aux.Nombre = lector.GetString(1);
-                    aux.Descripcion = lector.GetString(2);
+                    aux.Codigo = (string)datos.Lector["Código"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
 
                     aux.Marca = new Marca();
-                    aux.Marca.Descripcion = lector.GetString(3);
+                    aux.Marca.Descripcion =  (string)datos.Lector["Marca"];
 
                     aux.Categoria = new Categoria();
-                    aux.Categoria.Descripcion = lector.GetString(4);
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoría"];
 
-                    aux.ImagenUrl = lector.GetString(5);
-                    aux.Precio = lector.GetSqlMoney(6);
+                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    aux.Precio = datos.Lector.GetSqlMoney(6);
 
                     lista.Add(aux);
                 }
-                conexion.Close();
+                datos.CerrarConexion();
                 return lista;
             }
             catch (Exception ex)
