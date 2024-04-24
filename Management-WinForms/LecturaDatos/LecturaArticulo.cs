@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using Dominio;
 
+
 namespace LecturaDatos
 {
     public class LecturaArticulo

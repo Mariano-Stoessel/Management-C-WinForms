@@ -38,7 +38,6 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.pTitle = new System.Windows.Forms.Panel();
             this.btnDetalle = new System.Windows.Forms.Button();
-            this.dgvLista = new System.Windows.Forms.DataGridView();
             this.pHeader = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -46,11 +45,12 @@
             this.cbOrdenar = new System.Windows.Forms.ComboBox();
             this.lblOrdenar = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.dgvListaCategorias = new System.Windows.Forms.DataGridView();
             this.pLateralDerecho.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.pHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -181,15 +181,6 @@
             this.btnDetalle.TabIndex = 9;
             this.btnDetalle.UseVisualStyleBackColor = false;
             // 
-            // dgvLista
-            // 
-            this.dgvLista.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Location = new System.Drawing.Point(10, 169);
-            this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(545, 406);
-            this.dgvLista.TabIndex = 10;
-            // 
             // pHeader
             // 
             this.pHeader.Controls.Add(this.button1);
@@ -277,14 +268,25 @@
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.UseVisualStyleBackColor = false;
             // 
+            // dgvListaCategorias
+            // 
+            this.dgvListaCategorias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.dgvListaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaCategorias.Location = new System.Drawing.Point(14, 169);
+            this.dgvListaCategorias.Name = "dgvListaCategorias";
+            this.dgvListaCategorias.ReadOnly = true;
+            this.dgvListaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaCategorias.Size = new System.Drawing.Size(545, 406);
+            this.dgvListaCategorias.TabIndex = 13;
+            // 
             // VentanaCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 655);
+            this.Controls.Add(this.dgvListaCategorias);
             this.Controls.Add(this.pHeader);
-            this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAgregar);
@@ -297,13 +299,14 @@
             this.Name = "VentanaCategorias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ventana2";
+            this.Load += new System.EventHandler(this.VentanaCategorias_Load);
             this.pLateralDerecho.ResumeLayout(false);
             this.pLateralDerecho.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.pTitle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.pHeader.ResumeLayout(false);
             this.pHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -318,7 +321,6 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel pTitle;
         private System.Windows.Forms.Button btnDetalle;
-        private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Panel pHeader;
         private System.Windows.Forms.ComboBox cbOrdenar;
         private System.Windows.Forms.Label lblOrdenar;
@@ -328,5 +330,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvListaCategorias;
     }
 }
