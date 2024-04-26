@@ -39,6 +39,8 @@ namespace Proyecto_Principal
                 listaLecturaArticulos = lecturaArt.listar();
                 dgvListaArticulos.DataSource = lecturaArt.listar();
 
+                //REVISAR PARA RESOLVER
+                //dgvListaArticulos.Columns["Id"].Visible = false;
                 dgvListaArticulos.Columns["ImagenUrl"].Visible = false;
 
                 CargarImagen(listaLecturaArticulos[0].ImagenUrl);
@@ -50,6 +52,12 @@ namespace Proyecto_Principal
             }
 
         }
+        private void dgvListaArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+            CargarImagen(seleccionado.ImagenUrl);
+        }
+
         private void CargarImagen(string imagenUrl)
         {
             try
@@ -63,17 +71,16 @@ namespace Proyecto_Principal
             }
         }
 
-        private void dgvListaArticulos_SelectionChanged(object sender, EventArgs e)
-        {
-            Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-            CargarImagen(seleccionado.ImagenUrl);
-        }
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmAgregarArticulo alta = new frmAgregarArticulo();
             alta.ShowDialog();
             CargarDatos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

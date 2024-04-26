@@ -42,10 +42,10 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.cbxMarca = new System.Windows.Forms.ComboBox();
             this.cbxCategoria = new System.Windows.Forms.ComboBox();
-            this.pxImagenUrl = new System.Windows.Forms.PictureBox();
+            this.pbxImagenUrl = new System.Windows.Forms.PictureBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pxImagenUrl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).BeginInit();
             this.SuspendLayout();
             // 
             // LblCodigo
@@ -130,8 +130,6 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -142,8 +140,6 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -163,6 +159,7 @@
             this.txtImagenUrl.Name = "txtImagenUrl";
             this.txtImagenUrl.Size = new System.Drawing.Size(210, 23);
             this.txtImagenUrl.TabIndex = 4;
+            this.txtImagenUrl.Leave += new System.EventHandler(this.txtImagenUrl_Leave);
             // 
             // txtPrecio
             // 
@@ -172,7 +169,7 @@
             this.txtPrecio.Location = new System.Drawing.Point(115, 110);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(120, 23);
-            this.txtPrecio.TabIndex = 3;
+            this.txtPrecio.TabIndex = 2;
             // 
             // txtDescripcion
             // 
@@ -185,7 +182,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(210, 60);
-            this.txtDescripcion.TabIndex = 2;
+            this.txtDescripcion.TabIndex = 3;
             // 
             // cbxMarca
             // 
@@ -209,17 +206,22 @@
             this.cbxCategoria.Size = new System.Drawing.Size(120, 24);
             this.cbxCategoria.TabIndex = 6;
             // 
-            // pxImagenUrl
+            // pbxImagenUrl
             // 
-            this.pxImagenUrl.BackColor = System.Drawing.Color.Black;
-            this.pxImagenUrl.Location = new System.Drawing.Point(355, 155);
-            this.pxImagenUrl.Name = "pxImagenUrl";
-            this.pxImagenUrl.Size = new System.Drawing.Size(210, 210);
-            this.pxImagenUrl.TabIndex = 14;
-            this.pxImagenUrl.TabStop = false;
+            this.pbxImagenUrl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbxImagenUrl.BackColor = System.Drawing.Color.Black;
+            this.pbxImagenUrl.Location = new System.Drawing.Point(355, 155);
+            this.pbxImagenUrl.Name = "pbxImagenUrl";
+            this.pbxImagenUrl.Size = new System.Drawing.Size(210, 210);
+            this.pbxImagenUrl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImagenUrl.TabIndex = 14;
+            this.pbxImagenUrl.TabStop = false;
             // 
             // btnAceptar
             // 
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.btnAceptar.FlatAppearance.BorderSize = 0;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -232,9 +234,11 @@
             this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -247,6 +251,7 @@
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmAgregarArticulo
             // 
@@ -256,7 +261,7 @@
             this.ClientSize = new System.Drawing.Size(584, 381);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.pxImagenUrl);
+            this.Controls.Add(this.pbxImagenUrl);
             this.Controls.Add(this.cbxCategoria);
             this.Controls.Add(this.cbxMarca);
             this.Controls.Add(this.txtPrecio);
@@ -271,9 +276,13 @@
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.LblCodigo);
+            this.MaximumSize = new System.Drawing.Size(700, 520);
+            this.MinimumSize = new System.Drawing.Size(600, 420);
             this.Name = "frmAgregarArticulo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Artículo";
-            ((System.ComponentModel.ISupportInitialize)(this.pxImagenUrl)).EndInit();
+            this.Load += new System.EventHandler(this.frmAgregarArticulo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,7 +304,7 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.ComboBox cbxMarca;
         private System.Windows.Forms.ComboBox cbxCategoria;
-        private System.Windows.Forms.PictureBox pxImagenUrl;
+        private System.Windows.Forms.PictureBox pbxImagenUrl;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
     }

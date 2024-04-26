@@ -84,5 +84,78 @@ namespace LecturaDatos
             }
         }
 
+        public void agregarImagen(Articulo nuevo)
+        {
+            nuevo.Id = buscarId();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
+                datos.SetearParametro("@IdArticulo", nuevo.Id);
+                datos.SetearParametro("@ImagenUrl", nuevo.ImagenUrl);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+        private int buscarId()
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("SELECT MAX(Id) AS Id FROM ARTICULOS");
+                datos.EjecutarLectura();
+                datos.Lector.Read();
+                return (int)datos.Lector["Id"];
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+        /* REVISAR SI ESTA BIEN
+        
+        public void modificarArticulo(Articulo modificado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("UPDATE ARTICULOS SET Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, Precio = @Precio WHERE Id = @Id");
+
+                datos.SetearParametro("@Codigo", modificado.Codigo);
+                datos.SetearParametro("@Nombre", modificado.Nombre);
+                datos.SetearParametro("@Descripcion", modificado.Descripcion);
+                datos.SetearParametro("@IdMarca", modificado.Marca.Id);
+                datos.SetearParametro("@IdCategoria", modificado.Categoria.Id);
+                datos.SetearParametro("@Precio", modificado.Precio);
+                datos.SetearParametro("@Id", modificado.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+        */
     }
 }
