@@ -29,6 +29,10 @@ namespace LecturaDatos
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
         }
+        public void SetearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
 
         public void EjecutarLectura()
         {
@@ -61,6 +65,7 @@ namespace LecturaDatos
                 throw ex; 
             }
         }
+
         public void CerrarConexion()
         {
             if(lector != null)

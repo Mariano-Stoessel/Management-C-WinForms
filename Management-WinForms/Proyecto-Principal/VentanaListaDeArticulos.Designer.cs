@@ -42,7 +42,6 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
             this.pTitle = new System.Windows.Forms.Panel();
-            this.btnDetalle = new System.Windows.Forms.Button();
             this.dgvListaArticulos = new System.Windows.Forms.DataGridView();
             this.pHeader = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -50,11 +49,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbxOrdenar = new System.Windows.Forms.ComboBox();
             this.lblOrdenar = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.pbxImagenUrl = new System.Windows.Forms.PictureBox();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
             this.pLateralDerecho.SuspendLayout();
             this.pTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             this.pHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -197,7 +199,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnEditar.Location = new System.Drawing.Point(455, 595);
+            this.btnEditar.Location = new System.Drawing.Point(10, 455);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(0);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 40);
@@ -212,13 +214,14 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnAgregar.Location = new System.Drawing.Point(345, 595);
+            this.btnAgregar.Location = new System.Drawing.Point(10, 405);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 40);
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblHeader
             // 
@@ -244,31 +247,18 @@
             this.pTitle.Size = new System.Drawing.Size(765, 100);
             this.pTitle.TabIndex = 1;
             // 
-            // btnDetalle
-            // 
-            this.btnDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnDetalle.FlatAppearance.BorderSize = 0;
-            this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnDetalle.Image = global::Proyecto_Principal.Properties.Resources.IconDetails;
-            this.btnDetalle.Location = new System.Drawing.Point(295, 595);
-            this.btnDetalle.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(40, 40);
-            this.btnDetalle.TabIndex = 4;
-            this.btnDetalle.UseVisualStyleBackColor = false;
-            // 
             // dgvListaArticulos
             // 
+            this.dgvListaArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaArticulos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaArticulos.Location = new System.Drawing.Point(10, 169);
             this.dgvListaArticulos.Name = "dgvListaArticulos";
-            this.dgvListaArticulos.ReadOnly = true;
             this.dgvListaArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaArticulos.Size = new System.Drawing.Size(545, 406);
+            this.dgvListaArticulos.Size = new System.Drawing.Size(545, 220);
             this.dgvListaArticulos.TabIndex = 1;
+            this.dgvListaArticulos.SelectionChanged += new System.EventHandler(this.dgvListaArticulos_SelectionChanged);
             // 
             // pHeader
             // 
@@ -350,23 +340,35 @@
             this.lblOrdenar.TabIndex = 1;
             this.lblOrdenar.Text = "Ordenar por:";
             // 
-            // btnRefresh
+            // pbxImagenUrl
             // 
-            this.btnRefresh.AccessibleDescription = "";
-            this.btnRefresh.AccessibleName = "";
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnRefresh.Image = global::Proyecto_Principal.Properties.Resources.IconRefresh;
-            this.btnRefresh.Location = new System.Drawing.Point(245, 595);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(40, 40);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Tag = "";
-            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.pbxImagenUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.pbxImagenUrl.Location = new System.Drawing.Point(325, 405);
+            this.pbxImagenUrl.Name = "pbxImagenUrl";
+            this.pbxImagenUrl.Size = new System.Drawing.Size(230, 230);
+            this.pbxImagenUrl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImagenUrl.TabIndex = 7;
+            this.pbxImagenUrl.TabStop = false;
+            // 
+            // btnUp
+            // 
+            this.btnUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.Location = new System.Drawing.Point(290, 475);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(25, 35);
+            this.btnUp.TabIndex = 8;
+            this.btnUp.UseVisualStyleBackColor = false;
+            // 
+            // btnDown
+            // 
+            this.btnDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.Location = new System.Drawing.Point(290, 528);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(25, 35);
+            this.btnDown.TabIndex = 9;
+            this.btnDown.UseVisualStyleBackColor = false;
             // 
             // VentanaListaDeArticulos
             // 
@@ -374,10 +376,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 655);
+            this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.pbxImagenUrl);
             this.Controls.Add(this.pHeader);
+            this.Controls.Add(this.btnUp);
             this.Controls.Add(this.dgvListaArticulos);
-            this.Controls.Add(this.btnDetalle);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnVolver);
@@ -395,6 +398,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).EndInit();
             this.pHeader.ResumeLayout(false);
             this.pHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -405,10 +409,8 @@
         private System.Windows.Forms.Panel pLateralDerecho;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel pTitle;
-        private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Panel pHeader;
         private System.Windows.Forms.ComboBox cbxOrdenar;
         private System.Windows.Forms.Label lblOrdenar;
@@ -424,5 +426,8 @@
         private System.Windows.Forms.RadioButton rdActivo;
         private System.Windows.Forms.RadioButton rdNinguno;
         private System.Windows.Forms.DataGridView dgvListaArticulos;
+        private System.Windows.Forms.PictureBox pbxImagenUrl;
+        private System.Windows.Forms.Button btnUp;
+        private System.Windows.Forms.Button btnDown;
     }
 }
