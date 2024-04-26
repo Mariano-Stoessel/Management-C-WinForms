@@ -52,6 +52,7 @@
             this.pbxImagenUrl = new System.Windows.Forms.PictureBox();
             this.cbxOrdenar = new System.Windows.Forms.ComboBox();
             this.lblOrdenar = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.pLateralDerecho.SuspendLayout();
             this.pTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
@@ -370,12 +371,28 @@
             this.lblOrdenar.TabIndex = 9;
             this.lblOrdenar.Text = "Ordenar por:";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnEliminar.Location = new System.Drawing.Point(10, 505);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(100, 40);
+            this.btnEliminar.TabIndex = 10;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
             // VentanaListaDeArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 655);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.cbxOrdenar);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.lblOrdenar);
@@ -432,5 +449,6 @@
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.ComboBox cbxOrdenar;
         private System.Windows.Forms.Label lblOrdenar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

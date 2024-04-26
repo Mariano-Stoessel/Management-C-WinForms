@@ -18,26 +18,30 @@ namespace LecturaDatos
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion AS DescripcionArticulo, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio FROM ARTICULOS A LEFT JOIN MARCAS M ON M.Id = A.IdMarca LEFT JOIN CATEGORIAS C ON C.Id = A.IdCategoria LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id");
+                datos.SetearConsulta("SELECT A.Codigo, A.Nombre, A.Descripcion AS DescripcionArticulo, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio, A.Id AS IdArticulo, M.Id AS IdMarca, C.Id AS IdCategoria FROM ARTICULOS A LEFT JOIN MARCAS M ON M.Id = A.IdMarca LEFT JOIN CATEGORIAS C ON C.Id = A.IdCategoria LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id");
+
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Id = (int)datos.Lector["IdArticulo"];
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["DescripcionArticulo"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
 
                     aux.Marca = new Marca();
+                    if (!Convert.IsDBNull(datos.Lector["IdMarca"]))
+                        aux.Marca.Id = (int)datos.Lector["IdMarca"];
                     if (!Convert.IsDBNull(datos.Lector["Marca"]))
                         aux.Marca.Descripcion = (string)datos.Lector["Marca"];
 
                     aux.Categoria = new Categoria();
+                    if (!Convert.IsDBNull(datos.Lector["IdCategoria"]))
+                        aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
                     if (!Convert.IsDBNull(datos.Lector["Categoria"]))
                         aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
-
-                    aux.Precio = (decimal)datos.Lector["Precio"];
 
                     if (!Convert.IsDBNull(datos.Lector["ImagenUrl"]))
                         aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
@@ -56,6 +60,7 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
+
         public void agregar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -106,6 +111,7 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
+
         private int buscarId()
         {
             AccesoDatos datos = new AccesoDatos();
@@ -127,22 +133,20 @@ namespace LecturaDatos
             }
         }
 
-        /* REVISAR SI ESTA BIEN
-        
-        public void modificarArticulo(Articulo modificado)
+        public void editarArticulo(Articulo editado)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.SetearConsulta("UPDATE ARTICULOS SET Codigo = @Codigo, Nombre = @Nombre, Descripcion = @Descripcion, IdMarca = @IdMarca, IdCategoria = @IdCategoria, Precio = @Precio WHERE Id = @Id");
 
-                datos.SetearParametro("@Codigo", modificado.Codigo);
-                datos.SetearParametro("@Nombre", modificado.Nombre);
-                datos.SetearParametro("@Descripcion", modificado.Descripcion);
-                datos.SetearParametro("@IdMarca", modificado.Marca.Id);
-                datos.SetearParametro("@IdCategoria", modificado.Categoria.Id);
-                datos.SetearParametro("@Precio", modificado.Precio);
-                datos.SetearParametro("@Id", modificado.Id);
+                datos.SetearParametro("@Codigo", editado.Codigo);
+                datos.SetearParametro("@Nombre", editado.Nombre);
+                datos.SetearParametro("@Descripcion", editado.Descripcion);
+                datos.SetearParametro("@IdMarca", editado.Marca.Id);
+                datos.SetearParametro("@IdCategoria", editado.Categoria.Id);
+                datos.SetearParametro("@Precio", editado.Precio);
+                datos.SetearParametro("@Id", editado.Id);
 
                 datos.ejecutarAccion();
             }
@@ -156,6 +160,27 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
-        */
+
+        public void editarImagen(Articulo editado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("UPDATE IMAGENES SET ImagenUrl = @ImagenUrl WHERE IdArticulo = @IdArticulo");
+                datos.SetearParametro("@ImagenUrl", editado.ImagenUrl);
+                datos.SetearParametro("@IdArticulo", editado.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }

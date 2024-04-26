@@ -16,18 +16,44 @@ namespace Proyecto_Principal
 {
     public partial class frmAgregarArticulo : Form
     {
+        private Articulo articulo = null;
         public frmAgregarArticulo()
         {
             InitializeComponent();
         }
+
+        public frmAgregarArticulo(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+            Text = "Editar Artículo";
+        }
+
         private void frmAgregarArticulo_Load(object sender, EventArgs e)
         {
-            LecturaCategorias LecturaCat = new LecturaCategorias();
-            LecturaMarca LecturaMar = new LecturaMarca();
+            LecturaCategorias LecturaCategoria = new LecturaCategorias();
+            LecturaMarca LecturaMarca = new LecturaMarca();
             try
             {
-                cbxCategoria.DataSource = LecturaCat.listar();
-                cbxMarca.DataSource = LecturaMar.listar();
+                cbxCategoria.DataSource = LecturaCategoria.listar();
+                cbxCategoria.ValueMember = "Id";
+                cbxCategoria.DisplayMember = "Descripcion";
+                cbxMarca.DataSource = LecturaMarca.listar();
+                cbxMarca.ValueMember = "Id";
+                cbxMarca.DisplayMember = "Descripcion";
+
+                if(articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                    txtDescripcion.Text = articulo.Descripcion;
+                    txtImagenUrl.Text = articulo.ImagenUrl;
+                    cargarImagen(articulo.ImagenUrl);
+
+                    cbxMarca.SelectedValue = articulo.Marca.Id;
+                    cbxCategoria.SelectedValue = articulo.Categoria.Id;
+                }
             }
             catch (Exception ex)
             {
@@ -42,23 +68,34 @@ namespace Proyecto_Principal
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulo nuevoArticulo = new Articulo();
-            LecturaArticulo lecturaArt = new LecturaArticulo();
+            LecturaArticulo lecturaArticulo = new LecturaArticulo();
             try
             {
-                nuevoArticulo.Codigo = txtCodigo.Text;
-                nuevoArticulo.Nombre = txtNombre.Text;
-                nuevoArticulo.Precio = decimal.Parse(txtPrecio.Text);
-                nuevoArticulo.Descripcion = txtDescripcion.Text;
+                if(articulo == null)
+                {
+                    articulo = new Articulo();
+                }
+                articulo.Codigo = txtCodigo.Text;
+                articulo.Nombre = txtNombre.Text;
+                articulo.Precio = decimal.Parse(txtPrecio.Text);
+                articulo.Descripcion = txtDescripcion.Text;
+                articulo.ImagenUrl = (string)txtImagenUrl.Text;
 
-                nuevoArticulo.ImagenUrl = (string)txtImagenUrl.Text;
+                articulo.Marca = (Marca)cbxMarca.SelectedItem;
+                articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
 
-                nuevoArticulo.Marca = (Marca)cbxMarca.SelectedItem;
-                nuevoArticulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
-
-                lecturaArt.agregar(nuevoArticulo);
-                lecturaArt.agregarImagen(nuevoArticulo);
-                MessageBox.Show("Artículo agregado correctamente");
+                if(articulo.Id != 0)
+                {
+                    lecturaArticulo.editarArticulo(articulo);
+                    lecturaArticulo.editarImagen(articulo);
+                    MessageBox.Show("Artículo editado correctamente");
+                }
+                else
+                {
+                    lecturaArticulo.agregar(articulo);
+                    lecturaArticulo.agregarImagen(articulo);
+                    MessageBox.Show("Artículo agregado correctamente");
+                }
                 this.Close();
             }
             catch (Exception ex)

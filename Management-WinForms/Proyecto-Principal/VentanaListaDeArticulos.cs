@@ -35,12 +35,11 @@ namespace Proyecto_Principal
         {
             try
             {
-                LecturaArticulo lecturaArt = new LecturaArticulo();
-                listaLecturaArticulos = lecturaArt.listar();
-                dgvListaArticulos.DataSource = lecturaArt.listar();
+                LecturaArticulo lecturaArticulo = new LecturaArticulo();
+                listaLecturaArticulos = lecturaArticulo.listar();
+                dgvListaArticulos.DataSource = lecturaArticulo.listar();
 
-                //REVISAR PARA RESOLVER
-                //dgvListaArticulos.Columns["Id"].Visible = false;
+                dgvListaArticulos.Columns["Id"].Visible = false;
                 dgvListaArticulos.Columns["ImagenUrl"].Visible = false;
 
                 CargarImagen(listaLecturaArticulos[0].ImagenUrl);
@@ -80,7 +79,10 @@ namespace Proyecto_Principal
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+            frmAgregarArticulo editar = new frmAgregarArticulo(seleccionado);
+            editar.ShowDialog();
+            CargarDatos();
         }
     }
 }

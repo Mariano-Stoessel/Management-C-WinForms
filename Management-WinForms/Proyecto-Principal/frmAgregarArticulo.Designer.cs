@@ -211,7 +211,7 @@
             this.pbxImagenUrl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbxImagenUrl.BackColor = System.Drawing.Color.Black;
+            this.pbxImagenUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.pbxImagenUrl.Location = new System.Drawing.Point(355, 155);
             this.pbxImagenUrl.Name = "pbxImagenUrl";
             this.pbxImagenUrl.Size = new System.Drawing.Size(210, 210);
