@@ -9,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Dominio;
-using LecturaDatos;
 
 namespace Proyecto_Principal
 {
@@ -115,7 +113,7 @@ namespace Proyecto_Principal
             {
                 pbxImagenUrl.Load(imagenUrl);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 pbxImagenUrl.Load("https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png");
             }

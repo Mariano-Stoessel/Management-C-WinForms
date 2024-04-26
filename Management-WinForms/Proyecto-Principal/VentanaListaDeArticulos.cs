@@ -63,7 +63,7 @@ namespace Proyecto_Principal
             {
                 pbxImagenUrl.Load(imagenUrl);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 pbxImagenUrl.Load("https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png");
@@ -83,6 +83,28 @@ namespace Proyecto_Principal
             frmAgregarArticulo editar = new frmAgregarArticulo(seleccionado);
             editar.ShowDialog();
             CargarDatos();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            LecturaArticulo lecturaArticulo = new LecturaArticulo();
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Está seguro que desea eliminar el artículo?", "Eliminar Artículo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(respuesta == DialogResult.Yes)
+                {
+                    Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+                    lecturaArticulo.eliminarArticulo(seleccionado.Id);
+
+                    MessageBox.Show("Artículo eliminado correctamente");
+                    CargarDatos();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

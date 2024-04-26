@@ -182,5 +182,46 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
+
+        public void eliminarArticulo(int Id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("DELETE FROM ARTICULOS WHERE Id = @Id");
+                datos.SetearParametro("@Id", Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+        public void eliminarImagen(Articulo eliminado)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("DELETE FROM IMAGENES WHERE IdArticulo = @IdArticulo");
+                datos.SetearParametro("@IdArticulo", eliminado.Id);
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }
