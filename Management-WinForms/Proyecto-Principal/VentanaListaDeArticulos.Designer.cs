@@ -45,13 +45,13 @@
             this.dgvListaArticulos = new System.Windows.Forms.DataGridView();
             this.pHeader = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbxOrdenar = new System.Windows.Forms.ComboBox();
-            this.lblOrdenar = new System.Windows.Forms.Label();
-            this.pbxImagenUrl = new System.Windows.Forms.PictureBox();
+            this.txtCodArticulo = new System.Windows.Forms.TextBox();
+            this.lblCodArticulo = new System.Windows.Forms.Label();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
+            this.pbxImagenUrl = new System.Windows.Forms.PictureBox();
+            this.cbxOrdenar = new System.Windows.Forms.ComboBox();
+            this.lblOrdenar = new System.Windows.Forms.Label();
             this.pLateralDerecho.SuspendLayout();
             this.pTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
@@ -70,7 +70,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 40);
-            this.btnVolver.TabIndex = 2;
+            this.btnVolver.TabIndex = 4;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -88,7 +88,7 @@
             this.pLateralDerecho.Location = new System.Drawing.Point(565, 169);
             this.pLateralDerecho.Name = "pLateralDerecho";
             this.pLateralDerecho.Size = new System.Drawing.Size(190, 466);
-            this.pLateralDerecho.TabIndex = 2;
+            this.pLateralDerecho.TabIndex = 6;
             // 
             // rdInactivo
             // 
@@ -164,7 +164,7 @@
             this.lblMarcas.Name = "lblMarcas";
             this.lblMarcas.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
             this.lblMarcas.Size = new System.Drawing.Size(87, 54);
-            this.lblMarcas.TabIndex = 5;
+            this.lblMarcas.TabIndex = 6;
             this.lblMarcas.Text = "Marcas";
             // 
             // cbxCategorias
@@ -189,7 +189,7 @@
             this.lblCategorias.Name = "lblCategorias";
             this.lblCategorias.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
             this.lblCategorias.Size = new System.Drawing.Size(119, 54);
-            this.lblCategorias.TabIndex = 3;
+            this.lblCategorias.TabIndex = 5;
             this.lblCategorias.Text = "Categorias";
             // 
             // btnEditar
@@ -203,7 +203,7 @@
             this.btnEditar.Margin = new System.Windows.Forms.Padding(0);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 40);
-            this.btnEditar.TabIndex = 6;
+            this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             // 
@@ -218,7 +218,7 @@
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 40);
-            this.btnAgregar.TabIndex = 5;
+            this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -263,13 +263,11 @@
             // pHeader
             // 
             this.pHeader.Controls.Add(this.button1);
-            this.pHeader.Controls.Add(this.textBox1);
-            this.pHeader.Controls.Add(this.label1);
-            this.pHeader.Controls.Add(this.cbxOrdenar);
-            this.pHeader.Controls.Add(this.lblOrdenar);
+            this.pHeader.Controls.Add(this.txtCodArticulo);
+            this.pHeader.Controls.Add(this.lblCodArticulo);
             this.pHeader.Location = new System.Drawing.Point(10, 112);
             this.pHeader.Name = "pHeader";
-            this.pHeader.Size = new System.Drawing.Size(744, 45);
+            this.pHeader.Size = new System.Drawing.Size(463, 45);
             this.pHeader.TabIndex = 0;
             // 
             // button1
@@ -287,27 +285,57 @@
             this.button1.Text = "Buscar";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // txtCodArticulo
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(115, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 26);
-            this.textBox1.TabIndex = 0;
+            this.txtCodArticulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtCodArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodArticulo.Location = new System.Drawing.Point(115, 11);
+            this.txtCodArticulo.Name = "txtCodArticulo";
+            this.txtCodArticulo.Size = new System.Drawing.Size(152, 26);
+            this.txtCodArticulo.TabIndex = 0;
             // 
-            // label1
+            // lblCodArticulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.label1.Location = new System.Drawing.Point(0, 8);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(5);
-            this.label1.Size = new System.Drawing.Size(109, 30);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Cod Artículo:";
+            this.lblCodArticulo.AutoSize = true;
+            this.lblCodArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodArticulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.lblCodArticulo.Location = new System.Drawing.Point(0, 8);
+            this.lblCodArticulo.Name = "lblCodArticulo";
+            this.lblCodArticulo.Padding = new System.Windows.Forms.Padding(5);
+            this.lblCodArticulo.Size = new System.Drawing.Size(109, 30);
+            this.lblCodArticulo.TabIndex = 3;
+            this.lblCodArticulo.Text = "Cod Artículo:";
+            // 
+            // btnUp
+            // 
+            this.btnUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.Location = new System.Drawing.Point(290, 475);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(25, 35);
+            this.btnUp.TabIndex = 7;
+            this.btnUp.UseVisualStyleBackColor = false;
+            // 
+            // btnDown
+            // 
+            this.btnDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.Location = new System.Drawing.Point(290, 528);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(25, 35);
+            this.btnDown.TabIndex = 8;
+            this.btnDown.UseVisualStyleBackColor = false;
+            // 
+            // pbxImagenUrl
+            // 
+            this.pbxImagenUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.pbxImagenUrl.Location = new System.Drawing.Point(325, 405);
+            this.pbxImagenUrl.Name = "pbxImagenUrl";
+            this.pbxImagenUrl.Size = new System.Drawing.Size(230, 230);
+            this.pbxImagenUrl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImagenUrl.TabIndex = 7;
+            this.pbxImagenUrl.TabStop = false;
             // 
             // cbxOrdenar
             // 
@@ -323,52 +351,22 @@
             "Mayor Precio",
             "Menor Precio",
             "Orden por defecto"});
-            this.cbxOrdenar.Location = new System.Drawing.Point(585, 11);
+            this.cbxOrdenar.Location = new System.Drawing.Point(593, 124);
             this.cbxOrdenar.Name = "cbxOrdenar";
             this.cbxOrdenar.Size = new System.Drawing.Size(160, 28);
-            this.cbxOrdenar.TabIndex = 0;
+            this.cbxOrdenar.TabIndex = 5;
             // 
             // lblOrdenar
             // 
             this.lblOrdenar.AutoSize = true;
             this.lblOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrdenar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.lblOrdenar.Location = new System.Drawing.Point(471, 7);
+            this.lblOrdenar.Location = new System.Drawing.Point(479, 123);
             this.lblOrdenar.Name = "lblOrdenar";
             this.lblOrdenar.Padding = new System.Windows.Forms.Padding(5);
             this.lblOrdenar.Size = new System.Drawing.Size(108, 30);
-            this.lblOrdenar.TabIndex = 1;
+            this.lblOrdenar.TabIndex = 9;
             this.lblOrdenar.Text = "Ordenar por:";
-            // 
-            // pbxImagenUrl
-            // 
-            this.pbxImagenUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.pbxImagenUrl.Location = new System.Drawing.Point(325, 405);
-            this.pbxImagenUrl.Name = "pbxImagenUrl";
-            this.pbxImagenUrl.Size = new System.Drawing.Size(230, 230);
-            this.pbxImagenUrl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxImagenUrl.TabIndex = 7;
-            this.pbxImagenUrl.TabStop = false;
-            // 
-            // btnUp
-            // 
-            this.btnUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUp.Location = new System.Drawing.Point(290, 475);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(25, 35);
-            this.btnUp.TabIndex = 8;
-            this.btnUp.UseVisualStyleBackColor = false;
-            // 
-            // btnDown
-            // 
-            this.btnDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDown.Location = new System.Drawing.Point(290, 528);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(25, 35);
-            this.btnDown.TabIndex = 9;
-            this.btnDown.UseVisualStyleBackColor = false;
             // 
             // VentanaListaDeArticulos
             // 
@@ -376,7 +374,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 655);
+            this.Controls.Add(this.cbxOrdenar);
             this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.lblOrdenar);
             this.Controls.Add(this.pbxImagenUrl);
             this.Controls.Add(this.pHeader);
             this.Controls.Add(this.btnUp);
@@ -400,6 +400,7 @@
             this.pHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -412,11 +413,9 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel pTitle;
         private System.Windows.Forms.Panel pHeader;
-        private System.Windows.Forms.ComboBox cbxOrdenar;
-        private System.Windows.Forms.Label lblOrdenar;
         private System.Windows.Forms.Label lblCategorias;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblCodArticulo;
+        private System.Windows.Forms.TextBox txtCodArticulo;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbxMarcas;
         private System.Windows.Forms.Label lblMarcas;
@@ -429,5 +428,7 @@
         private System.Windows.Forms.PictureBox pbxImagenUrl;
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.ComboBox cbxOrdenar;
+        private System.Windows.Forms.Label lblOrdenar;
     }
 }
