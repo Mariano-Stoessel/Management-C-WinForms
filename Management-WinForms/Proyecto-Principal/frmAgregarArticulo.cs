@@ -29,7 +29,7 @@ namespace Proyecto_Principal
 
         private void frmAgregarArticulo_Load(object sender, EventArgs e)
         {
-            LecturaCategorias LecturaCategoria = new LecturaCategorias();
+            LecturaCategoria LecturaCategoria = new LecturaCategoria();
             LecturaMarca LecturaMarca = new LecturaMarca();
             try
             {

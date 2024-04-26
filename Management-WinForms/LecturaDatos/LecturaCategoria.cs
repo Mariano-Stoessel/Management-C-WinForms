@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LecturaDatos
 {
-    public class LecturaCategorias
+    public class LecturaCategoria
     {
         public List<Categoria> listar()
         {

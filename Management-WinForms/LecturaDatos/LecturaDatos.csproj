@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="LecturaArticulo.cs" />
-    <Compile Include="LecturaCategorias.cs" />
+    <Compile Include="LecturaCategoria.cs" />
     <Compile Include="LecturaMarca.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

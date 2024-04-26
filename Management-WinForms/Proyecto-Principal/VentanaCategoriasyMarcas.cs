@@ -12,11 +12,14 @@ using System.Windows.Forms;
 
 namespace Proyecto_Principal
 {
-    public partial class VentanaCategorias : Form
+    public partial class VentanaCategoriasyMarcas : Form
     {
 
         private List<Categoria> ListaLecturaCategorias;
-        public VentanaCategorias()
+
+        private List<Marca> listaLecturaMarcas;
+
+        public VentanaCategoriasyMarcas()
         {
             InitializeComponent();
         }
@@ -38,16 +41,22 @@ namespace Proyecto_Principal
 
         private void VentanaCategorias_Load(object sender, EventArgs e)
         {
-            LecturaCategorias lecturaCat = new LecturaCategorias();
+            //refresh Categorias
+            LecturaCategoria lecturaCat = new LecturaCategoria();
             ListaLecturaCategorias = lecturaCat.listar();
             dgvListaCategorias.DataSource = lecturaCat.listar();
+
+            //refresh Marcas
+            LecturaMarca lecturaMar = new LecturaMarca();
+            listaLecturaMarcas = lecturaMar.listar();
+            dgvMarcas.DataSource = lecturaMar.listar();
         }
 
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Categoria NuevaCat = new Categoria();
-            LecturaCategorias lecturaCat = new LecturaCategorias();
+            LecturaCategoria lecturaCat = new LecturaCategoria();
             try
             {
                 NuevaCat.Descripcion = textAgregarCategoria.Text;
@@ -58,6 +67,34 @@ namespace Proyecto_Principal
                 dgvListaCategorias.DataSource = lecturaCat.listar();
 
                 MessageBox.Show("Agregado exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        {
+            Marca NuevaMarca = new Marca();
+            LecturaMarca lecturaMarca = new LecturaMarca();
+            try
+            {
+                NuevaMarca.Descripcion = txtAgregarMarca.Text;
+                lecturaMarca.agregar(NuevaMarca);
+
+                LecturaMarca lecturaMar = new LecturaMarca();
+                listaLecturaMarcas = lecturaMar.listar();
+                dgvMarcas.DataSource = lecturaMar.listar();
+
+                MessageBox.Show("Agregado exitosamente");
+                
             }
             catch (Exception ex)
             {

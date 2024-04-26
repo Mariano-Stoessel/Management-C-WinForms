@@ -48,50 +48,7 @@ namespace Proyecto_Principal
             ventana.Show();          
         }
 
-        private void btnMarcas_Click(object sender, EventArgs e)
-        {
-            foreach (var item in Application.OpenForms)
-            {
-                if (item.GetType() == typeof(VentanaMarcas))
-                {
-                    
-                    return;
-                }
-                
-            }
-            VentanaMarcas ventana = new VentanaMarcas();
-            ventana.MdiParent = this;
-            ventana.Show();
-        }
 
-        private void btnUsuario_Click(object sender, EventArgs e)
-        {
-                foreach (var item in Application.OpenForms)
-            {
-                if (item.GetType() == typeof(VentanaUsuario))
-                {
-                    return;
-                }
-            }
-            VentanaUsuario ventana = new VentanaUsuario();
-            ventana.MdiParent = this;
-            ventana.Show();
-        }
-
-        private void btnCategorias_Click(object sender, EventArgs e)
-        {
-            foreach (var item in Application.OpenForms)
-            {
-                if (item.GetType() == typeof(VentanaCategorias))
-                {
-                    return;
-                }
-            }
-            VentanaCategorias ventana = new VentanaCategorias();
-            ventana.MdiParent = this;
-            ventana.Show();
-
-        }
         private void btnAbout_Click(object sender, EventArgs e)
         {
                 foreach (var item in Application.OpenForms)
@@ -102,6 +59,20 @@ namespace Proyecto_Principal
                 }
             }
             VentanaAbout ventana = new VentanaAbout();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void btnCategoriasyMarcas_Click_1(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(VentanaCategoriasyMarcas))
+                {
+                    return;
+                }
+            }
+            VentanaCategoriasyMarcas ventana = new VentanaCategoriasyMarcas();
             ventana.MdiParent = this;
             ventana.Show();
         }
