@@ -35,5 +35,25 @@ namespace LecturaDatos
                 throw ex;
             }
         }
+        public void agregar(Categoria nueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("insert into CATEGORIAS (Descripcion) values ('" + nueva + "')");
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }

@@ -37,5 +37,26 @@ namespace LecturaDatos
                 throw ex;
             }
         }
+
+        public void agregar (Marca nueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {   
+                datos.SetearConsulta("insert into MARCAS (Descripcion) values ('"+nueva+"')");
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally 
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }

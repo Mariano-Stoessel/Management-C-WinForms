@@ -46,6 +46,21 @@ namespace LecturaDatos
             }
             
         }
+
+        public void ejecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+            conexion.Open();
+            comando.ExecuteNonQuery(); 
+            }
+            catch (Exception ex)
+            {
+
+                throw ex; 
+            }
+        }
         public void CerrarConexion()
         {
             if(lector != null)

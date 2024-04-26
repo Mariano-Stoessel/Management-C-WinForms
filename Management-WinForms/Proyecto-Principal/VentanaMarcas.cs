@@ -33,11 +33,39 @@ namespace Proyecto_Principal
 
         private void VentanaMarcas_Load(object sender, EventArgs e)
         {
-            LecturaMarca lecturaArt = new LecturaMarca();
-            listaLecturaMarcas = lecturaArt.listar();
-            dgvListaMarca.DataSource = lecturaArt.listar();
+            LecturaMarca lecturaMar = new LecturaMarca();
+            listaLecturaMarcas = lecturaMar.listar();
+            dgvListaMarca.DataSource = lecturaMar.listar();
 
            
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Marca NuevaMarca = new Marca();
+            LecturaMarca lecturaMarca = new LecturaMarca();
+            try
+            {
+                NuevaMarca.Descripcion = txtAgregarMarca.Text;
+                lecturaMarca.agregar(NuevaMarca);
+
+                LecturaMarca lecturaMar = new LecturaMarca();
+                listaLecturaMarcas = lecturaMar.listar();
+                dgvListaMarca.DataSource = lecturaMar.listar();
+
+                MessageBox.Show("Agregado exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString()); 
+                
+            }
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

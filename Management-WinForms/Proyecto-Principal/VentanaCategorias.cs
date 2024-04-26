@@ -42,5 +42,28 @@ namespace Proyecto_Principal
             ListaLecturaCategorias = lecturaCat.listar();
             dgvListaCategorias.DataSource = lecturaCat.listar();
         }
+
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Categoria NuevaCat = new Categoria();
+            LecturaCategorias lecturaCat = new LecturaCategorias();
+            try
+            {
+                NuevaCat.Descripcion = textAgregarCategoria.Text;
+                lecturaCat.agregar(NuevaCat);
+
+               
+                ListaLecturaCategorias = lecturaCat.listar();
+                dgvListaCategorias.DataSource = lecturaCat.listar();
+
+                MessageBox.Show("Agregado exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+
+            }
+        }
     }
 }

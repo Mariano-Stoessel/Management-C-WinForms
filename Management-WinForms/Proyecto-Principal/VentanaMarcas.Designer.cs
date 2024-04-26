@@ -33,15 +33,15 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
             this.pTitle = new System.Windows.Forms.Panel();
-            this.btnDetalle = new System.Windows.Forms.Button();
             this.pHeader = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbOrdenar = new System.Windows.Forms.ComboBox();
             this.lblOrdenar = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvListaMarca = new System.Windows.Forms.DataGridView();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAgregarMarca = new System.Windows.Forms.TextBox();
             this.pTitle.SuspendLayout();
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaMarca)).BeginInit();
@@ -83,15 +83,16 @@
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnAgregar.Location = new System.Drawing.Point(537, 595);
+            this.btnAgregar.Location = new System.Drawing.Point(455, 595);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 40);
             this.btnAgregar.TabIndex = 7;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = "Agregar Marca";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblHeader
             // 
@@ -117,21 +118,6 @@
             this.pTitle.Name = "pTitle";
             this.pTitle.Size = new System.Drawing.Size(765, 100);
             this.pTitle.TabIndex = 1;
-            // 
-            // btnDetalle
-            // 
-            this.btnDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnDetalle.FlatAppearance.BorderSize = 0;
-            this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnDetalle.Image = global::Proyecto_Principal.Properties.Resources.IconDetails;
-            this.btnDetalle.Location = new System.Drawing.Point(387, 596);
-            this.btnDetalle.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(40, 40);
-            this.btnDetalle.TabIndex = 9;
-            this.btnDetalle.UseVisualStyleBackColor = false;
             // 
             // pHeader
             // 
@@ -205,21 +191,6 @@
             this.lblOrdenar.TabIndex = 1;
             this.lblOrdenar.Text = "Ordenar por:";
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnRefresh.Image = global::Proyecto_Principal.Properties.Resources.IconRefresh;
-            this.btnRefresh.Location = new System.Drawing.Point(336, 596);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(40, 40);
-            this.btnRefresh.TabIndex = 8;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            // 
             // dgvListaMarca
             // 
             this.dgvListaMarca.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -231,16 +202,31 @@
             this.dgvListaMarca.Size = new System.Drawing.Size(545, 406);
             this.dgvListaMarca.TabIndex = 12;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(-15, -15);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 13;
+            // 
+            // txtAgregarMarca
+            // 
+            this.txtAgregarMarca.Location = new System.Drawing.Point(266, 607);
+            this.txtAgregarMarca.Name = "txtAgregarMarca";
+            this.txtAgregarMarca.Size = new System.Drawing.Size(170, 20);
+            this.txtAgregarMarca.TabIndex = 14;
+            this.txtAgregarMarca.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
             // VentanaMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 655);
+            this.Controls.Add(this.txtAgregarMarca);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dgvListaMarca);
             this.Controls.Add(this.pHeader);
-            this.Controls.Add(this.btnDetalle);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnVolver);
@@ -256,6 +242,7 @@
             this.pHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaMarca)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -264,9 +251,7 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Panel pTitle;
-        private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Panel pHeader;
         private System.Windows.Forms.ComboBox cbOrdenar;
         private System.Windows.Forms.Label lblOrdenar;
@@ -275,5 +260,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.DataGridView dgvListaMarca;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAgregarMarca;
     }
 }

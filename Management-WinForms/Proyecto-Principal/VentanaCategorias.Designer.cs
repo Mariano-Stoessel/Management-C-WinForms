@@ -37,15 +37,14 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
             this.pTitle = new System.Windows.Forms.Panel();
-            this.btnDetalle = new System.Windows.Forms.Button();
             this.pHeader = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbOrdenar = new System.Windows.Forms.ComboBox();
             this.lblOrdenar = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.dgvListaCategorias = new System.Windows.Forms.DataGridView();
+            this.textAgregarCategoria = new System.Windows.Forms.TextBox();
             this.pLateralDerecho.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pTitle.SuspendLayout();
@@ -134,13 +133,14 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnAgregar.Location = new System.Drawing.Point(345, 595);
+            this.btnAgregar.Location = new System.Drawing.Point(295, 595);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(100, 40);
+            this.btnAgregar.Size = new System.Drawing.Size(150, 40);
             this.btnAgregar.TabIndex = 7;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = "Agregar categoría";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblHeader
             // 
@@ -165,21 +165,6 @@
             this.pTitle.Name = "pTitle";
             this.pTitle.Size = new System.Drawing.Size(765, 100);
             this.pTitle.TabIndex = 1;
-            // 
-            // btnDetalle
-            // 
-            this.btnDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnDetalle.FlatAppearance.BorderSize = 0;
-            this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDetalle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnDetalle.Image = global::Proyecto_Principal.Properties.Resources.IconDetails;
-            this.btnDetalle.Location = new System.Drawing.Point(295, 595);
-            this.btnDetalle.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(40, 40);
-            this.btnDetalle.TabIndex = 9;
-            this.btnDetalle.UseVisualStyleBackColor = false;
             // 
             // pHeader
             // 
@@ -253,21 +238,6 @@
             this.lblOrdenar.TabIndex = 1;
             this.lblOrdenar.Text = "Ordenar por:";
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnRefresh.Image = global::Proyecto_Principal.Properties.Resources.IconRefresh;
-            this.btnRefresh.Location = new System.Drawing.Point(245, 595);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(0);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(40, 40);
-            this.btnRefresh.TabIndex = 8;
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            // 
             // dgvListaCategorias
             // 
             this.dgvListaCategorias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -279,16 +249,22 @@
             this.dgvListaCategorias.Size = new System.Drawing.Size(545, 406);
             this.dgvListaCategorias.TabIndex = 13;
             // 
+            // textAgregarCategoria
+            // 
+            this.textAgregarCategoria.Location = new System.Drawing.Point(140, 607);
+            this.textAgregarCategoria.Name = "textAgregarCategoria";
+            this.textAgregarCategoria.Size = new System.Drawing.Size(152, 20);
+            this.textAgregarCategoria.TabIndex = 14;
+            // 
             // VentanaCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 655);
+            this.Controls.Add(this.textAgregarCategoria);
             this.Controls.Add(this.dgvListaCategorias);
             this.Controls.Add(this.pHeader);
-            this.Controls.Add(this.btnDetalle);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnVolver);
@@ -308,6 +284,7 @@
             this.pHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -317,10 +294,8 @@
         private System.Windows.Forms.Panel pLateralDerecho;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel pTitle;
-        private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Panel pHeader;
         private System.Windows.Forms.ComboBox cbOrdenar;
         private System.Windows.Forms.Label lblOrdenar;
@@ -331,5 +306,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvListaCategorias;
+        private System.Windows.Forms.TextBox textAgregarCategoria;
     }
 }
