@@ -77,13 +77,14 @@
             this.btnEditarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnEditarCategoria.Location = new System.Drawing.Point(509, 275);
+            this.btnEditarCategoria.Location = new System.Drawing.Point(548, 300);
             this.btnEditarCategoria.Margin = new System.Windows.Forms.Padding(0);
             this.btnEditarCategoria.Name = "btnEditarCategoria";
-            this.btnEditarCategoria.Size = new System.Drawing.Size(150, 40);
+            this.btnEditarCategoria.Size = new System.Drawing.Size(151, 40);
             this.btnEditarCategoria.TabIndex = 6;
             this.btnEditarCategoria.Text = "Editar Categoria";
             this.btnEditarCategoria.UseVisualStyleBackColor = false;
+            this.btnEditarCategoria.Click += new System.EventHandler(this.btnEditarCategoria_Click_1);
             // 
             // btnAgregarCategoria
             // 
@@ -92,10 +93,10 @@
             this.btnAgregarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(509, 220);
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(548, 246);
             this.btnAgregarCategoria.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(150, 40);
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(151, 40);
             this.btnAgregarCategoria.TabIndex = 7;
             this.btnAgregarCategoria.Text = "Agregar categoría";
             this.btnAgregarCategoria.UseVisualStyleBackColor = false;
@@ -111,8 +112,8 @@
             this.lblHeader.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
             this.lblHeader.Size = new System.Drawing.Size(765, 100);
             this.lblHeader.TabIndex = 0;
-            this.lblHeader.Text = "Categorias y Marcas";
-            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblHeader.Text = "Administrar";
+            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblHeader.Click += new System.EventHandler(this.lblHeader_Click);
             // 
             // pTitle
@@ -188,7 +189,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.label1.Location = new System.Drawing.Point(21, 186);
+            this.label1.Location = new System.Drawing.Point(34, 211);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(5);
             this.label1.Size = new System.Drawing.Size(205, 49);
@@ -200,7 +201,7 @@
             // 
             this.dgvListaCategorias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.dgvListaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaCategorias.Location = new System.Drawing.Point(232, 186);
+            this.dgvListaCategorias.Location = new System.Drawing.Point(258, 211);
             this.dgvListaCategorias.Name = "dgvListaCategorias";
             this.dgvListaCategorias.ReadOnly = true;
             this.dgvListaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -212,7 +213,7 @@
             this.lblMarcas.AutoSize = true;
             this.lblMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMarcas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.lblMarcas.Location = new System.Drawing.Point(64, 402);
+            this.lblMarcas.Location = new System.Drawing.Point(78, 452);
             this.lblMarcas.Name = "lblMarcas";
             this.lblMarcas.Padding = new System.Windows.Forms.Padding(5);
             this.lblMarcas.Size = new System.Drawing.Size(152, 49);
@@ -223,7 +224,7 @@
             // 
             this.dgvMarcas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Location = new System.Drawing.Point(232, 402);
+            this.dgvMarcas.Location = new System.Drawing.Point(258, 452);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.ReadOnly = true;
             this.dgvMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -237,13 +238,14 @@
             this.btnEditarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnEditarMarca.Location = new System.Drawing.Point(509, 489);
+            this.btnEditarMarca.Location = new System.Drawing.Point(548, 539);
             this.btnEditarMarca.Margin = new System.Windows.Forms.Padding(0);
             this.btnEditarMarca.Name = "btnEditarMarca";
-            this.btnEditarMarca.Size = new System.Drawing.Size(150, 40);
+            this.btnEditarMarca.Size = new System.Drawing.Size(151, 40);
             this.btnEditarMarca.TabIndex = 17;
             this.btnEditarMarca.Text = "Editar Marca";
             this.btnEditarMarca.UseVisualStyleBackColor = false;
+            this.btnEditarMarca.Click += new System.EventHandler(this.btnEditarMarca_Click);
             // 
             // btnAgregarMarca
             // 
@@ -252,10 +254,10 @@
             this.btnAgregarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnAgregarMarca.Location = new System.Drawing.Point(509, 435);
+            this.btnAgregarMarca.Location = new System.Drawing.Point(548, 485);
             this.btnAgregarMarca.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregarMarca.Name = "btnAgregarMarca";
-            this.btnAgregarMarca.Size = new System.Drawing.Size(150, 40);
+            this.btnAgregarMarca.Size = new System.Drawing.Size(151, 40);
             this.btnAgregarMarca.TabIndex = 18;
             this.btnAgregarMarca.Text = "Agregar Marca";
             this.btnAgregarMarca.UseVisualStyleBackColor = false;
@@ -263,16 +265,16 @@
             // 
             // textAgregarCategoria
             // 
-            this.textAgregarCategoria.Location = new System.Drawing.Point(509, 186);
+            this.textAgregarCategoria.Location = new System.Drawing.Point(548, 211);
             this.textAgregarCategoria.Name = "textAgregarCategoria";
-            this.textAgregarCategoria.Size = new System.Drawing.Size(150, 20);
+            this.textAgregarCategoria.Size = new System.Drawing.Size(151, 20);
             this.textAgregarCategoria.TabIndex = 19;
             // 
             // txtAgregarMarca
             // 
-            this.txtAgregarMarca.Location = new System.Drawing.Point(509, 402);
+            this.txtAgregarMarca.Location = new System.Drawing.Point(548, 452);
             this.txtAgregarMarca.Name = "txtAgregarMarca";
-            this.txtAgregarMarca.Size = new System.Drawing.Size(150, 20);
+            this.txtAgregarMarca.Size = new System.Drawing.Size(151, 20);
             this.txtAgregarMarca.TabIndex = 20;
             // 
             // btnEliminarMarca
@@ -282,10 +284,10 @@
             this.btnEliminarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarMarca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnEliminarMarca.Location = new System.Drawing.Point(509, 545);
+            this.btnEliminarMarca.Location = new System.Drawing.Point(548, 595);
             this.btnEliminarMarca.Margin = new System.Windows.Forms.Padding(0);
             this.btnEliminarMarca.Name = "btnEliminarMarca";
-            this.btnEliminarMarca.Size = new System.Drawing.Size(150, 40);
+            this.btnEliminarMarca.Size = new System.Drawing.Size(151, 40);
             this.btnEliminarMarca.TabIndex = 21;
             this.btnEliminarMarca.Text = "Eliminar Marca";
             this.btnEliminarMarca.UseVisualStyleBackColor = false;
@@ -297,10 +299,10 @@
             this.btnEliminarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnEliminarCategoria.Location = new System.Drawing.Point(509, 329);
+            this.btnEliminarCategoria.Location = new System.Drawing.Point(548, 354);
             this.btnEliminarCategoria.Margin = new System.Windows.Forms.Padding(0);
             this.btnEliminarCategoria.Name = "btnEliminarCategoria";
-            this.btnEliminarCategoria.Size = new System.Drawing.Size(150, 40);
+            this.btnEliminarCategoria.Size = new System.Drawing.Size(151, 40);
             this.btnEliminarCategoria.TabIndex = 22;
             this.btnEliminarCategoria.Text = "Eliminar Marca";
             this.btnEliminarCategoria.UseVisualStyleBackColor = false;

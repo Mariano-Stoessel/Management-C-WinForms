@@ -9,6 +9,7 @@ namespace LecturaDatos
 {
     public class LecturaCategoria
     {
+
         public List<Categoria> listar()
         {
             List<Categoria> lista = new List<Categoria>();
@@ -35,12 +36,37 @@ namespace LecturaDatos
                 throw ex;
             }
         }
-        public void agregar(Categoria nueva)
+        public void agregar(Categoria categoria)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("insert into CATEGORIAS (Descripcion) values ('" + nueva + "')");
+                datos.SetearConsulta("insert into CATEGORIAS (Descripcion) values (@descripcion)");
+                datos.SetearParametro("@descripcion", categoria.Descripcion);
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
+        public void modificar(Categoria nueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("UPDATE CATEGORIAS SET  Descripcion = @Descripcion WHERE Id = @Id");
+                datos.SetearParametro("@Id", nueva.Id);
+                datos.SetearParametro("@Descripcion", nueva.Descripcion);
+                
                 datos.ejecutarAccion();
 
 

@@ -58,5 +58,28 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
+        public void modificar(Marca nueva)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("UPDATE MARCAS SET  Descripcion = @Descripcion WHERE Id = @Id");
+                datos.SetearParametro("@Id", nueva.Id);
+                datos.SetearParametro("@Descripcion", nueva.Descripcion);
+
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }
