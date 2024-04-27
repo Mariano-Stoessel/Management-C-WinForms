@@ -41,20 +41,23 @@ namespace Proyecto_Principal
             LecturaMarca lecturaMarca = new LecturaMarca();
             try
             {
-                marca.Descripcion = txtAgregarMarca.Text;
-                lecturaMarca.agregar(marca);
+                DialogResult respuesta = MessageBox.Show("¿Seguro desea Agregar esta Marca?", "Modificando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                LecturaMarca lecturaMar = new LecturaMarca();
-                listaLecturaMarcas = lecturaMar.listar();
-                dgvMarcas.DataSource = lecturaMar.listar();
+                if (respuesta == DialogResult.Yes)
+                {
+                    marca.Descripcion = txtAgregarMarca.Text;
+                    lecturaMarca.agregar(marca);
 
-                MessageBox.Show("Agregado exitosamente");
+                    LecturaMarca lecturaMar = new LecturaMarca();
+                    listaLecturaMarcas = lecturaMar.listar();
+                    dgvMarcas.DataSource = lecturaMar.listar();
 
+                    MessageBox.Show("Agregado exitosamente");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-
             }
         }
 
@@ -63,14 +66,18 @@ namespace Proyecto_Principal
             LecturaCategoria lecturaCat = new LecturaCategoria();
             try
             {
-                categoria.Descripcion = textAgregarCategoria.Text;
-                lecturaCat.agregar(categoria);
+                DialogResult respuesta = MessageBox.Show("¿Seguro desea agregar esta Categoria?", "Agregando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (respuesta == DialogResult.Yes)
+                {
+                    categoria.Descripcion = textAgregarCategoria.Text;
+                    lecturaCat.agregar(categoria);
 
-                ListaLecturaCategorias = lecturaCat.listar();
-                dgvListaCategorias.DataSource = lecturaCat.listar();
+                    ListaLecturaCategorias = lecturaCat.listar();
+                    dgvListaCategorias.DataSource = lecturaCat.listar();
 
-                MessageBox.Show("Agregado exitosamente");
+                    MessageBox.Show("Agregado exitosamente");
+                }
             }
             catch (Exception ex)
             {
@@ -83,14 +90,18 @@ namespace Proyecto_Principal
             LecturaCategoria lecturaCat = new LecturaCategoria();
             try
             {
-                categoria.Descripcion = textAgregarCategoria.Text;
-                lecturaCat.modificar(categoria);
+                DialogResult respuesta = MessageBox.Show("¿Seguro desea modificar esta Marca?", "Modificando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (respuesta == DialogResult.Yes)
+                {
+                    categoria.Descripcion = textAgregarCategoria.Text;
+                    lecturaCat.modificar(categoria);
 
-                ListaLecturaCategorias = lecturaCat.listar();
-                dgvListaCategorias.DataSource = lecturaCat.listar();
+                    ListaLecturaCategorias = lecturaCat.listar();
+                    dgvListaCategorias.DataSource = lecturaCat.listar();
 
-                MessageBox.Show("Modificado exitosamente");
+                    MessageBox.Show("Modificado exitosamente");
+                }
             }
             catch (Exception ex)
             {
@@ -104,19 +115,22 @@ namespace Proyecto_Principal
             LecturaMarca lecturaMar = new LecturaMarca();
             try
             {
-                marca.Descripcion = txtAgregarMarca.Text;
-                lecturaMar.modificar(marca);
+                DialogResult respuesta = MessageBox.Show("¿Seguro desea modificar esta Marca?", "Modificando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (respuesta == DialogResult.Yes)
+                {
+                    marca.Descripcion = txtAgregarMarca.Text;
+                    lecturaMar.modificar(marca);
 
-                listaLecturaMarcas = lecturaMar.listar();
-                dgvMarcas.DataSource = lecturaMar.listar();
+                    listaLecturaMarcas = lecturaMar.listar();
+                    dgvMarcas.DataSource = lecturaMar.listar();
 
-                MessageBox.Show("Modificado exitosamente");
+                    MessageBox.Show("Modificado exitosamente");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-
             }
         }
 
@@ -130,14 +144,12 @@ namespace Proyecto_Principal
 
                 if (respuesta == DialogResult.Yes)
                 {
-
                     cat.eliminar(categoria.Id);
                     cargarcategoria();
                 }
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -151,10 +163,36 @@ namespace Proyecto_Principal
 
                 if (respuesta == DialogResult.Yes)
                 {
-
                     mar.eliminar(marca.Id);
                     cargarmarca();
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void FiltrarMarca()
+        {
+            List<Marca> listaFiltrada;
+            try
+            {
+                string opcion = cboMarcas.SelectedItem.ToString();
+                if (opcion == "Nro ID asc.")
+                {
+                    listaFiltrada = listaLecturaMarcas.OrderBy(x => x.Id).ToList();
+                }
+                else if (opcion == "Nro ID des.")
+                {
+                    listaFiltrada = listaLecturaMarcas.OrderByDescending(x => x.Id).ToList();
+                }
+                else
+                {
+                    listaFiltrada = listaLecturaMarcas.OrderBy(x => x.Descripcion).ToList();
+                }
+                dgvMarcas.DataSource = null;
+                dgvMarcas.DataSource = listaFiltrada;
             }
             catch (Exception ex)
             {
@@ -163,52 +201,77 @@ namespace Proyecto_Principal
             }
         }
 
+        private void FiltrarCategoria()
+        {
+            List<Categoria> listaFiltrada;
+            try
+            {
+                string opcion = cboCategoria.SelectedItem.ToString();
+                if (opcion == "Nro ID asc.")
+                {
+                    listaFiltrada = ListaLecturaCategorias.OrderBy(x => x.Id).ToList();
+                }
+                else if (opcion == "Nro ID des.")
+                {
+                    listaFiltrada = ListaLecturaCategorias.OrderByDescending(x => x.Id).ToList();
+                }
+                else
+                {
+                    listaFiltrada = ListaLecturaCategorias.OrderBy(x => x.Descripcion).ToList();
+                }
+                dgvListaCategorias.DataSource = null;
+                dgvListaCategorias.DataSource = listaFiltrada;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
         public VentanaCategoriasyMarcas()
         {
             InitializeComponent();
         }
+
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-        private void lblHeader_Click(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void dgvListaCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
 
         private void VentanaCategorias_Load(object sender, EventArgs e)
         {
             //refresh Categorias
             cargarcategoria();
-
+            cboCategoria.Items.Add("Orden alfabetico");
+            cboCategoria.Items.Add("Nro ID asc.");
+            cboCategoria.Items.Add("Nro ID des.");
             //refresh Marcas
             cargarmarca();
+            cboMarcas.Items.Add("Orden alfabetico");
+            cboMarcas.Items.Add("Nro ID asc.");
+            cboMarcas.Items.Add("Nro ID des.");
+
         }
 
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Categoria categoria = new Categoria();
+            
             Agregar(categoria);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
             Marca marca = new Marca();
-            Agregar(marca);
-            
+
+            Agregar(marca);     
         }
         
 
@@ -230,13 +293,26 @@ namespace Proyecto_Principal
         private void btnEliminarCategoria_Click(object sender, EventArgs e)
         {
             Categoria categoria = (Categoria)dgvListaCategorias.CurrentRow.DataBoundItem;
+
             Eliminar(categoria);
         }
 
         private void btnEliminarMarca_Click(object sender, EventArgs e)
         {
             Marca marca = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+
             Eliminar(marca);
+        }
+
+
+        private void cboCategoria_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            FiltrarCategoria();
+        }
+
+        private void cboMarcas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FiltrarMarca();
         }
     }
 }

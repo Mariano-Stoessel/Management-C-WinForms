@@ -88,7 +88,7 @@ namespace LecturaDatos
             try
             {
                 datos.SetearConsulta("delete from MARCAS WHERE Id = @Id");
-                datos.SetearParametro("@Id", id);
+                datos.SetearParametro("@Id", valor: id);
                 datos.ejecutarAccion();
 
 

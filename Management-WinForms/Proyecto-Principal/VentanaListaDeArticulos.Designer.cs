@@ -30,6 +30,10 @@
         {
             this.btnVolver = new System.Windows.Forms.Button();
             this.pLateralDerecho = new System.Windows.Forms.Panel();
+            this.btnAvanzado = new System.Windows.Forms.Button();
+            this.txtAvanzado = new System.Windows.Forms.TextBox();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.pSeparador = new System.Windows.Forms.Panel();
             this.cbxCriterio = new System.Windows.Forms.ComboBox();
             this.lblCriterio = new System.Windows.Forms.Label();
             this.cbxCampo = new System.Windows.Forms.ComboBox();
@@ -51,10 +55,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblAvanzado = new System.Windows.Forms.Label();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.txtAvanzado = new System.Windows.Forms.TextBox();
-            this.btnAvanzado = new System.Windows.Forms.Button();
-            this.pSeparador = new System.Windows.Forms.Panel();
             this.pLateralDerecho.SuspendLayout();
             this.pTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
@@ -93,6 +93,57 @@
             this.pLateralDerecho.Name = "pLateralDerecho";
             this.pLateralDerecho.Size = new System.Drawing.Size(180, 395);
             this.pLateralDerecho.TabIndex = 6;
+            // 
+            // btnAvanzado
+            // 
+            this.btnAvanzado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnAvanzado.FlatAppearance.BorderSize = 0;
+            this.btnAvanzado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvanzado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnAvanzado.Location = new System.Drawing.Point(80, 288);
+            this.btnAvanzado.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAvanzado.Name = "btnAvanzado";
+            this.btnAvanzado.Size = new System.Drawing.Size(100, 40);
+            this.btnAvanzado.TabIndex = 13;
+            this.btnAvanzado.Text = "Avanzado";
+            this.btnAvanzado.UseVisualStyleBackColor = false;
+            this.btnAvanzado.Click += new System.EventHandler(this.btnAvanzado_Click);
+            // 
+            // txtAvanzado
+            // 
+            this.txtAvanzado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtAvanzado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAvanzado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAvanzado.Location = new System.Drawing.Point(0, 224);
+            this.txtAvanzado.Name = "txtAvanzado";
+            this.txtAvanzado.Size = new System.Drawing.Size(180, 26);
+            this.txtAvanzado.TabIndex = 4;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnLimpiar.Image = global::Proyecto_Principal.Properties.Resources.IconRefresh;
+            this.btnLimpiar.Location = new System.Drawing.Point(25, 288);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(40, 40);
+            this.btnLimpiar.TabIndex = 12;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // pSeparador
+            // 
+            this.pSeparador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pSeparador.Location = new System.Drawing.Point(0, 164);
+            this.pSeparador.Name = "pSeparador";
+            this.pSeparador.Size = new System.Drawing.Size(180, 60);
+            this.pSeparador.TabIndex = 7;
             // 
             // cbxCriterio
             // 
@@ -356,57 +407,6 @@
             this.lblAvanzado.Size = new System.Drawing.Size(185, 26);
             this.lblAvanzado.TabIndex = 0;
             this.lblAvanzado.Text = "Filtro Avanzado:";
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnLimpiar.FlatAppearance.BorderSize = 0;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnLimpiar.Image = global::Proyecto_Principal.Properties.Resources.IconRefresh;
-            this.btnLimpiar.Location = new System.Drawing.Point(25, 288);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(40, 40);
-            this.btnLimpiar.TabIndex = 12;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // txtAvanzado
-            // 
-            this.txtAvanzado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.txtAvanzado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAvanzado.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAvanzado.Location = new System.Drawing.Point(0, 224);
-            this.txtAvanzado.Name = "txtAvanzado";
-            this.txtAvanzado.Size = new System.Drawing.Size(180, 26);
-            this.txtAvanzado.TabIndex = 4;
-            // 
-            // btnAvanzado
-            // 
-            this.btnAvanzado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnAvanzado.FlatAppearance.BorderSize = 0;
-            this.btnAvanzado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAvanzado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnAvanzado.Location = new System.Drawing.Point(80, 288);
-            this.btnAvanzado.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAvanzado.Name = "btnAvanzado";
-            this.btnAvanzado.Size = new System.Drawing.Size(100, 40);
-            this.btnAvanzado.TabIndex = 13;
-            this.btnAvanzado.Text = "Avanzado";
-            this.btnAvanzado.UseVisualStyleBackColor = false;
-            this.btnAvanzado.Click += new System.EventHandler(this.btnAvanzado_Click);
-            // 
-            // pSeparador
-            // 
-            this.pSeparador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pSeparador.Location = new System.Drawing.Point(0, 164);
-            this.pSeparador.Name = "pSeparador";
-            this.pSeparador.Size = new System.Drawing.Size(180, 60);
-            this.pSeparador.TabIndex = 7;
             // 
             // VentanaListaDeArticulos
             // 

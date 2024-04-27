@@ -34,9 +34,9 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.pTitle = new System.Windows.Forms.Panel();
             this.pHeader = new System.Windows.Forms.Panel();
-            this.cbOrdenarMarca = new System.Windows.Forms.ComboBox();
+            this.cboMarcas = new System.Windows.Forms.ComboBox();
             this.lblOrdenarMarca = new System.Windows.Forms.Label();
-            this.cbOrdenar = new System.Windows.Forms.ComboBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.lblOrdenar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListaCategorias = new System.Windows.Forms.DataGridView();
@@ -114,7 +114,6 @@
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "Administrar";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblHeader.Click += new System.EventHandler(this.lblHeader_Click);
             // 
             // pTitle
             // 
@@ -129,25 +128,26 @@
             // 
             // pHeader
             // 
-            this.pHeader.Controls.Add(this.cbOrdenarMarca);
+            this.pHeader.Controls.Add(this.cboMarcas);
             this.pHeader.Controls.Add(this.lblOrdenarMarca);
-            this.pHeader.Controls.Add(this.cbOrdenar);
+            this.pHeader.Controls.Add(this.cboCategoria);
             this.pHeader.Controls.Add(this.lblOrdenar);
             this.pHeader.Location = new System.Drawing.Point(10, 112);
             this.pHeader.Name = "pHeader";
             this.pHeader.Size = new System.Drawing.Size(744, 45);
             this.pHeader.TabIndex = 11;
             // 
-            // cbOrdenarMarca
+            // cboMarcas
             // 
-            this.cbOrdenarMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.cbOrdenarMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbOrdenarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOrdenarMarca.FormattingEnabled = true;
-            this.cbOrdenarMarca.Location = new System.Drawing.Point(538, 10);
-            this.cbOrdenarMarca.Name = "cbOrdenarMarca";
-            this.cbOrdenarMarca.Size = new System.Drawing.Size(151, 28);
-            this.cbOrdenarMarca.TabIndex = 4;
+            this.cboMarcas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.cboMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMarcas.FormattingEnabled = true;
+            this.cboMarcas.Location = new System.Drawing.Point(538, 10);
+            this.cboMarcas.Name = "cboMarcas";
+            this.cboMarcas.Size = new System.Drawing.Size(151, 28);
+            this.cboMarcas.TabIndex = 4;
+            this.cboMarcas.SelectedIndexChanged += new System.EventHandler(this.cboMarcas_SelectedIndexChanged);
             // 
             // lblOrdenarMarca
             // 
@@ -161,16 +161,17 @@
             this.lblOrdenarMarca.TabIndex = 3;
             this.lblOrdenarMarca.Text = "Ordenar Marca  por:";
             // 
-            // cbOrdenar
+            // cboCategoria
             // 
-            this.cbOrdenar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.cbOrdenar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbOrdenar.FormattingEnabled = true;
-            this.cbOrdenar.Location = new System.Drawing.Point(196, 12);
-            this.cbOrdenar.Name = "cbOrdenar";
-            this.cbOrdenar.Size = new System.Drawing.Size(151, 28);
-            this.cbOrdenar.TabIndex = 2;
+            this.cboCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(196, 12);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(151, 28);
+            this.cboCategoria.TabIndex = 2;
+            this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged_1);
             // 
             // lblOrdenar
             // 
@@ -195,7 +196,6 @@
             this.label1.Size = new System.Drawing.Size(205, 49);
             this.label1.TabIndex = 3;
             this.label1.Text = "Categorias:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvListaCategorias
             // 
@@ -354,7 +354,7 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel pTitle;
         private System.Windows.Forms.Panel pHeader;
-        private System.Windows.Forms.ComboBox cbOrdenar;
+        private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.Label lblOrdenar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvListaCategorias;
@@ -362,7 +362,7 @@
         private System.Windows.Forms.DataGridView dgvMarcas;
         private System.Windows.Forms.Button btnEditarMarca;
         private System.Windows.Forms.Button btnAgregarMarca;
-        private System.Windows.Forms.ComboBox cbOrdenarMarca;
+        private System.Windows.Forms.ComboBox cboMarcas;
         private System.Windows.Forms.Label lblOrdenarMarca;
         private System.Windows.Forms.TextBox textAgregarCategoria;
         private System.Windows.Forms.TextBox txtAgregarMarca;

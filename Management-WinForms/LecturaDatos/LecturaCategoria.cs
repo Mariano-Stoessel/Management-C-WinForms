@@ -1,5 +1,6 @@
 ﻿using Dominio;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -101,6 +102,51 @@ namespace LecturaDatos
             {
                 datos.CerrarConexion();
             }
+        }
+        public List<Categoria> FiltrarCategoria(string opcion)
+        {
+            List<Categoria> listaCategoria = new List<Categoria>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+
+                if(opcion == "Orden alfabetico")
+                {
+                    datos.SetearConsulta("select Id,Descripcion from CATEGORIAS ORDER BY Descripcion ASC");
+                    datos.ejecutarAccion();
+                }
+                else if(opcion == "Nro ID asc.")
+                {
+                    datos.SetearConsulta("select Id,Descripcion from CATEGORIAS ORDER BY Id ASC");
+                    datos.ejecutarAccion();
+                }
+                else 
+                {
+                    datos.SetearConsulta("select Id,Descripcion from CATEGORIAS ORDER BY Id DESC");
+                    datos.ejecutarAccion();
+                }
+
+                while (datos.Lector.Read())
+                {
+                    Categoria aux = new Categoria();
+                    if (!Convert.IsDBNull(datos.Lector["Id"]))
+                        aux.Id = (int)datos.Lector["Id"];
+                    if (!Convert.IsDBNull(datos.Lector["Descripcion"]))
+                        aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    listaCategoria.Add(aux);
+                }
+                return listaCategoria;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+
         }
     }
 }
