@@ -30,14 +30,10 @@
         {
             this.btnVolver = new System.Windows.Forms.Button();
             this.pLateralDerecho = new System.Windows.Forms.Panel();
-            this.rdInactivo = new System.Windows.Forms.RadioButton();
-            this.rdActivo = new System.Windows.Forms.RadioButton();
-            this.rdNinguno = new System.Windows.Forms.RadioButton();
-            this.pSeparador = new System.Windows.Forms.Panel();
-            this.cbxMarca = new System.Windows.Forms.ComboBox();
-            this.lblMarcas = new System.Windows.Forms.Label();
-            this.cbxCategoria = new System.Windows.Forms.ComboBox();
-            this.lblCategorias = new System.Windows.Forms.Label();
+            this.cbxCriterio = new System.Windows.Forms.ComboBox();
+            this.lblCriterio = new System.Windows.Forms.Label();
+            this.cbxCampo = new System.Windows.Forms.ComboBox();
+            this.lblCampo = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
@@ -53,11 +49,18 @@
             this.cbxOrdenar = new System.Windows.Forms.ComboBox();
             this.lblOrdenar = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblAvanzado = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.txtAvanzado = new System.Windows.Forms.TextBox();
+            this.btnAvanzado = new System.Windows.Forms.Button();
+            this.pSeparador = new System.Windows.Forms.Panel();
             this.pLateralDerecho.SuspendLayout();
             this.pTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -78,120 +81,69 @@
             // 
             // pLateralDerecho
             // 
-            this.pLateralDerecho.Controls.Add(this.rdInactivo);
-            this.pLateralDerecho.Controls.Add(this.rdActivo);
-            this.pLateralDerecho.Controls.Add(this.rdNinguno);
+            this.pLateralDerecho.Controls.Add(this.btnAvanzado);
+            this.pLateralDerecho.Controls.Add(this.txtAvanzado);
+            this.pLateralDerecho.Controls.Add(this.btnLimpiar);
             this.pLateralDerecho.Controls.Add(this.pSeparador);
-            this.pLateralDerecho.Controls.Add(this.cbxMarca);
-            this.pLateralDerecho.Controls.Add(this.lblMarcas);
-            this.pLateralDerecho.Controls.Add(this.cbxCategoria);
-            this.pLateralDerecho.Controls.Add(this.lblCategorias);
-            this.pLateralDerecho.Location = new System.Drawing.Point(565, 169);
+            this.pLateralDerecho.Controls.Add(this.cbxCriterio);
+            this.pLateralDerecho.Controls.Add(this.lblCriterio);
+            this.pLateralDerecho.Controls.Add(this.cbxCampo);
+            this.pLateralDerecho.Controls.Add(this.lblCampo);
+            this.pLateralDerecho.Location = new System.Drawing.Point(570, 240);
             this.pLateralDerecho.Name = "pLateralDerecho";
-            this.pLateralDerecho.Size = new System.Drawing.Size(190, 466);
+            this.pLateralDerecho.Size = new System.Drawing.Size(180, 395);
             this.pLateralDerecho.TabIndex = 6;
             // 
-            // rdInactivo
+            // cbxCriterio
             // 
-            this.rdInactivo.AutoSize = true;
-            this.rdInactivo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdInactivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdInactivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.rdInactivo.Location = new System.Drawing.Point(0, 261);
-            this.rdInactivo.Name = "rdInactivo";
-            this.rdInactivo.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
-            this.rdInactivo.Size = new System.Drawing.Size(190, 36);
-            this.rdInactivo.TabIndex = 4;
-            this.rdInactivo.Text = "Inactivo";
-            this.rdInactivo.UseVisualStyleBackColor = true;
+            this.cbxCriterio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.cbxCriterio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbxCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCriterio.FormattingEnabled = true;
+            this.cbxCriterio.Location = new System.Drawing.Point(0, 136);
+            this.cbxCriterio.Name = "cbxCriterio";
+            this.cbxCriterio.Size = new System.Drawing.Size(180, 28);
+            this.cbxCriterio.TabIndex = 1;
             // 
-            // rdActivo
+            // lblCriterio
             // 
-            this.rdActivo.AutoSize = true;
-            this.rdActivo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdActivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdActivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.rdActivo.Location = new System.Drawing.Point(0, 225);
-            this.rdActivo.Name = "rdActivo";
-            this.rdActivo.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
-            this.rdActivo.Size = new System.Drawing.Size(190, 36);
-            this.rdActivo.TabIndex = 3;
-            this.rdActivo.Text = "Activo";
-            this.rdActivo.UseVisualStyleBackColor = true;
+            this.lblCriterio.AutoSize = true;
+            this.lblCriterio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblCriterio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCriterio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.lblCriterio.Location = new System.Drawing.Point(0, 82);
+            this.lblCriterio.Name = "lblCriterio";
+            this.lblCriterio.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
+            this.lblCriterio.Size = new System.Drawing.Size(87, 54);
+            this.lblCriterio.TabIndex = 6;
+            this.lblCriterio.Text = "Criterio";
             // 
-            // rdNinguno
+            // cbxCampo
             // 
-            this.rdNinguno.AutoSize = true;
-            this.rdNinguno.Checked = true;
-            this.rdNinguno.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rdNinguno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdNinguno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.rdNinguno.Location = new System.Drawing.Point(0, 189);
-            this.rdNinguno.Name = "rdNinguno";
-            this.rdNinguno.Padding = new System.Windows.Forms.Padding(10, 10, 0, 5);
-            this.rdNinguno.Size = new System.Drawing.Size(190, 36);
-            this.rdNinguno.TabIndex = 2;
-            this.rdNinguno.TabStop = true;
-            this.rdNinguno.Text = "Ninguno";
-            this.rdNinguno.UseVisualStyleBackColor = true;
+            this.cbxCampo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.cbxCampo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbxCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCampo.FormattingEnabled = true;
+            this.cbxCampo.Location = new System.Drawing.Point(0, 54);
+            this.cbxCampo.Name = "cbxCampo";
+            this.cbxCampo.Size = new System.Drawing.Size(180, 28);
+            this.cbxCampo.TabIndex = 0;
+            this.cbxCampo.SelectedIndexChanged += new System.EventHandler(this.cbxCampo_SelectedIndexChanged);
             // 
-            // pSeparador
+            // lblCampo
             // 
-            this.pSeparador.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pSeparador.Location = new System.Drawing.Point(0, 164);
-            this.pSeparador.Name = "pSeparador";
-            this.pSeparador.Size = new System.Drawing.Size(190, 25);
-            this.pSeparador.TabIndex = 7;
-            // 
-            // cbxMarca
-            // 
-            this.cbxMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.cbxMarca.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxMarca.FormattingEnabled = true;
-            this.cbxMarca.Location = new System.Drawing.Point(0, 136);
-            this.cbxMarca.Name = "cbxMarca";
-            this.cbxMarca.Size = new System.Drawing.Size(190, 28);
-            this.cbxMarca.TabIndex = 1;
-            // 
-            // lblMarcas
-            // 
-            this.lblMarcas.AutoSize = true;
-            this.lblMarcas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.lblMarcas.Location = new System.Drawing.Point(0, 82);
-            this.lblMarcas.Name = "lblMarcas";
-            this.lblMarcas.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
-            this.lblMarcas.Size = new System.Drawing.Size(87, 54);
-            this.lblMarcas.TabIndex = 6;
-            this.lblMarcas.Text = "Marcas";
-            // 
-            // cbxCategoria
-            // 
-            this.cbxCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.cbxCategoria.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxCategoria.FormattingEnabled = true;
-            this.cbxCategoria.Location = new System.Drawing.Point(0, 54);
-            this.cbxCategoria.Name = "cbxCategoria";
-            this.cbxCategoria.Size = new System.Drawing.Size(190, 28);
-            this.cbxCategoria.TabIndex = 0;
-            // 
-            // lblCategorias
-            // 
-            this.lblCategorias.AutoSize = true;
-            this.lblCategorias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.lblCategorias.Location = new System.Drawing.Point(0, 0);
-            this.lblCategorias.Name = "lblCategorias";
-            this.lblCategorias.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
-            this.lblCategorias.Size = new System.Drawing.Size(119, 54);
-            this.lblCategorias.TabIndex = 5;
-            this.lblCategorias.Text = "Categorias";
+            this.lblCampo.AutoSize = true;
+            this.lblCampo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCampo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.lblCampo.Location = new System.Drawing.Point(0, 0);
+            this.lblCampo.Name = "lblCampo";
+            this.lblCampo.Padding = new System.Windows.Forms.Padding(5, 15, 5, 15);
+            this.lblCampo.Size = new System.Drawing.Size(86, 54);
+            this.lblCampo.TabIndex = 5;
+            this.lblCampo.Text = "Campo";
             // 
             // btnEditar
             // 
@@ -385,12 +337,84 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblAvanzado);
+            this.panel1.Location = new System.Drawing.Point(565, 169);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(185, 60);
+            this.panel1.TabIndex = 11;
+            // 
+            // lblAvanzado
+            // 
+            this.lblAvanzado.AutoSize = true;
+            this.lblAvanzado.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvanzado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.lblAvanzado.Location = new System.Drawing.Point(0, 34);
+            this.lblAvanzado.Name = "lblAvanzado";
+            this.lblAvanzado.Size = new System.Drawing.Size(185, 26);
+            this.lblAvanzado.TabIndex = 0;
+            this.lblAvanzado.Text = "Filtro Avanzado:";
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnLimpiar.Image = global::Proyecto_Principal.Properties.Resources.IconRefresh;
+            this.btnLimpiar.Location = new System.Drawing.Point(25, 288);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(40, 40);
+            this.btnLimpiar.TabIndex = 12;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // txtAvanzado
+            // 
+            this.txtAvanzado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtAvanzado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAvanzado.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAvanzado.Location = new System.Drawing.Point(0, 224);
+            this.txtAvanzado.Name = "txtAvanzado";
+            this.txtAvanzado.Size = new System.Drawing.Size(180, 26);
+            this.txtAvanzado.TabIndex = 4;
+            // 
+            // btnAvanzado
+            // 
+            this.btnAvanzado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnAvanzado.FlatAppearance.BorderSize = 0;
+            this.btnAvanzado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvanzado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvanzado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnAvanzado.Location = new System.Drawing.Point(80, 288);
+            this.btnAvanzado.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAvanzado.Name = "btnAvanzado";
+            this.btnAvanzado.Size = new System.Drawing.Size(100, 40);
+            this.btnAvanzado.TabIndex = 13;
+            this.btnAvanzado.Text = "Avanzado";
+            this.btnAvanzado.UseVisualStyleBackColor = false;
+            this.btnAvanzado.Click += new System.EventHandler(this.btnAvanzado_Click);
+            // 
+            // pSeparador
+            // 
+            this.pSeparador.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pSeparador.Location = new System.Drawing.Point(0, 164);
+            this.pSeparador.Name = "pSeparador";
+            this.pSeparador.Size = new System.Drawing.Size(180, 60);
+            this.pSeparador.TabIndex = 7;
+            // 
             // VentanaListaDeArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 655);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.cbxOrdenar);
             this.Controls.Add(this.btnDown);
@@ -417,6 +441,8 @@
             this.pHeader.ResumeLayout(false);
             this.pHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,17 +457,13 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel pTitle;
         private System.Windows.Forms.Panel pHeader;
-        private System.Windows.Forms.Label lblCategorias;
+        private System.Windows.Forms.Label lblCampo;
         private System.Windows.Forms.Label lblCodArticulo;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.ComboBox cbxMarca;
-        private System.Windows.Forms.Label lblMarcas;
-        private System.Windows.Forms.ComboBox cbxCategoria;
-        private System.Windows.Forms.Panel pSeparador;
-        private System.Windows.Forms.RadioButton rdInactivo;
-        private System.Windows.Forms.RadioButton rdActivo;
-        private System.Windows.Forms.RadioButton rdNinguno;
+        private System.Windows.Forms.ComboBox cbxCriterio;
+        private System.Windows.Forms.Label lblCriterio;
+        private System.Windows.Forms.ComboBox cbxCampo;
         private System.Windows.Forms.DataGridView dgvListaArticulos;
         private System.Windows.Forms.PictureBox pbxImagenUrl;
         private System.Windows.Forms.Button btnUp;
@@ -449,5 +471,11 @@
         private System.Windows.Forms.ComboBox cbxOrdenar;
         private System.Windows.Forms.Label lblOrdenar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblAvanzado;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnAvanzado;
+        private System.Windows.Forms.TextBox txtAvanzado;
+        private System.Windows.Forms.Panel pSeparador;
     }
 }

@@ -26,19 +26,8 @@ namespace Proyecto_Principal
             LecturaMarca LecturaMarca = new LecturaMarca();
             try
             {
-                cbxMarca.Items.Insert(0, "Cualquier marca");
-                cbxMarca.SelectedIndex = 0;
-
-                cbxCategoria.Items.Insert(0, "Cualquier categoría");
-                cbxCategoria.SelectedIndex = 0;
-
-                cbxMarca.DataSource = LecturaMarca.listar();
-                cbxCategoria.DataSource = LecturaCategoria.listar();
-
                 CargarDatos();
-                cbxOrdenar.Items.Add("Menor Código");
-                cbxOrdenar.Items.Add("Mayor Código");
-
+                cargarCampos();
             }
             catch (Exception ex)
             {
@@ -182,5 +171,64 @@ namespace Proyecto_Principal
             dgvListaArticulos.DataSource = listaFiltrada;
             ocultarColumnas();
         }
+
+        private void cbxCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cbxCampo.SelectedItem.ToString();
+            if (opcion == "Código")
+            {
+                cbxCriterio.Items.Clear();
+                cbxCriterio.Items.Add("Mayor que");
+                cbxCriterio.Items.Add("Menor que");
+                cbxCriterio.Items.Add("Igual a");
+            }
+            else
+            {
+                cbxCriterio.Items.Clear();
+                cbxCriterio.Items.Add("Comienza con");
+                cbxCriterio.Items.Add("Termina con");
+                cbxCriterio.Items.Add("Contiene");
+            }
+        }
+
+        private void btnAvanzado_Click(object sender, EventArgs e)
+        {
+            LecturaArticulo lecturaArticulo = new LecturaArticulo();
+            try
+            {
+                string campo = cbxCampo.SelectedItem.ToString();
+                string criterio = cbxCriterio.SelectedItem.ToString();
+                string filtro = txtAvanzado.Text;
+                dgvListaArticulos.DataSource = lecturaArticulo.filtrarArticulo(campo, criterio, filtro);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            cbxCampo.Items.Clear();
+            cbxCriterio.Items.Clear();
+            cbxOrdenar.Items.Clear();
+            txtBuscar.Text = "";
+            txtAvanzado.Text = "";
+
+            CargarDatos();
+            cargarCampos();
+        }
+        private void cargarCampos()
+        {
+            cbxOrdenar.Items.Add("Menor Código");
+            cbxOrdenar.Items.Add("Mayor Código");
+
+            cbxCampo.Items.Add("Código");
+            cbxCampo.Items.Add("Nombre");
+            cbxCampo.Items.Add("Marca");
+            cbxCampo.Items.Add("Categoría");
+        }
+
     }
 }

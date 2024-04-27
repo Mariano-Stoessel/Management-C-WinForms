@@ -30,12 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaAbout));
             this.btnVolver = new System.Windows.Forms.Button();
-            this.dgvLista = new System.Windows.Forms.DataGridView();
-            this.pHeader = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
             this.pTitle = new System.Windows.Forms.Panel();
             this.textoabout = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.pTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +43,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnVolver.Location = new System.Drawing.Point(343, 595);
+            this.btnVolver.Location = new System.Drawing.Point(10, 595);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 40);
@@ -54,22 +51,6 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // dgvLista
-            // 
-            this.dgvLista.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Location = new System.Drawing.Point(10, 169);
-            this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(744, 406);
-            this.dgvLista.TabIndex = 10;
-            // 
-            // pHeader
-            // 
-            this.pHeader.Location = new System.Drawing.Point(10, 112);
-            this.pHeader.Name = "pHeader";
-            this.pHeader.Size = new System.Drawing.Size(744, 45);
-            this.pHeader.TabIndex = 11;
             // 
             // lblHeader
             // 
@@ -98,13 +79,12 @@
             // 
             // textoabout
             // 
-            this.textoabout.AutoSize = true;
             this.textoabout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.textoabout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoabout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textoabout.Location = new System.Drawing.Point(169, 195);
+            this.textoabout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoabout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.textoabout.Location = new System.Drawing.Point(0, 150);
             this.textoabout.Name = "textoabout";
-            this.textoabout.Size = new System.Drawing.Size(470, 352);
+            this.textoabout.Size = new System.Drawing.Size(765, 420);
             this.textoabout.TabIndex = 12;
             this.textoabout.Text = resources.GetString("textoabout.Text");
             this.textoabout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,8 +97,6 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 655);
             this.Controls.Add(this.textoabout);
-            this.Controls.Add(this.pHeader);
-            this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.pTitle);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -126,18 +104,14 @@
             this.Name = "VentanaAbout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Ventana2";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.pTitle.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.DataGridView dgvLista;
-        private System.Windows.Forms.Panel pHeader;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel pTitle;
         private System.Windows.Forms.Label textoabout;

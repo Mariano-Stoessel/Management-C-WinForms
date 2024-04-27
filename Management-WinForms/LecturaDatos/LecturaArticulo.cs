@@ -19,7 +19,6 @@ namespace LecturaDatos
             try
             {
                 datos.SetearConsulta("SELECT A.Codigo, A.Nombre, A.Descripcion AS DescripcionArticulo, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio, A.Id AS IdArticulo, M.Id AS IdMarca, C.Id AS IdCategoria FROM ARTICULOS A LEFT JOIN MARCAS M ON M.Id = A.IdMarca LEFT JOIN CATEGORIAS C ON C.Id = A.IdCategoria LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id");
-
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
@@ -221,6 +220,112 @@ namespace LecturaDatos
             finally
             {
                 datos.CerrarConexion();
+            }
+        }
+
+        public List<Articulo> filtrarArticulo(string campo, string criterio, string avanzado)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                string consulta = "SELECT DISTINCT A.Codigo, A.Nombre, A.Descripcion AS DescripcionArticulo, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio, A.Id AS IdArticulo, M.Id AS IdMarca, C.Id AS IdCategoria FROM ARTICULOS A INNER JOIN MARCAS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS C ON C.Id = A.IdCategoria INNER JOIN IMAGENES I ON I.IdArticulo = A.Id ";
+                switch(campo)
+                {
+                    case "Código":
+                        switch(criterio)
+                        {
+                            case "Mayor que":
+                                consulta += "WHERE A.Codigo > @avanzado";
+                                break;
+                            case "Menor que":
+                                consulta += "WHERE A.Codigo < @avanzado";
+                                break;
+                            case "Igual a":
+                                consulta += "WHERE A.Codigo = @avanzado";
+                                break;
+                        }
+                        break;
+                    case "Nombre":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "WHERE A.Nombre LIKE @avanzado + '%'";
+                                break;
+                            case "Termina con":
+                                consulta += "WHERE A.Nombre LIKE '%' + @avanzado";
+                                break;
+                            case "Contiene":
+                                consulta += "WHERE A.Nombre LIKE '%' + @avanzado + '%'";
+                                break;
+                        }
+                        break;
+                    case "Marca":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "WHERE M.Descripcion LIKE @avanzado + '%'";
+                                break;
+                            case "Termina con":
+                                consulta += "WHERE M.Descripcion LIKE '%' + @avanzado";
+                                break;
+                            case "Contiene":
+                                consulta += "WHERE M.Descripcion LIKE '%' + @avanzado + '%'";
+                                break;
+                        }
+                        break;
+                    case "Categoría":
+                        switch (criterio)
+                        {
+                            case "Comienza con":
+                                consulta += "WHERE C.Descripcion LIKE @avanzado + '%'";
+                                break;
+                            case "Termina con":
+                                consulta += "WHERE C.Descripcion LIKE '%' + @avanzado";
+                                break;
+                            case "Contiene":
+                                consulta += "WHERE C.Descripcion LIKE '%' + @avanzado + '%'";
+                                break;
+                        }
+                        break;
+                }
+                datos.SetearConsulta(consulta);
+                datos.SetearParametro("@avanzado", avanzado);
+                datos.EjecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Id = (int)datos.Lector["IdArticulo"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["DescripcionArticulo"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+
+                    aux.Marca = new Marca();
+                    if (!Convert.IsDBNull(datos.Lector["IdMarca"]))
+                        aux.Marca.Id = (int)datos.Lector["IdMarca"];
+                    if (!Convert.IsDBNull(datos.Lector["Marca"]))
+                        aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+
+                    aux.Categoria = new Categoria();
+                    if (!Convert.IsDBNull(datos.Lector["IdCategoria"]))
+                        aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
+                    if (!Convert.IsDBNull(datos.Lector["Categoria"]))
+                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+
+                    if (!Convert.IsDBNull(datos.Lector["ImagenUrl"]))
+                        aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }
