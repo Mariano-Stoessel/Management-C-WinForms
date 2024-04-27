@@ -15,10 +15,15 @@ namespace Proyecto_Principal
     public partial class VentanaListaDeArticulos : Form
     {
         private List<Articulo> listaLecturaArticulos;
+        private List<Imagen> listaImagenes;
+        int indiceMaximo;
+        int indiceActual;
 
         public VentanaListaDeArticulos()
         {
             InitializeComponent();
+            indiceMaximo = 0;
+            indiceActual = 0;
         }
         private void VentanaListaDeArticulos_Load(object sender, EventArgs e)
         {
@@ -26,7 +31,7 @@ namespace Proyecto_Principal
             LecturaMarca LecturaMarca = new LecturaMarca();
             try
             {
-                CargarDatos();
+                cargarDatos();
                 cargarCampos();
             }
             catch (Exception ex)
@@ -42,7 +47,7 @@ namespace Proyecto_Principal
             this.Dispose();
         }
 
-        private void CargarDatos()
+        private void cargarDatos()
         {
             try
             {
@@ -50,8 +55,11 @@ namespace Proyecto_Principal
                 listaLecturaArticulos = lecturaArticulo.listar();
                 dgvListaArticulos.DataSource = lecturaArticulo.listar();
 
+                LecturaImagen imgBD = new LecturaImagen();
+                indiceMaximo = imgBD.maximoImagen(listaLecturaArticulos[0].Id);
+
                 ocultarColumnas();
-                CargarImagen(listaLecturaArticulos[0].ImagenUrl);
+                cargarImagen(listaLecturaArticulos[0].Id);
             }
             catch (Exception ex)
             {
@@ -65,8 +73,9 @@ namespace Proyecto_Principal
         {
             if(dgvListaArticulos.CurrentCell != null)
             {
+                indiceActual = 0;
                 Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-                CargarImagen(seleccionado.ImagenUrl);
+                cargarImagen(seleccionado.Id);
             }
         }
 
@@ -76,11 +85,14 @@ namespace Proyecto_Principal
             dgvListaArticulos.Columns["ImagenUrl"].Visible = false;
         }
 
-        private void CargarImagen(string imagenUrl)
+        private void cargarImagen(int Id)
         {
             try
             {
-                pbxImagenUrl.Load(imagenUrl);
+                LecturaImagen lecturaImagen = new LecturaImagen();
+                listaImagenes = lecturaImagen.listar(Id);
+
+                pbxImagenUrl.Load(listaImagenes[indiceActual].ImagenUrl);
             }
             catch (Exception)
             {
@@ -93,7 +105,7 @@ namespace Proyecto_Principal
         {
             frmAgregarArticulo alta = new frmAgregarArticulo();
             alta.ShowDialog();
-            CargarDatos();
+            cargarDatos();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -101,7 +113,7 @@ namespace Proyecto_Principal
             Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
             frmAgregarArticulo editar = new frmAgregarArticulo(seleccionado);
             editar.ShowDialog();
-            CargarDatos();
+            cargarDatos();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -116,7 +128,7 @@ namespace Proyecto_Principal
                     lecturaArticulo.eliminarArticulo(seleccionado.Id);
 
                     MessageBox.Show("Artículo eliminado correctamente");
-                    CargarDatos();
+                    cargarDatos();
                 }
             }
             catch (Exception ex)
@@ -216,7 +228,7 @@ namespace Proyecto_Principal
             txtBuscar.Text = "";
             txtAvanzado.Text = "";
 
-            CargarDatos();
+            cargarDatos();
             cargarCampos();
         }
         private void cargarCampos()
@@ -230,5 +242,22 @@ namespace Proyecto_Principal
             cbxCampo.Items.Add("Categoría");
         }
 
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            if (indiceActual < indiceMaximo)
+            {
+                indiceActual++;
+            }
+            Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.Id);
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {          
+            indiceActual--;
+            if (indiceActual < 1) indiceActual = 0;
+            Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.Id);
+        }
     }
 }

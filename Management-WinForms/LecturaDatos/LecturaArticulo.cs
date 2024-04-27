@@ -18,7 +18,7 @@ namespace LecturaDatos
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("SELECT A.Codigo, A.Nombre, A.Descripcion AS DescripcionArticulo, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio, A.Id AS IdArticulo, M.Id AS IdMarca, C.Id AS IdCategoria FROM ARTICULOS A LEFT JOIN MARCAS M ON M.Id = A.IdMarca LEFT JOIN CATEGORIAS C ON C.Id = A.IdCategoria LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id");
+                datos.SetearConsulta("SELECT A.Codigo, A.Nombre, A.Descripcion AS DescripcionArticulo, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio, A.Id AS IdArticulo, M.Id AS IdMarca, C.Id AS IdCategoria FROM ARTICULOS A INNER JOIN MARCAS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS C ON C.Id = A.IdCategoria INNER JOIN IMAGENES I ON I.IdArticulo = A.Id WHERE NOT EXISTS (SELECT 1 FROM ARTICULOS A2 INNER JOIN IMAGENES I2 ON I2.IdArticulo = A2.Id WHERE A2.Codigo = A.Codigo AND I2.Id > I.Id) ");
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
@@ -229,20 +229,20 @@ namespace LecturaDatos
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = "SELECT DISTINCT A.Codigo, A.Nombre, A.Descripcion AS DescripcionArticulo, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio, A.Id AS IdArticulo, M.Id AS IdMarca, C.Id AS IdCategoria FROM ARTICULOS A INNER JOIN MARCAS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS C ON C.Id = A.IdCategoria INNER JOIN IMAGENES I ON I.IdArticulo = A.Id ";
-                switch(campo)
+                string consulta = ("SELECT A.Codigo, A.Nombre, A.Descripcion AS DescripcionArt, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio, A.Id AS IdArt, M.Id AS IdMar, C.Id AS IdCat FROM ARTICULOS A INNER JOIN MARCAS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS C ON C.Id = A.IdCategoria INNER JOIN IMAGENES I ON I.IdArticulo = A.Id WHERE NOT EXISTS (SELECT 1 FROM ARTICULOS A2 INNER JOIN IMAGENES I2 ON I2.IdArticulo = A2.Id WHERE A2.Codigo = A.Codigo AND I2.Id > I.Id) ");
+                switch (campo)
                 {
                     case "Código":
                         switch(criterio)
                         {
                             case "Mayor que":
-                                consulta += "WHERE A.Codigo > @avanzado";
+                                consulta += "AND A.Codigo > @avanzado";
                                 break;
                             case "Menor que":
-                                consulta += "WHERE A.Codigo < @avanzado";
+                                consulta += "AND A.Codigo < @avanzado";
                                 break;
                             case "Igual a":
-                                consulta += "WHERE A.Codigo = @avanzado";
+                                consulta += "AND A.Codigo = @avanzado";
                                 break;
                         }
                         break;
@@ -250,13 +250,13 @@ namespace LecturaDatos
                         switch (criterio)
                         {
                             case "Comienza con":
-                                consulta += "WHERE A.Nombre LIKE @avanzado + '%'";
+                                consulta += "AND A.Nombre LIKE @avanzado + '%'";
                                 break;
                             case "Termina con":
-                                consulta += "WHERE A.Nombre LIKE '%' + @avanzado";
+                                consulta += "AND A.Nombre LIKE '%' + @avanzado";
                                 break;
                             case "Contiene":
-                                consulta += "WHERE A.Nombre LIKE '%' + @avanzado + '%'";
+                                consulta += "AND A.Nombre LIKE '%' + @avanzado + '%'";
                                 break;
                         }
                         break;
@@ -264,13 +264,13 @@ namespace LecturaDatos
                         switch (criterio)
                         {
                             case "Comienza con":
-                                consulta += "WHERE M.Descripcion LIKE @avanzado + '%'";
+                                consulta += "AND M.Descripcion LIKE @avanzado + '%'";
                                 break;
                             case "Termina con":
-                                consulta += "WHERE M.Descripcion LIKE '%' + @avanzado";
+                                consulta += "AND M.Descripcion LIKE '%' + @avanzado";
                                 break;
                             case "Contiene":
-                                consulta += "WHERE M.Descripcion LIKE '%' + @avanzado + '%'";
+                                consulta += "AND M.Descripcion LIKE '%' + @avanzado + '%'";
                                 break;
                         }
                         break;
@@ -278,13 +278,13 @@ namespace LecturaDatos
                         switch (criterio)
                         {
                             case "Comienza con":
-                                consulta += "WHERE C.Descripcion LIKE @avanzado + '%'";
+                                consulta += "AND C.Descripcion LIKE @avanzado + '%'";
                                 break;
                             case "Termina con":
-                                consulta += "WHERE C.Descripcion LIKE '%' + @avanzado";
+                                consulta += "AND C.Descripcion LIKE '%' + @avanzado";
                                 break;
                             case "Contiene":
-                                consulta += "WHERE C.Descripcion LIKE '%' + @avanzado + '%'";
+                                consulta += "AND C.Descripcion LIKE '%' + @avanzado + '%'";
                                 break;
                         }
                         break;

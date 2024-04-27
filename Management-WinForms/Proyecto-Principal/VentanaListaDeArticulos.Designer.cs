@@ -319,22 +319,30 @@
             // btnUp
             // 
             this.btnUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUp.Location = new System.Drawing.Point(290, 475);
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnUp.Location = new System.Drawing.Point(285, 475);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(25, 35);
+            this.btnUp.Size = new System.Drawing.Size(30, 35);
             this.btnUp.TabIndex = 7;
+            this.btnUp.Text = "/\\";
             this.btnUp.UseVisualStyleBackColor = false;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnDown
             // 
             this.btnDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDown.Location = new System.Drawing.Point(290, 528);
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnDown.Location = new System.Drawing.Point(285, 528);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(25, 35);
+            this.btnDown.Size = new System.Drawing.Size(30, 35);
             this.btnDown.TabIndex = 8;
+            this.btnDown.Text = "\\/";
             this.btnDown.UseVisualStyleBackColor = false;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // pbxImagenUrl
             // 
