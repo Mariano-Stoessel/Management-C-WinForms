@@ -34,9 +34,9 @@
             this.rdActivo = new System.Windows.Forms.RadioButton();
             this.rdNinguno = new System.Windows.Forms.RadioButton();
             this.pSeparador = new System.Windows.Forms.Panel();
-            this.cbxMarcas = new System.Windows.Forms.ComboBox();
+            this.cbxMarca = new System.Windows.Forms.ComboBox();
             this.lblMarcas = new System.Windows.Forms.Label();
-            this.cbxCategorias = new System.Windows.Forms.ComboBox();
+            this.cbxCategoria = new System.Windows.Forms.ComboBox();
             this.lblCategorias = new System.Windows.Forms.Label();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -44,8 +44,8 @@
             this.pTitle = new System.Windows.Forms.Panel();
             this.dgvListaArticulos = new System.Windows.Forms.DataGridView();
             this.pHeader = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtCodArticulo = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblCodArticulo = new System.Windows.Forms.Label();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
@@ -82,9 +82,9 @@
             this.pLateralDerecho.Controls.Add(this.rdActivo);
             this.pLateralDerecho.Controls.Add(this.rdNinguno);
             this.pLateralDerecho.Controls.Add(this.pSeparador);
-            this.pLateralDerecho.Controls.Add(this.cbxMarcas);
+            this.pLateralDerecho.Controls.Add(this.cbxMarca);
             this.pLateralDerecho.Controls.Add(this.lblMarcas);
-            this.pLateralDerecho.Controls.Add(this.cbxCategorias);
+            this.pLateralDerecho.Controls.Add(this.cbxCategoria);
             this.pLateralDerecho.Controls.Add(this.lblCategorias);
             this.pLateralDerecho.Location = new System.Drawing.Point(565, 169);
             this.pLateralDerecho.Name = "pLateralDerecho";
@@ -143,17 +143,17 @@
             this.pSeparador.Size = new System.Drawing.Size(190, 25);
             this.pSeparador.TabIndex = 7;
             // 
-            // cbxMarcas
+            // cbxMarca
             // 
-            this.cbxMarcas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.cbxMarcas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbxMarcas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxMarcas.FormattingEnabled = true;
-            this.cbxMarcas.Location = new System.Drawing.Point(0, 136);
-            this.cbxMarcas.Name = "cbxMarcas";
-            this.cbxMarcas.Size = new System.Drawing.Size(190, 28);
-            this.cbxMarcas.TabIndex = 1;
-            this.cbxMarcas.Text = "Todo";
+            this.cbxMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.cbxMarca.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxMarca.FormattingEnabled = true;
+            this.cbxMarca.Location = new System.Drawing.Point(0, 136);
+            this.cbxMarca.Name = "cbxMarca";
+            this.cbxMarca.Size = new System.Drawing.Size(190, 28);
+            this.cbxMarca.TabIndex = 1;
             // 
             // lblMarcas
             // 
@@ -168,17 +168,17 @@
             this.lblMarcas.TabIndex = 6;
             this.lblMarcas.Text = "Marcas";
             // 
-            // cbxCategorias
+            // cbxCategoria
             // 
-            this.cbxCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.cbxCategorias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cbxCategorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxCategorias.FormattingEnabled = true;
-            this.cbxCategorias.Location = new System.Drawing.Point(0, 54);
-            this.cbxCategorias.Name = "cbxCategorias";
-            this.cbxCategorias.Size = new System.Drawing.Size(190, 28);
-            this.cbxCategorias.TabIndex = 0;
-            this.cbxCategorias.Text = "Todo";
+            this.cbxCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.cbxCategoria.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCategoria.FormattingEnabled = true;
+            this.cbxCategoria.Location = new System.Drawing.Point(0, 54);
+            this.cbxCategoria.Name = "cbxCategoria";
+            this.cbxCategoria.Size = new System.Drawing.Size(190, 28);
+            this.cbxCategoria.TabIndex = 0;
             // 
             // lblCategorias
             // 
@@ -251,13 +251,14 @@
             // 
             // dgvListaArticulos
             // 
-            this.dgvListaArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListaArticulos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvListaArticulos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaArticulos.Location = new System.Drawing.Point(10, 169);
             this.dgvListaArticulos.MultiSelect = false;
             this.dgvListaArticulos.Name = "dgvListaArticulos";
+            this.dgvListaArticulos.ReadOnly = true;
             this.dgvListaArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaArticulos.Size = new System.Drawing.Size(545, 220);
             this.dgvListaArticulos.TabIndex = 1;
@@ -265,38 +266,40 @@
             // 
             // pHeader
             // 
-            this.pHeader.Controls.Add(this.button1);
-            this.pHeader.Controls.Add(this.txtCodArticulo);
+            this.pHeader.Controls.Add(this.btnBuscar);
+            this.pHeader.Controls.Add(this.txtBuscar);
             this.pHeader.Controls.Add(this.lblCodArticulo);
             this.pHeader.Location = new System.Drawing.Point(10, 112);
             this.pHeader.Name = "pHeader";
             this.pHeader.Size = new System.Drawing.Size(463, 45);
             this.pHeader.TabIndex = 0;
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.button1.Location = new System.Drawing.Point(285, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 32);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBuscar.AutoSize = true;
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnBuscar.Location = new System.Drawing.Point(353, 6);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(71, 32);
+            this.btnBuscar.TabIndex = 1;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtCodArticulo
+            // txtBuscar
             // 
-            this.txtCodArticulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.txtCodArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodArticulo.Location = new System.Drawing.Point(115, 11);
-            this.txtCodArticulo.Name = "txtCodArticulo";
-            this.txtCodArticulo.Size = new System.Drawing.Size(152, 26);
-            this.txtCodArticulo.TabIndex = 0;
+            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
+            this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(183, 9);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(152, 26);
+            this.txtBuscar.TabIndex = 0;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // lblCodArticulo
             // 
@@ -306,9 +309,9 @@
             this.lblCodArticulo.Location = new System.Drawing.Point(0, 8);
             this.lblCodArticulo.Name = "lblCodArticulo";
             this.lblCodArticulo.Padding = new System.Windows.Forms.Padding(5);
-            this.lblCodArticulo.Size = new System.Drawing.Size(109, 30);
+            this.lblCodArticulo.Size = new System.Drawing.Size(177, 30);
             this.lblCodArticulo.TabIndex = 3;
-            this.lblCodArticulo.Text = "Cod Artículo:";
+            this.lblCodArticulo.Text = "Cod Artículo / Nombre:";
             // 
             // btnUp
             // 
@@ -348,23 +351,18 @@
             this.cbxOrdenar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxOrdenar.FormattingEnabled = true;
-            this.cbxOrdenar.Items.AddRange(new object[] {
-            "Mas antiguo",
-            "Mas reciente",
-            "Mayor Precio",
-            "Menor Precio",
-            "Orden por defecto"});
-            this.cbxOrdenar.Location = new System.Drawing.Point(593, 124);
+            this.cbxOrdenar.Location = new System.Drawing.Point(593, 122);
             this.cbxOrdenar.Name = "cbxOrdenar";
             this.cbxOrdenar.Size = new System.Drawing.Size(160, 28);
             this.cbxOrdenar.TabIndex = 5;
+            this.cbxOrdenar.SelectedIndexChanged += new System.EventHandler(this.cbxOrdenar_SelectedIndexChanged);
             // 
             // lblOrdenar
             // 
             this.lblOrdenar.AutoSize = true;
             this.lblOrdenar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrdenar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.lblOrdenar.Location = new System.Drawing.Point(479, 123);
+            this.lblOrdenar.Location = new System.Drawing.Point(479, 120);
             this.lblOrdenar.Name = "lblOrdenar";
             this.lblOrdenar.Padding = new System.Windows.Forms.Padding(5);
             this.lblOrdenar.Size = new System.Drawing.Size(108, 30);
@@ -435,11 +433,11 @@
         private System.Windows.Forms.Panel pHeader;
         private System.Windows.Forms.Label lblCategorias;
         private System.Windows.Forms.Label lblCodArticulo;
-        private System.Windows.Forms.TextBox txtCodArticulo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cbxMarcas;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ComboBox cbxMarca;
         private System.Windows.Forms.Label lblMarcas;
-        private System.Windows.Forms.ComboBox cbxCategorias;
+        private System.Windows.Forms.ComboBox cbxCategoria;
         private System.Windows.Forms.Panel pSeparador;
         private System.Windows.Forms.RadioButton rdInactivo;
         private System.Windows.Forms.RadioButton rdActivo;
