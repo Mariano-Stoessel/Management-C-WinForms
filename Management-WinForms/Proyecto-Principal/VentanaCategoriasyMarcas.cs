@@ -120,6 +120,48 @@ namespace Proyecto_Principal
             }
         }
 
+        private void Eliminar(Categoria categoria)
+        {
+            LecturaCategoria cat = new LecturaCategoria();
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Seguro desea eleminar esta categoria?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+
+                    cat.eliminar(categoria.Id);
+                    cargarcategoria();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private void Eliminar(Marca marca)
+        {
+            LecturaMarca mar = new LecturaMarca();
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Seguro desea eleminar esta categoria?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+
+                    mar.eliminar(marca.Id);
+                    cargarmarca();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
         public VentanaCategoriasyMarcas()
         {
@@ -183,6 +225,18 @@ namespace Proyecto_Principal
             Marca marca = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
 
             Modificar(marca);
+        }
+
+        private void btnEliminarCategoria_Click(object sender, EventArgs e)
+        {
+            Categoria categoria = (Categoria)dgvListaCategorias.CurrentRow.DataBoundItem;
+            Eliminar(categoria);
+        }
+
+        private void btnEliminarMarca_Click(object sender, EventArgs e)
+        {
+            Marca marca = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+            Eliminar(marca);
         }
     }
 }

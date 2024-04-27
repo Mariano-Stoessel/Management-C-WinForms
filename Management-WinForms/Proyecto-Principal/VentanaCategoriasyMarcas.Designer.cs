@@ -291,6 +291,7 @@
             this.btnEliminarMarca.TabIndex = 21;
             this.btnEliminarMarca.Text = "Eliminar Marca";
             this.btnEliminarMarca.UseVisualStyleBackColor = false;
+            this.btnEliminarMarca.Click += new System.EventHandler(this.btnEliminarMarca_Click);
             // 
             // btnEliminarCategoria
             // 
@@ -304,8 +305,9 @@
             this.btnEliminarCategoria.Name = "btnEliminarCategoria";
             this.btnEliminarCategoria.Size = new System.Drawing.Size(151, 40);
             this.btnEliminarCategoria.TabIndex = 22;
-            this.btnEliminarCategoria.Text = "Eliminar Marca";
+            this.btnEliminarCategoria.Text = "Eliminar Categoria";
             this.btnEliminarCategoria.UseVisualStyleBackColor = false;
+            this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
             // 
             // VentanaCategoriasyMarcas
             // 

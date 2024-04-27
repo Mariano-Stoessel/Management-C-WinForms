@@ -81,5 +81,27 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
+        
+        public void eliminar(int id)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("delete from MARCAS WHERE Id = @Id");
+                datos.SetearParametro("@Id", id);
+                datos.ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
     }
 }
