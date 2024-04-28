@@ -52,7 +52,6 @@ namespace Proyecto_Principal
                     listaLecturaMarcas = lecturaMar.listar();
                     dgvMarcas.DataSource = lecturaMar.listar();
 
-                    MessageBox.Show("Agregado exitosamente");
                 }
             }
             catch (Exception ex)
@@ -76,7 +75,6 @@ namespace Proyecto_Principal
                     ListaLecturaCategorias = lecturaCat.listar();
                     dgvListaCategorias.DataSource = lecturaCat.listar();
 
-                    MessageBox.Show("Agregado exitosamente");
                 }
             }
             catch (Exception ex)
@@ -100,7 +98,6 @@ namespace Proyecto_Principal
                     ListaLecturaCategorias = lecturaCat.listar();
                     dgvListaCategorias.DataSource = lecturaCat.listar();
 
-                    MessageBox.Show("Modificado exitosamente");
                 }
             }
             catch (Exception ex)
@@ -124,8 +121,6 @@ namespace Proyecto_Principal
 
                     listaLecturaMarcas = lecturaMar.listar();
                     dgvMarcas.DataSource = lecturaMar.listar();
-
-                    MessageBox.Show("Modificado exitosamente");
                 }
             }
             catch (Exception ex)
@@ -233,7 +228,7 @@ namespace Proyecto_Principal
         {
             if (string.IsNullOrEmpty(txtAgregarMarca.Text))
             {
-                MessageBox.Show("Rellene el campo por favor.");
+                lblCamporequeridoMarca.Text = "*Campo Requerido*";
                 return true;
             }
             return false;
@@ -242,7 +237,7 @@ namespace Proyecto_Principal
         {
             if (string.IsNullOrEmpty(textAgregarCategoria.Text))
             {
-                MessageBox.Show("Rellene el campo por favor.");
+                lblCamporequeridoCategoria.Text = "*Campo Requerido*";
                 return true;
             }
             return false;
@@ -283,6 +278,7 @@ namespace Proyecto_Principal
         {
             if (!ValidarFiltroCategoria())
             {
+                lblCamporequeridoCategoria.Text = "";
                 Categoria categoria = new Categoria();
                 Agregar(categoria);
             }
@@ -293,6 +289,7 @@ namespace Proyecto_Principal
         {
             if (!ValidarFiltroMarca())
             {
+                lblCamporequeridoMarca.Text = "";
                 Marca marca = new Marca();
                 Agregar(marca);
             }

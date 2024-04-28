@@ -48,6 +48,8 @@
             this.txtAgregarMarca = new System.Windows.Forms.TextBox();
             this.btnEliminarMarca = new System.Windows.Forms.Button();
             this.btnEliminarCategoria = new System.Windows.Forms.Button();
+            this.lblCamporequeridoCategoria = new System.Windows.Forms.Label();
+            this.lblCamporequeridoMarca = new System.Windows.Forms.Label();
             this.pTitle.SuspendLayout();
             this.pHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).BeginInit();
@@ -309,12 +311,32 @@
             this.btnEliminarCategoria.UseVisualStyleBackColor = false;
             this.btnEliminarCategoria.Click += new System.EventHandler(this.btnEliminarCategoria_Click);
             // 
+            // lblCamporequeridoCategoria
+            // 
+            this.lblCamporequeridoCategoria.AutoSize = true;
+            this.lblCamporequeridoCategoria.ForeColor = System.Drawing.Color.Red;
+            this.lblCamporequeridoCategoria.Location = new System.Drawing.Point(579, 195);
+            this.lblCamporequeridoCategoria.Name = "lblCamporequeridoCategoria";
+            this.lblCamporequeridoCategoria.Size = new System.Drawing.Size(0, 13);
+            this.lblCamporequeridoCategoria.TabIndex = 23;
+            // 
+            // lblCamporequeridoMarca
+            // 
+            this.lblCamporequeridoMarca.AutoSize = true;
+            this.lblCamporequeridoMarca.ForeColor = System.Drawing.Color.Red;
+            this.lblCamporequeridoMarca.Location = new System.Drawing.Point(579, 436);
+            this.lblCamporequeridoMarca.Name = "lblCamporequeridoMarca";
+            this.lblCamporequeridoMarca.Size = new System.Drawing.Size(0, 13);
+            this.lblCamporequeridoMarca.TabIndex = 24;
+            // 
             // VentanaCategoriasyMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 655);
+            this.Controls.Add(this.lblCamporequeridoMarca);
+            this.Controls.Add(this.lblCamporequeridoCategoria);
             this.Controls.Add(this.btnEliminarCategoria);
             this.Controls.Add(this.btnEliminarMarca);
             this.Controls.Add(this.txtAgregarMarca);
@@ -368,5 +390,7 @@
         private System.Windows.Forms.TextBox txtAgregarMarca;
         private System.Windows.Forms.Button btnEliminarMarca;
         private System.Windows.Forms.Button btnEliminarCategoria;
+        private System.Windows.Forms.Label lblCamporequeridoCategoria;
+        private System.Windows.Forms.Label lblCamporequeridoMarca;
     }
 }
