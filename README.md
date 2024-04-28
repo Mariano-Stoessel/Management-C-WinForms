@@ -8,6 +8,6 @@
    **Project members:**
    
    [Santiago Javier Escobar Mendoza](https://github.com/SantiagoxEscobar)   
-   [Estrella Berrios](https://github.com/Estrellaberrios)
+   [Mariano Stoessel](https://github.com/Mariano-Stoessel)
    
 
