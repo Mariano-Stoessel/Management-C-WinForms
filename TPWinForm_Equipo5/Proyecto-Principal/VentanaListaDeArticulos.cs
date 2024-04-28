@@ -58,8 +58,8 @@ namespace Proyecto_Principal
                 LecturaImagen imgBD = new LecturaImagen();
                 indiceMaximo = imgBD.maximoImagen(listaLecturaArticulos[0].Id);
 
-                cargarImagen(listaLecturaArticulos[0].Id);
-                ocultarColumnas();
+                Articulo articuloSeleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(articuloSeleccionado.Id); ocultarColumnas();
             }
             catch (Exception ex)
             {
@@ -173,6 +173,8 @@ namespace Proyecto_Principal
             dgvListaArticulos.DataSource = null;
             dgvListaArticulos.DataSource = listaFiltrada;
             ocultarColumnas();
+
+            dgvListaArticulos.ClearSelection();
         }
 
         private void cbxOrdenar_SelectedIndexChanged(object sender, EventArgs e)
@@ -259,12 +261,16 @@ namespace Proyecto_Principal
 
         private void btnDown_Click(object sender, EventArgs e)
         {
+            LecturaImagen imgBD = new LecturaImagen();
+            Articulo articuloSeleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+            indiceMaximo = imgBD.maximoImagen(articuloSeleccionado.Id);
             Articulo seleccionado = null;
+
             if (dgvListaArticulos.CurrentRow != null)
             {
                 seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
             }
-            if (indiceActual < indiceMaximo)
+            if (indiceActual < indiceMaximo - 1)
             {
                 indiceActual++;
                 if (seleccionado != null)
