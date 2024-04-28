@@ -55,8 +55,8 @@ namespace Proyecto_Principal
                 listaLecturaArticulos = lecturaArticulo.listar();
                 dgvListaArticulos.DataSource = lecturaArticulo.listar();
 
-                LecturaImagen imgBD = new LecturaImagen();
-                indiceMaximo = imgBD.maximoImagen(listaLecturaArticulos[0].Id);
+                LecturaImagen lecturaImagen = new LecturaImagen();
+                indiceMaximo = lecturaImagen.maximoImagen(listaLecturaArticulos[0].Id);
 
                 Articulo articuloSeleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
                 cargarImagen(articuloSeleccionado.Id); ocultarColumnas();
@@ -261,9 +261,9 @@ namespace Proyecto_Principal
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            LecturaImagen imgBD = new LecturaImagen();
+            LecturaImagen lecturaImagen = new LecturaImagen();
             Articulo articuloSeleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-            indiceMaximo = imgBD.maximoImagen(articuloSeleccionado.Id);
+            indiceMaximo = lecturaImagen.maximoImagen(articuloSeleccionado.Id);
             Articulo seleccionado = null;
 
             if (dgvListaArticulos.CurrentRow != null)
@@ -302,6 +302,37 @@ namespace Proyecto_Principal
                 {
                     cargarImagen(listaLecturaArticulos[indiceActual].Id);
                 }
+            }
+        }
+
+        private void btnAgregarImg_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+
+            if (seleccionado != null)
+            {
+                frmAgregarImagen alta = new frmAgregarImagen(seleccionado.Id);
+                alta.ShowDialog();
+                cargarDatos();
+                dgvListaArticulos.ClearSelection();
+            }
+        }
+
+        private void btnEliminarImg_Click(object sender, EventArgs e)
+        {
+            if (dgvListaArticulos.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un artículo para eliminar");
+                return;
+            }
+            DialogResult respuesta = MessageBox.Show("¿Seguro desea eliminar esta Imagen?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                LecturaImagen lecturaImagen = new LecturaImagen();
+                Articulo articuloSeleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+                lecturaImagen.eliminarimagen(articuloSeleccionado.ImagenUrl, articuloSeleccionado.Id);
+                dgvListaArticulos.ClearSelection();
             }
         }
     }

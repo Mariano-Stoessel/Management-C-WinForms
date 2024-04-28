@@ -9,6 +9,28 @@ namespace LecturaDatos
 {
     public class LecturaImagen
     {
+        public void eliminarimagen(string url, int id)
+        {
+            
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("DELETE FROM IMAGENES WHERE ImagenUrl = @UrlImagenActual AND IdArticulo = @IdArticuloActual ");
+                datos.SetearParametro("@UrlImagenActual", url);
+                datos.SetearParametro("@IdArticuloActual", id);
+                datos.EjecutarLectura();  
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
         //Carga imagenes a la lista
         public List<Imagen> listar(int Id)
         {

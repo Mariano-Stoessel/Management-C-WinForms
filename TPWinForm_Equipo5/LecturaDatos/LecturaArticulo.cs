@@ -100,7 +100,26 @@ namespace LecturaDatos
                 datos.SetearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
                 datos.SetearParametro("@IdArticulo", nuevo.Id);
                 datos.SetearParametro("@ImagenUrl", nuevo.ImagenUrl);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+        public void agregarImagen(int Id,string URL)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.SetearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
+                datos.SetearParametro("@IdArticulo", Id);
+                datos.SetearParametro("@ImagenUrl",URL);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

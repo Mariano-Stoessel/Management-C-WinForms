@@ -44,13 +44,14 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnCancelar.Location = new System.Drawing.Point(159, 258);
+            this.btnCancelar.Location = new System.Drawing.Point(159, 318);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(0);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 40);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -60,13 +61,14 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnAceptar.Location = new System.Drawing.Point(22, 258);
+            this.btnAceptar.Location = new System.Drawing.Point(22, 318);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(0);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(100, 40);
             this.btnAceptar.TabIndex = 17;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // pbxImagenUrl
             // 
@@ -76,7 +78,7 @@
             this.pbxImagenUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.pbxImagenUrl.Location = new System.Drawing.Point(22, 60);
             this.pbxImagenUrl.Name = "pbxImagenUrl";
-            this.pbxImagenUrl.Size = new System.Drawing.Size(237, 179);
+            this.pbxImagenUrl.Size = new System.Drawing.Size(237, 237);
             this.pbxImagenUrl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagenUrl.TabIndex = 19;
             this.pbxImagenUrl.TabStop = false;
@@ -92,6 +94,8 @@
             this.txtImagenUrl.Name = "txtImagenUrl";
             this.txtImagenUrl.Size = new System.Drawing.Size(144, 23);
             this.txtImagenUrl.TabIndex = 15;
+            this.txtImagenUrl.TextChanged += new System.EventHandler(this.txtImagenUrl_Leave);
+            this.txtImagenUrl.Leave += new System.EventHandler(this.txtImagenUrl_Leave);
             // 
             // lblImagenUrl
             // 
@@ -109,14 +113,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(295, 307);
+            this.ClientSize = new System.Drawing.Size(295, 367);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.pbxImagenUrl);
             this.Controls.Add(this.txtImagenUrl);
             this.Controls.Add(this.lblImagenUrl);
             this.Name = "frmAgregarImagen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Imagen";
+            this.Load += new System.EventHandler(this.frmAgregarImagen_Load);
+            this.Leave += new System.EventHandler(this.txtImagenUrl_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
