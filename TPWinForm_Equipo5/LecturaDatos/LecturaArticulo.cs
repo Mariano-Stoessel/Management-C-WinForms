@@ -12,6 +12,7 @@ namespace LecturaDatos
 {
     public class LecturaArticulo
     {
+        //Carga los datos a la lista 
         public List<Articulo> listar()
         {
             List<Articulo> lista = new List<Articulo>();
@@ -60,6 +61,7 @@ namespace LecturaDatos
             }
         }
 
+        //Agrega datos a la dgv
         public void agregar(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -88,6 +90,7 @@ namespace LecturaDatos
             }
         }
 
+        //Agrega img a la BBDD
         public void agregarImagen(Articulo nuevo)
         {
             nuevo.Id = buscarId();
@@ -111,6 +114,7 @@ namespace LecturaDatos
             }
         }
 
+        //Busca por ID en BBDD
         private int buscarId()
         {
             AccesoDatos datos = new AccesoDatos();
@@ -132,6 +136,7 @@ namespace LecturaDatos
             }
         }
 
+        //Edita articulo en BBDD
         public void editarArticulo(Articulo editado)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -160,6 +165,7 @@ namespace LecturaDatos
             }
         }
 
+        //Edita Img 
         public void editarImagen(Articulo editado)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -182,6 +188,7 @@ namespace LecturaDatos
             }
         }
 
+        //Elimina articulo en BBDD
         public void eliminarArticulo(int Id)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -202,6 +209,8 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
+
+        //Elimina Imagen BBDD
         public void eliminarImagen(Articulo eliminado)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -223,6 +232,7 @@ namespace LecturaDatos
             }
         }
 
+        //Filtra Articulo y devuelve ordenado
         public List<Articulo> filtrarArticulo(string campo, string criterio, string avanzado)
         {
             List<Articulo> lista = new List<Articulo>();

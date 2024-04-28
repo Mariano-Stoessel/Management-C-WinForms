@@ -118,5 +118,7 @@ namespace Proyecto_Principal
                 pbxImagenUrl.Load("https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png");
             }
         }
+
+        
     }
 }

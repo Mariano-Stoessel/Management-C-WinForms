@@ -254,6 +254,7 @@ namespace Proyecto_Principal
             return false;
         }       
 
+        //Elementos del Frm
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Dispose();

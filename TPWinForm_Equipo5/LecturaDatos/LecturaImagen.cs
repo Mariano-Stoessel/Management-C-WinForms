@@ -9,6 +9,7 @@ namespace LecturaDatos
 {
     public class LecturaImagen
     {
+        //Carga imagenes a la lista
         public List<Imagen> listar(int Id)
         {
             List<Imagen> lista = new List<Imagen>();
@@ -38,6 +39,8 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
+
+        //Cuenta la cantidad de img que tiene el articulo
         public int maximoImagen(int Id)
         {
             int maximoImagenes = 0;

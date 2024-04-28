@@ -11,7 +11,7 @@ namespace LecturaDatos
     public class LecturaCategoria
     {
 
-        //Carga los datos a la lista
+        //Carga los datos a la lista Categorias
         public List<Categoria> listar()
         {
             List<Categoria> lista = new List<Categoria>();
@@ -39,7 +39,7 @@ namespace LecturaDatos
             }
         }
 
-        //Agrega datos a la tabla Marcas
+        //Agrega datos a la tabla Categorias
         public void agregar(Categoria categoria)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -62,7 +62,7 @@ namespace LecturaDatos
             }
         }
 
-        //Modifica datos a la tabla Marcas
+        //Modifica datos a la tabla Categorias
         public void modificar(Categoria nueva)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -87,7 +87,7 @@ namespace LecturaDatos
             }
         }
 
-        //Elimina datos de la tabla Marcas
+        //Elimina datos de la tabla Categorias
         public void eliminar(int id)
         {
                 AccesoDatos datos = new AccesoDatos();
@@ -109,50 +109,6 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
-       /* public List<Categoria> FiltrarCategoria(string opcion)
-        {
-            List<Categoria> listaCategoria = new List<Categoria>();
-            AccesoDatos datos = new AccesoDatos();
-            try
-            {
-
-                if(opcion == "Orden alfabetico")
-                {
-                    datos.SetearConsulta("select Id,Descripcion from CATEGORIAS ORDER BY Descripcion ASC");
-                    datos.ejecutarAccion();
-                }
-                else if(opcion == "Nro ID asc.")
-                {
-                    datos.SetearConsulta("select Id,Descripcion from CATEGORIAS ORDER BY Id ASC");
-                    datos.ejecutarAccion();
-                }
-                else 
-                {
-                    datos.SetearConsulta("select Id,Descripcion from CATEGORIAS ORDER BY Id DESC");
-                    datos.ejecutarAccion();
-                }
-
-                while (datos.Lector.Read())
-                {
-                    Categoria aux = new Categoria();
-                    if (!Convert.IsDBNull(datos.Lector["Id"]))
-                        aux.Id = (int)datos.Lector["Id"];
-                    if (!Convert.IsDBNull(datos.Lector["Descripcion"]))
-                        aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    listaCategoria.Add(aux);
-                }
-                return listaCategoria;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                datos.CerrarConexion();
-            }
-
-        }*/
+       
     }
 }
