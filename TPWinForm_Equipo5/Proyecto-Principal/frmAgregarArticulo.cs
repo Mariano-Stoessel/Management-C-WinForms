@@ -75,14 +75,25 @@ namespace Proyecto_Principal
                 }
                 articulo.Codigo = txtCodigo.Text;
                 articulo.Nombre = txtNombre.Text;
-                articulo.Precio = decimal.Parse(txtPrecio.Text);
                 articulo.Descripcion = txtDescripcion.Text;
-                articulo.ImagenUrl = (string)txtImagenUrl.Text;
-
                 articulo.Marca = (Marca)cbxMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cbxCategoria.SelectedItem;
 
-                if(articulo.Id != 0)
+                if (txtPrecio.Text == "")
+                {
+                    txtPrecio.Text = "0";
+                }
+                else
+                {
+                    articulo.Precio = decimal.Parse(txtPrecio.Text);
+                }
+
+                if (txtImagenUrl.Text != "" && txtImagenUrl.Text != articulo.ImagenUrl)
+                {
+                    articulo.ImagenUrl = (string)txtImagenUrl.Text;
+                }
+
+                if (articulo.Id != 0)
                 {
                     lecturaArticulo.editarArticulo(articulo);
                     lecturaArticulo.editarImagen(articulo);
@@ -90,6 +101,43 @@ namespace Proyecto_Principal
                 }
                 else
                 {
+                    if (articulo.Codigo == "")
+                    {
+                        lblAdvertencia.Text = "Debe completar el campo Código.";
+                        articulo = null;
+                        return;
+                    }
+                    else if (articulo.Nombre == "")
+                    {
+                        lblAdvertencia.Text = "Debe completar el campo Nombre.";
+                        articulo = null;
+                        return;
+                    }
+                    else if (articulo.Categoria == null)
+                    {
+                        lblAdvertencia.Text = "Debe seleccionar una categoría.";
+                        articulo = null;
+                        return;
+                    }
+                    else if (articulo.Marca == null)
+                    {
+                        lblAdvertencia.Text = "Debe seleccionar una marca.";
+                        articulo = null;
+                        return;
+                    }
+                    else if (articulo.Precio == 0)
+                    {
+                        lblAdvertencia.Text = "Debe completar el campo Precio.";
+                        articulo = null;
+                        return;
+                    }
+                    if (articulo.Codigo == "" || articulo.Nombre == "" || articulo.Categoria == null || articulo.Marca == null || articulo.Precio == 0)
+                    {
+                        articulo = null;
+                        MessageBox.Show("Debe completar todos los campos.");
+                        return;
+                    }
+
                     lecturaArticulo.agregar(articulo);
                     lecturaArticulo.agregarImagen(articulo);
                     MessageBox.Show("Artículo agregado correctamente");

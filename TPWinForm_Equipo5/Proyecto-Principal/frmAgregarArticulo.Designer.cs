@@ -45,6 +45,7 @@
             this.pbxImagenUrl = new System.Windows.Forms.PictureBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblAdvertencia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -253,12 +254,23 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblAdvertencia
+            // 
+            this.lblAdvertencia.AutoSize = true;
+            this.lblAdvertencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdvertencia.ForeColor = System.Drawing.Color.Red;
+            this.lblAdvertencia.Location = new System.Drawing.Point(15, 285);
+            this.lblAdvertencia.Name = "lblAdvertencia";
+            this.lblAdvertencia.Size = new System.Drawing.Size(0, 17);
+            this.lblAdvertencia.TabIndex = 15;
+            // 
             // frmAgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(584, 381);
+            this.Controls.Add(this.lblAdvertencia);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.pbxImagenUrl);
@@ -307,5 +319,6 @@
         private System.Windows.Forms.PictureBox pbxImagenUrl;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblAdvertencia;
     }
 }

@@ -58,8 +58,8 @@ namespace Proyecto_Principal
                 LecturaImagen imgBD = new LecturaImagen();
                 indiceMaximo = imgBD.maximoImagen(listaLecturaArticulos[0].Id);
 
-                ocultarColumnas();
                 cargarImagen(listaLecturaArticulos[0].Id);
+                ocultarColumnas();
             }
             catch (Exception ex)
             {
@@ -110,6 +110,11 @@ namespace Proyecto_Principal
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (dgvListaArticulos.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un artículo para modificar");
+                return;
+            }
             Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
             frmAgregarArticulo editar = new frmAgregarArticulo(seleccionado);
             editar.ShowDialog();
@@ -121,6 +126,11 @@ namespace Proyecto_Principal
             LecturaArticulo lecturaArticulo = new LecturaArticulo();
             try
             {
+                if (dgvListaArticulos.CurrentRow == null)
+                {
+                    MessageBox.Show("Debe seleccionar un artículo para eliminar");
+                    return;
+                }
                 DialogResult respuesta = MessageBox.Show("¿Está seguro que desea eliminar el artículo?", "Eliminar Artículo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if(respuesta == DialogResult.Yes)
                 {
@@ -208,6 +218,11 @@ namespace Proyecto_Principal
             LecturaArticulo lecturaArticulo = new LecturaArticulo();
             try
             {
+                if (cbxCampo.SelectedItem == null || cbxCriterio.SelectedItem == null || txtAvanzado.Text == "")
+                {
+                    MessageBox.Show("Debe completar todos los campos");
+                    return;
+                }
                 string campo = cbxCampo.SelectedItem.ToString();
                 string criterio = cbxCriterio.SelectedItem.ToString();
                 string filtro = txtAvanzado.Text;
@@ -244,20 +259,44 @@ namespace Proyecto_Principal
 
         private void btnDown_Click(object sender, EventArgs e)
         {
+            Articulo seleccionado = null;
+            if (dgvListaArticulos.CurrentRow != null)
+            {
+                seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+            }
             if (indiceActual < indiceMaximo)
             {
                 indiceActual++;
+                if (seleccionado != null)
+                {
+                    cargarImagen(seleccionado.Id);
+                }
+                else
+                {
+                    cargarImagen(listaLecturaArticulos[0].Id);
+                }
             }
-            Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.Id);
         }
 
         private void btnUp_Click(object sender, EventArgs e)
-        {          
-            indiceActual--;
-            if (indiceActual < 1) indiceActual = 0;
-            Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.Id);
+        {
+            if (indiceActual > 0)
+            {
+                indiceActual--;
+                Articulo seleccionado = null;
+                if (dgvListaArticulos.CurrentRow != null)
+                {
+                    seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+                }
+                if (seleccionado != null)
+                {
+                    cargarImagen(seleccionado.Id);
+                }
+                else
+                {
+                    cargarImagen(listaLecturaArticulos[indiceActual].Id);
+                }
+            }
         }
     }
 }
