@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto-Principal", "Proyecto-Principal\Proyecto-Principal.csproj", "{D6D3C5E8-F0E4-4B74-A08D-C6C9751F2659}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPWinForm_equipo-5", "Proyecto-Principal\TPWinForm_equipo-5.csproj", "{D6D3C5E8-F0E4-4B74-A08D-C6C9751F2659}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{AA4C210C-2D7A-4C0D-85C2-D298DAC3FBA9}"
 EndProject

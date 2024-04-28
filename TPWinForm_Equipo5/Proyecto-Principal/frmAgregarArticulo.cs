@@ -20,7 +20,7 @@ namespace Proyecto_Principal
             InitializeComponent();
         }
 
-        public frmAgregarArticulo(Articulo articulo)
+       public frmAgregarArticulo(Articulo articulo)
         {
             InitializeComponent();
             this.articulo = articulo;
