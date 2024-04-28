@@ -228,6 +228,26 @@ namespace Proyecto_Principal
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private bool ValidarFiltroMarca ()
+        {
+            if (string.IsNullOrEmpty(txtAgregarMarca.Text))
+            {
+                MessageBox.Show("Rellene el campo por favor.");
+                return true;
+            }
+            return false;
+        }
+        private bool ValidarFiltroCategoria ()
+        {
+            if (string.IsNullOrEmpty(textAgregarCategoria.Text))
+            {
+                MessageBox.Show("Rellene el campo por favor.");
+                return true;
+            }
+            return false;
+        }
+        
         public VentanaCategoriasyMarcas()
         {
             InitializeComponent();
@@ -261,33 +281,37 @@ namespace Proyecto_Principal
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Categoria categoria = new Categoria();
-            
-            Agregar(categoria);
+            if (!ValidarFiltroCategoria())
+            {
+                Categoria categoria = new Categoria();
+                Agregar(categoria);
+            }
         }
 
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
-            Marca marca = new Marca();
-
-            Agregar(marca);     
+            if (!ValidarFiltroMarca())
+            {
+                Marca marca = new Marca();
+                Agregar(marca);
+            }
         }
         
 
 
         private void btnEditarCategoria_Click_1(object sender, EventArgs e)
         {
-            Categoria categoria = (Categoria)dgvListaCategorias.CurrentRow.DataBoundItem;
-
-            Modificar(categoria);
+            
+                Categoria categoria = (Categoria)dgvListaCategorias.CurrentRow.DataBoundItem;
+                Modificar(categoria);
+            
         }
 
         private void btnEditarMarca_Click(object sender, EventArgs e)
         {
-            Marca marca = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
-
-            Modificar(marca);
+                Marca marca = (Marca)dgvMarcas.CurrentRow.DataBoundItem;
+                Modificar(marca);  
         }
 
         private void btnEliminarCategoria_Click(object sender, EventArgs e)
