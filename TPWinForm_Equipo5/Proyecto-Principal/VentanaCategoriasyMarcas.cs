@@ -15,13 +15,18 @@ namespace Proyecto_Principal
 {
     public partial class VentanaCategoriasyMarcas : Form
     {
-  
+        //Constructor
+        public VentanaCategoriasyMarcas()
+        {
+            InitializeComponent();
+        }
 
-
+        //Listas obj
         private List<Categoria> ListaLecturaCategorias;
 
         private List<Marca> listaLecturaMarcas;
         
+        //Cargo img de tablas 
         private void cargarmarca()
         {
             LecturaMarca lecturaMar = new LecturaMarca();
@@ -35,7 +40,7 @@ namespace Proyecto_Principal
             dgvListaCategorias.DataSource = lecturaCat.listar();
         }
 
-        
+        //Metodos para Agregar datos a la dgv
         private void Agregar(Marca marca)
         {
             LecturaMarca lecturaMarca = new LecturaMarca();
@@ -83,6 +88,8 @@ namespace Proyecto_Principal
 
             }
         }
+
+        //Metodos para modificar datos de las dgv
         private void Modificar(Categoria categoria)
         {
             LecturaCategoria lecturaCat = new LecturaCategoria();
@@ -129,6 +136,7 @@ namespace Proyecto_Principal
             }
         }
 
+        //Metodos para eliminar datos de la dgv
         private void Eliminar(Categoria categoria)
         {
             LecturaCategoria cat = new LecturaCategoria();
@@ -148,6 +156,7 @@ namespace Proyecto_Principal
                 MessageBox.Show(ex.ToString());
             }
         }
+
         private void Eliminar(Marca marca)
         {
             LecturaMarca mar = new LecturaMarca();
@@ -168,6 +177,7 @@ namespace Proyecto_Principal
             }
         }
 
+        //Filtros
         private void FiltrarMarca()
         {
             List<Marca> listaFiltrada;
@@ -223,7 +233,8 @@ namespace Proyecto_Principal
                 MessageBox.Show(ex.ToString());
             }
         }
-
+        
+        //Validaciones
         private bool ValidarFiltroMarca ()
         {
             if (string.IsNullOrEmpty(txtAgregarMarca.Text))
@@ -241,22 +252,12 @@ namespace Proyecto_Principal
                 return true;
             }
             return false;
-        }
-        
-        public VentanaCategoriasyMarcas()
-        {
-            InitializeComponent();
-        }
-
+        }       
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
-
-        
-
-        
 
         private void VentanaCategorias_Load(object sender, EventArgs e)
         {
@@ -273,7 +274,6 @@ namespace Proyecto_Principal
 
         }
 
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (!ValidarFiltroCategoria())
@@ -283,7 +283,6 @@ namespace Proyecto_Principal
                 Agregar(categoria);
             }
         }
-
 
         private void btnAgregarMarca_Click(object sender, EventArgs e)
         {
@@ -295,8 +294,6 @@ namespace Proyecto_Principal
             }
         }
         
-
-
         private void btnEditarCategoria_Click_1(object sender, EventArgs e)
         {
             
@@ -324,7 +321,6 @@ namespace Proyecto_Principal
 
             Eliminar(marca);
         }
-
 
         private void cboCategoria_SelectedIndexChanged_1(object sender, EventArgs e)
         {

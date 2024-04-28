@@ -11,6 +11,7 @@ namespace LecturaDatos
 {
     public class LecturaMarca
     {
+        //Carga los datos a la lista
         public List<Marca> listar()
         {
             List<Marca> lista = new List<Marca>();
@@ -38,6 +39,7 @@ namespace LecturaDatos
             }
         }
 
+        //Agrega datos a la tabla Marcas
         public void agregar (Marca nueva)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -58,6 +60,8 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
+
+        //Modifica datos a la tabla Marcas
         public void modificar(Marca nueva)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -82,6 +86,7 @@ namespace LecturaDatos
             }
         }
         
+        //Elimina datos de la tabla Marcas
         public void eliminar(int id)
         {
             AccesoDatos datos = new AccesoDatos();

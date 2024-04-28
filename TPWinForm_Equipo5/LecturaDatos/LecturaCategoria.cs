@@ -11,6 +11,7 @@ namespace LecturaDatos
     public class LecturaCategoria
     {
 
+        //Carga los datos a la lista
         public List<Categoria> listar()
         {
             List<Categoria> lista = new List<Categoria>();
@@ -37,6 +38,8 @@ namespace LecturaDatos
                 throw ex;
             }
         }
+
+        //Agrega datos a la tabla Marcas
         public void agregar(Categoria categoria)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -59,6 +62,7 @@ namespace LecturaDatos
             }
         }
 
+        //Modifica datos a la tabla Marcas
         public void modificar(Categoria nueva)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -82,6 +86,8 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
+
+        //Elimina datos de la tabla Marcas
         public void eliminar(int id)
         {
                 AccesoDatos datos = new AccesoDatos();
@@ -103,7 +109,7 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
         }
-        public List<Categoria> FiltrarCategoria(string opcion)
+       /* public List<Categoria> FiltrarCategoria(string opcion)
         {
             List<Categoria> listaCategoria = new List<Categoria>();
             AccesoDatos datos = new AccesoDatos();
@@ -147,6 +153,6 @@ namespace LecturaDatos
                 datos.CerrarConexion();
             }
 
-        }
+        }*/
     }
 }
