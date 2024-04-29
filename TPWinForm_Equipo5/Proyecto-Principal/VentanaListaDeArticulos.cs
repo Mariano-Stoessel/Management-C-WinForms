@@ -259,52 +259,6 @@ namespace Proyecto_Principal
             cbxCampo.Items.Add("Categoría");
         }
 
-        private void btnDown_Click(object sender, EventArgs e)
-        {
-            LecturaImagen lecturaImagen = new LecturaImagen();
-            Articulo articuloSeleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-            indiceMaximo = lecturaImagen.maximoImagen(articuloSeleccionado.Id);
-            Articulo seleccionado = null;
-
-            if (dgvListaArticulos.CurrentRow != null)
-            {
-                seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-            }
-            if (indiceActual < indiceMaximo - 1)
-            {
-                indiceActual++;
-                if (seleccionado != null)
-                {
-                    cargarImagen(seleccionado.Id);
-                }
-                else
-                {
-                    cargarImagen(listaLecturaArticulos[0].Id);
-                }
-            }
-        }
-
-        private void btnUp_Click(object sender, EventArgs e)
-        {
-            if (indiceActual > 0)
-            {
-                indiceActual--;
-                Articulo seleccionado = null;
-                if (dgvListaArticulos.CurrentRow != null)
-                {
-                    seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
-                }
-                if (seleccionado != null)
-                {
-                    cargarImagen(seleccionado.Id);
-                }
-                else
-                {
-                    cargarImagen(listaLecturaArticulos[indiceActual].Id);
-                }
-            }
-        }
-
         private void btnAgregarImg_Click(object sender, EventArgs e)
         {
             Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
@@ -333,6 +287,52 @@ namespace Proyecto_Principal
                 Articulo articuloSeleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
                 lecturaImagen.eliminarimagen(articuloSeleccionado.ImagenUrl, articuloSeleccionado.Id);
                 dgvListaArticulos.ClearSelection();
+            }
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (indiceActual > 0)
+            {
+                indiceActual--;
+                Articulo seleccionado = null;
+                if (dgvListaArticulos.CurrentRow != null)
+                {
+                    seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+                }
+                if (seleccionado != null)
+                {
+                    cargarImagen(seleccionado.Id);
+                }
+                else
+                {
+                    cargarImagen(listaLecturaArticulos[indiceActual].Id);
+                }
+            }
+        }
+
+        private void btnPosterior_Click(object sender, EventArgs e)
+        {
+            LecturaImagen lecturaImagen = new LecturaImagen();
+            Articulo articuloSeleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+            indiceMaximo = lecturaImagen.maximoImagen(articuloSeleccionado.Id);
+            Articulo seleccionado = null;
+
+            if (dgvListaArticulos.CurrentRow != null)
+            {
+                seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+            }
+            if (indiceActual < indiceMaximo - 1)
+            {
+                indiceActual++;
+                if (seleccionado != null)
+                {
+                    cargarImagen(seleccionado.Id);
+                }
+                else
+                {
+                    cargarImagen(listaLecturaArticulos[0].Id);
+                }
             }
         }
     }
