@@ -118,7 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="textoabout.Text" xml:space="preserve">
-    <value>Bienvenido a nuestra sección de "Acerca de nosotros".
+    <value>
+Bienvenido a nuestra sección de "Acerca de nosotros".
 Somos dos estudiantes que actualmente estamos cursando 
 la Tecnicatura Universitaria de Programación  
 en la Universidad Tecnológica Nacional. 
@@ -131,10 +132,25 @@ donde estamos explorando a fondo dos tecnologías fundamentales:
 SQL y C#. 
 
 
-Nuestro objetivo como equipo es crecer y destacarnos en el 
-ámbito de la programación, aprovechando 
-cada oportunidad para expandir nuestros conocimientos y habilidades. 
-Estamos entusiasmados de compartir 
+
+
+</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>
+Alumnos
+Escobar Mendoza, Santiago Javier.
+Stoessel, Mariano.
+
+Equipo Docente
+Sar Fernandez, Maximiliano.
+Regina, Laurentino.
+Gonzalo, Ligero.
+
+     Repositorio GitHub: https://github.com/Mariano-Stoessel/tp-winform-equipo-5
+
+
+
 </value>
   </data>
 </root>
