@@ -58,6 +58,7 @@ namespace Proyecto_Principal
                     dgvMarcas.DataSource = lecturaMar.listar();
 
                 }
+                txtAgregarMarca.Text = "";
             }
             catch (Exception ex)
             {
@@ -81,6 +82,7 @@ namespace Proyecto_Principal
                     dgvListaCategorias.DataSource = lecturaCat.listar();
 
                 }
+                textAgregarCategoria.Text = "";
             }
             catch (Exception ex)
             {
@@ -95,6 +97,11 @@ namespace Proyecto_Principal
             LecturaCategoria lecturaCat = new LecturaCategoria();
             try
             {
+                if (string.IsNullOrEmpty(textAgregarCategoria.Text))
+                {
+                    lblCamporequeridoCategoria.Text = "*Campo Requerido*";
+                    return;
+                }
                 DialogResult respuesta = MessageBox.Show("¿Seguro desea modificar esta Marca?", "Modificando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (respuesta == DialogResult.Yes)
@@ -106,6 +113,7 @@ namespace Proyecto_Principal
                     dgvListaCategorias.DataSource = lecturaCat.listar();
 
                 }
+                textAgregarCategoria.Text = "";
             }
             catch (Exception ex)
             {
@@ -119,6 +127,11 @@ namespace Proyecto_Principal
             LecturaMarca lecturaMar = new LecturaMarca();
             try
             {
+                if(string.IsNullOrEmpty(txtAgregarMarca.Text))
+                {
+                    lblCamporequeridoMarca.Text = "*Campo Requerido*";
+                    return;
+                }
                 DialogResult respuesta = MessageBox.Show("¿Seguro desea modificar esta Marca?", "Modificando", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (respuesta == DialogResult.Yes)
@@ -129,6 +142,7 @@ namespace Proyecto_Principal
                     listaLecturaMarcas = lecturaMar.listar();
                     dgvMarcas.DataSource = lecturaMar.listar();
                 }
+                txtAgregarMarca.Text = "";
             }
             catch (Exception ex)
             {

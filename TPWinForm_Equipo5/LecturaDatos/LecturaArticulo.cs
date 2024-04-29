@@ -19,7 +19,7 @@ namespace LecturaDatos
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.SetearConsulta("SELECT A.Codigo, A.Nombre, A.Descripcion AS DescripcionArticulo, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio, A.Id AS IdArticulo, M.Id AS IdMarca, C.Id AS IdCategoria FROM ARTICULOS A INNER JOIN MARCAS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS C ON C.Id = A.IdCategoria INNER JOIN IMAGENES I ON I.IdArticulo = A.Id WHERE NOT EXISTS (SELECT 1 FROM ARTICULOS A2 INNER JOIN IMAGENES I2 ON I2.IdArticulo = A2.Id WHERE A2.Codigo = A.Codigo AND I2.Id > I.Id) ");
+                datos.SetearConsulta("SELECT A.Codigo, A.Nombre, A.Descripcion AS DescripcionArticulo, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio, A.Id AS IdArticulo, M.Id AS IdMarca, C.Id AS IdCategoria FROM ARTICULOS A INNER JOIN MARCAS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS C ON C.Id = A.IdCategoria LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id WHERE NOT EXISTS (SELECT 1 FROM ARTICULOS A2 INNER JOIN IMAGENES I2 ON I2.IdArticulo = A2.Id WHERE A2.Codigo = A.Codigo AND I2.Id > I.Id) ");
                 datos.EjecutarLectura();
 
                 while (datos.Lector.Read())
@@ -258,7 +258,7 @@ namespace LecturaDatos
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                string consulta = ("SELECT A.Codigo, A.Nombre, A.Descripcion AS DescripcionArt, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio, A.Id AS IdArt, M.Id AS IdMar, C.Id AS IdCat FROM ARTICULOS A INNER JOIN MARCAS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS C ON C.Id = A.IdCategoria INNER JOIN IMAGENES I ON I.IdArticulo = A.Id WHERE NOT EXISTS (SELECT 1 FROM ARTICULOS A2 INNER JOIN IMAGENES I2 ON I2.IdArticulo = A2.Id WHERE A2.Codigo = A.Codigo AND I2.Id > I.Id) ");
+                string consulta = ("SELECT A.Codigo, A.Nombre, A.Descripcion AS DescripcionArticulo, M.Descripcion AS Marca, C.Descripcion AS Categoria, I.ImagenUrl, A.Precio, A.Id AS IdArticulo, M.Id AS IdMarca, C.Id AS IdCategoria FROM ARTICULOS A INNER JOIN MARCAS M ON M.Id = A.IdMarca INNER JOIN CATEGORIAS C ON C.Id = A.IdCategoria LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id WHERE NOT EXISTS (SELECT 1 FROM ARTICULOS A2 INNER JOIN IMAGENES I2 ON I2.IdArticulo = A2.Id WHERE A2.Codigo = A.Codigo AND I2.Id > I.Id) ");
                 switch (campo)
                 {
                     case "Código":

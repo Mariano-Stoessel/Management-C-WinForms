@@ -47,8 +47,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblCodArticulo = new System.Windows.Forms.Label();
-            this.btnUp = new System.Windows.Forms.Button();
-            this.btnDown = new System.Windows.Forms.Button();
+            this.btnPosterior = new System.Windows.Forms.Button();
+            this.btnAnterior = new System.Windows.Forms.Button();
             this.pbxImagenUrl = new System.Windows.Forms.PictureBox();
             this.cbxOrdenar = new System.Windows.Forms.ComboBox();
             this.lblOrdenar = new System.Windows.Forms.Label();
@@ -320,33 +320,33 @@
             this.lblCodArticulo.TabIndex = 3;
             this.lblCodArticulo.Text = "Cod Artículo / Nombre:";
             // 
-            // btnUp
+            // btnPosterior
             // 
-            this.btnUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnUp.Location = new System.Drawing.Point(495, 596);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(50, 40);
-            this.btnUp.TabIndex = 7;
-            this.btnUp.Text = ">";
-            this.btnUp.UseVisualStyleBackColor = false;
-            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            this.btnPosterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnPosterior.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPosterior.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPosterior.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnPosterior.Location = new System.Drawing.Point(495, 596);
+            this.btnPosterior.Name = "btnPosterior";
+            this.btnPosterior.Size = new System.Drawing.Size(50, 40);
+            this.btnPosterior.TabIndex = 7;
+            this.btnPosterior.Text = ">";
+            this.btnPosterior.UseVisualStyleBackColor = false;
+            this.btnPosterior.Click += new System.EventHandler(this.btnPosterior_Click);
             // 
-            // btnDown
+            // btnAnterior
             // 
-            this.btnDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnDown.Location = new System.Drawing.Point(423, 596);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(50, 40);
-            this.btnDown.TabIndex = 8;
-            this.btnDown.Text = "<";
-            this.btnDown.UseVisualStyleBackColor = false;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            this.btnAnterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAnterior.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnterior.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.btnAnterior.Location = new System.Drawing.Point(423, 596);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(50, 40);
+            this.btnAnterior.TabIndex = 8;
+            this.btnAnterior.Text = "<";
+            this.btnAnterior.UseVisualStyleBackColor = false;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // pbxImagenUrl
             // 
@@ -463,11 +463,11 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.cbxOrdenar);
-            this.Controls.Add(this.btnDown);
+            this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.lblOrdenar);
             this.Controls.Add(this.pbxImagenUrl);
             this.Controls.Add(this.pHeader);
-            this.Controls.Add(this.btnUp);
+            this.Controls.Add(this.btnPosterior);
             this.Controls.Add(this.dgvListaArticulos);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEditar);
@@ -512,8 +512,8 @@
         private System.Windows.Forms.ComboBox cbxCampo;
         private System.Windows.Forms.DataGridView dgvListaArticulos;
         private System.Windows.Forms.PictureBox pbxImagenUrl;
-        private System.Windows.Forms.Button btnUp;
-        private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button btnPosterior;
+        private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.ComboBox cbxOrdenar;
         private System.Windows.Forms.Label lblOrdenar;
         private System.Windows.Forms.Button btnEliminar;
