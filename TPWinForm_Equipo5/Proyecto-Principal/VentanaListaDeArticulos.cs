@@ -232,7 +232,6 @@ namespace Proyecto_Principal
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -287,6 +286,7 @@ namespace Proyecto_Principal
                 Articulo articuloSeleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
                 lecturaImagen.eliminarimagen(articuloSeleccionado.ImagenUrl, articuloSeleccionado.Id);
                 dgvListaArticulos.ClearSelection();
+                cargarImagen(articuloSeleccionado.Id);
             }
         }
 
