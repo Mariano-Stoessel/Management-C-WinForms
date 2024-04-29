@@ -46,6 +46,11 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblAdvertencia = new System.Windows.Forms.Label();
+            this.lblPrioridadCodigo = new System.Windows.Forms.Label();
+            this.lblPrioridadNombre = new System.Windows.Forms.Label();
+            this.lblPrioridadPrecio = new System.Windows.Forms.Label();
+            this.lblPrioridadMarca = new System.Windows.Forms.Label();
+            this.lblPrioridadCategoria = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenUrl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -264,12 +269,72 @@
             this.lblAdvertencia.Size = new System.Drawing.Size(0, 17);
             this.lblAdvertencia.TabIndex = 15;
             // 
+            // lblPrioridadCodigo
+            // 
+            this.lblPrioridadCodigo.AutoSize = true;
+            this.lblPrioridadCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrioridadCodigo.ForeColor = System.Drawing.Color.Red;
+            this.lblPrioridadCodigo.Location = new System.Drawing.Point(82, 29);
+            this.lblPrioridadCodigo.Name = "lblPrioridadCodigo";
+            this.lblPrioridadCodigo.Size = new System.Drawing.Size(13, 17);
+            this.lblPrioridadCodigo.TabIndex = 16;
+            this.lblPrioridadCodigo.Text = "*";
+            // 
+            // lblPrioridadNombre
+            // 
+            this.lblPrioridadNombre.AutoSize = true;
+            this.lblPrioridadNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrioridadNombre.ForeColor = System.Drawing.Color.Red;
+            this.lblPrioridadNombre.Location = new System.Drawing.Point(82, 71);
+            this.lblPrioridadNombre.Name = "lblPrioridadNombre";
+            this.lblPrioridadNombre.Size = new System.Drawing.Size(13, 17);
+            this.lblPrioridadNombre.TabIndex = 17;
+            this.lblPrioridadNombre.Text = "*";
+            // 
+            // lblPrioridadPrecio
+            // 
+            this.lblPrioridadPrecio.AutoSize = true;
+            this.lblPrioridadPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrioridadPrecio.ForeColor = System.Drawing.Color.Red;
+            this.lblPrioridadPrecio.Location = new System.Drawing.Point(82, 112);
+            this.lblPrioridadPrecio.Name = "lblPrioridadPrecio";
+            this.lblPrioridadPrecio.Size = new System.Drawing.Size(13, 17);
+            this.lblPrioridadPrecio.TabIndex = 18;
+            this.lblPrioridadPrecio.Text = "*";
+            // 
+            // lblPrioridadMarca
+            // 
+            this.lblPrioridadMarca.AutoSize = true;
+            this.lblPrioridadMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrioridadMarca.ForeColor = System.Drawing.Color.Red;
+            this.lblPrioridadMarca.Location = new System.Drawing.Point(82, 196);
+            this.lblPrioridadMarca.Name = "lblPrioridadMarca";
+            this.lblPrioridadMarca.Size = new System.Drawing.Size(13, 17);
+            this.lblPrioridadMarca.TabIndex = 19;
+            this.lblPrioridadMarca.Text = "*";
+            // 
+            // lblPrioridadCategoria
+            // 
+            this.lblPrioridadCategoria.AutoSize = true;
+            this.lblPrioridadCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrioridadCategoria.ForeColor = System.Drawing.Color.Red;
+            this.lblPrioridadCategoria.Location = new System.Drawing.Point(82, 240);
+            this.lblPrioridadCategoria.Name = "lblPrioridadCategoria";
+            this.lblPrioridadCategoria.Size = new System.Drawing.Size(13, 17);
+            this.lblPrioridadCategoria.TabIndex = 20;
+            this.lblPrioridadCategoria.Text = "*";
+            // 
             // frmAgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(584, 381);
+            this.Controls.Add(this.lblPrioridadCategoria);
+            this.Controls.Add(this.lblPrioridadMarca);
+            this.Controls.Add(this.lblPrioridadPrecio);
+            this.Controls.Add(this.lblPrioridadNombre);
+            this.Controls.Add(this.lblPrioridadCodigo);
             this.Controls.Add(this.lblAdvertencia);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -320,5 +385,10 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblAdvertencia;
+        private System.Windows.Forms.Label lblPrioridadCodigo;
+        private System.Windows.Forms.Label lblPrioridadNombre;
+        private System.Windows.Forms.Label lblPrioridadPrecio;
+        private System.Windows.Forms.Label lblPrioridadMarca;
+        private System.Windows.Forms.Label lblPrioridadCategoria;
     }
 }
