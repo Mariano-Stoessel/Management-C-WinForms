@@ -33,6 +33,7 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.pTitle = new System.Windows.Forms.Panel();
             this.textoabout = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnVolver.Location = new System.Drawing.Point(10, 595);
+            this.btnVolver.Location = new System.Drawing.Point(7, 595);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 40);
@@ -82,13 +83,25 @@
             this.textoabout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.textoabout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textoabout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.textoabout.Location = new System.Drawing.Point(0, 150);
+            this.textoabout.Location = new System.Drawing.Point(3, 141);
             this.textoabout.Name = "textoabout";
-            this.textoabout.Size = new System.Drawing.Size(765, 420);
+            this.textoabout.Size = new System.Drawing.Size(765, 256);
             this.textoabout.TabIndex = 12;
             this.textoabout.Text = resources.GetString("textoabout.Text");
             this.textoabout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.textoabout.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
+            this.label1.Location = new System.Drawing.Point(-4, 428);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(768, 228);
+            this.label1.TabIndex = 13;
+            this.label1.Text = resources.GetString("label1.Text");
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // VentanaAbout
             // 
@@ -99,6 +112,7 @@
             this.Controls.Add(this.textoabout);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.pTitle);
+            this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "VentanaAbout";
@@ -115,5 +129,6 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Panel pTitle;
         private System.Windows.Forms.Label textoabout;
+        private System.Windows.Forms.Label label1;
     }
 }
