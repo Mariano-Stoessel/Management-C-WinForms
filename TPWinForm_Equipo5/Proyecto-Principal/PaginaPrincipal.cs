@@ -38,6 +38,7 @@ namespace Proyecto_Principal
 
         private void btnArticulos_Click(object sender, EventArgs e)
         {
+            
             foreach(var item in Application.OpenForms)
             {
                 if (item.GetType() == typeof(VentanaListaDeArticulos))

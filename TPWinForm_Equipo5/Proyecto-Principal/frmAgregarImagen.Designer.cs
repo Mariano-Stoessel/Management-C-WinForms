@@ -119,6 +119,8 @@
             this.Controls.Add(this.pbxImagenUrl);
             this.Controls.Add(this.txtImagenUrl);
             this.Controls.Add(this.lblImagenUrl);
+            this.MaximumSize = new System.Drawing.Size(311, 406);
+            this.MinimumSize = new System.Drawing.Size(311, 406);
             this.Name = "frmAgregarImagen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Imagen";
