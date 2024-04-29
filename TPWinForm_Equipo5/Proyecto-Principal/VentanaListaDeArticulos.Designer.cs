@@ -326,11 +326,11 @@
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnUp.Location = new System.Drawing.Point(366, 455);
+            this.btnUp.Location = new System.Drawing.Point(495, 596);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(30, 35);
+            this.btnUp.Size = new System.Drawing.Size(50, 40);
             this.btnUp.TabIndex = 7;
-            this.btnUp.Text = "/\\";
+            this.btnUp.Text = ">";
             this.btnUp.UseVisualStyleBackColor = false;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
@@ -340,18 +340,18 @@
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnDown.Location = new System.Drawing.Point(366, 528);
+            this.btnDown.Location = new System.Drawing.Point(423, 596);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(30, 35);
+            this.btnDown.Size = new System.Drawing.Size(50, 40);
             this.btnDown.TabIndex = 8;
-            this.btnDown.Text = "\\/";
+            this.btnDown.Text = "<";
             this.btnDown.UseVisualStyleBackColor = false;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // pbxImagenUrl
             // 
             this.pbxImagenUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.pbxImagenUrl.Location = new System.Drawing.Point(130, 404);
+            this.pbxImagenUrl.Location = new System.Drawing.Point(164, 405);
             this.pbxImagenUrl.Name = "pbxImagenUrl";
             this.pbxImagenUrl.Size = new System.Drawing.Size(230, 230);
             this.pbxImagenUrl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -427,10 +427,10 @@
             this.btnAgregarImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarImg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnAgregarImg.Location = new System.Drawing.Point(417, 404);
+            this.btnAgregarImg.Location = new System.Drawing.Point(425, 405);
             this.btnAgregarImg.Margin = new System.Windows.Forms.Padding(0);
             this.btnAgregarImg.Name = "btnAgregarImg";
-            this.btnAgregarImg.Size = new System.Drawing.Size(100, 50);
+            this.btnAgregarImg.Size = new System.Drawing.Size(120, 50);
             this.btnAgregarImg.TabIndex = 12;
             this.btnAgregarImg.Text = "Agregar Imagen";
             this.btnAgregarImg.UseVisualStyleBackColor = false;
@@ -443,10 +443,10 @@
             this.btnEliminarImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarImg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarImg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.btnEliminarImg.Location = new System.Drawing.Point(417, 583);
+            this.btnEliminarImg.Location = new System.Drawing.Point(425, 470);
             this.btnEliminarImg.Margin = new System.Windows.Forms.Padding(0);
             this.btnEliminarImg.Name = "btnEliminarImg";
-            this.btnEliminarImg.Size = new System.Drawing.Size(100, 51);
+            this.btnEliminarImg.Size = new System.Drawing.Size(120, 51);
             this.btnEliminarImg.TabIndex = 13;
             this.btnEliminarImg.Text = "Eliminar Imagen";
             this.btnEliminarImg.UseVisualStyleBackColor = false;
