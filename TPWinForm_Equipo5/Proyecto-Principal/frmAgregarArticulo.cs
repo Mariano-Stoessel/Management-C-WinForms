@@ -83,6 +83,12 @@ namespace Proyecto_Principal
                 {
                     txtPrecio.Text = "0";
                 }
+                else if (!decimal.TryParse(txtPrecio.Text, out decimal precio))
+                {
+                    lblAdvertencia.Text = "El campo Precio debe ser un número.";
+                    articulo = null;
+                    return;
+                }
                 else
                 {
                     articulo.Precio = decimal.Parse(txtPrecio.Text);
